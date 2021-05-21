@@ -26,6 +26,8 @@ body {
 .cards .card {
   margin: 0 5px;
   flex: 0.5;
+  height: 40vh;
+  transition: flex 0.4s;
 }
 .cards .card.active {
   flex: 4;
