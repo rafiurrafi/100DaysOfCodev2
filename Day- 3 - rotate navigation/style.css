@@ -26,6 +26,9 @@ body {
   top: -100px;
   left: -100px;
 }
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
 .circle {
   background-color: #ff7979;
   height: 200px;
@@ -43,6 +46,7 @@ body {
   border: 0;
   font-size: 25px;
   color: #fff;
+  cursor: pointer;
 }
 .circle button:focus {
   outline: none;
