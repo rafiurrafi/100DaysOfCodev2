@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(to right bottom, #7d5fff, #7158e2);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-box {
+  position: relative;
+}
+.search-box__input {
+  /* width: 100%; */
+  padding: 10px;
+  width: 35px;
+  transition: width 0.6s;
+}
+.search-box__input.active {
+  width: 230px;
+}
+.search-box__icon {
+  position: absolute;
+  width: 20px;
+  font-size: 20px;
+  margin-left: -30px;
+  padding-top: 10px;
+  cursor: pointer;
+}
