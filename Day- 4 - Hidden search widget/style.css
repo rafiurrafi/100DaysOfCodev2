@@ -10,21 +10,46 @@ body {
 }
 .search-box {
   position: relative;
+  height: 50px;
 }
 .search-box__input {
-  /* width: 100%; */
-  padding: 10px;
-  width: 35px;
-  transition: width 0.6s;
+  background-color: white;
+  border: 0;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 50px;
+  /* padding: 10px;
+  width: 35px; */
+  transition: width 0.6s ease;
 }
 .search-box__input.active {
   width: 230px;
 }
+.search-box__input:focus {
+  outline: none;
+}
 .search-box__icon {
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 24px;
   position: absolute;
+  top: 0;
+  left: 0;
+  padding: 12px;
+  transition: transform 0.6s ease;
+  /* position: absolute;
   width: 20px;
   font-size: 20px;
   margin-left: -30px;
   padding-top: 10px;
-  cursor: pointer;
+  cursor: pointer; */
+}
+.search-box.active .search-box__input {
+  width: 200px;
+}
+.search-box.active .search-box__icon {
+  transform: translateX(198px);
 }
