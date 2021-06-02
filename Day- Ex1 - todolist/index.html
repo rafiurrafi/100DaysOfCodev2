@@ -15,12 +15,27 @@
         <p>A simple vanilla js todo list app</p>
       </div>
       <div class="todo-list__items">
-        <div class="todo-list__item">
-          <span>Milk the cat</span>
-          <span><i class="fa fa-pencil"></i></span>
-          <span><i class="fa fa-trash"></i></span>
+        <div class="todo-list__item-container">
+          <div class="todo-list__item">
+            <span>Milk the cat</span>
+            <span><i class="fa fa-pencil"></i></span>
+            <span><i class="fa fa-trash"></i></span>
+          </div>
+          <div class="todo-list__item-form">
+            <div class="todo-list__form-group">
+              <input type="text" placeholder="New todo" />
+              <button>Add todo</button>
+            </div>
+          </div>
         </div>
       </div>
+      <form class="todo-list__form">
+        <h3>New Todo</h3>
+        <div class="todo-list__form-group">
+          <input type="text" placeholder="New todo" />
+          <button>Add todo</button>
+        </div>
+      </form>
     </div>
     <script src="main.js"></script>
   </body>
