@@ -31,15 +31,22 @@
 }
 .todo-list__item-container {
   position: relative;
+  margin: 10px 0;
 }
 .todo-list__item-form {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  display: block;
   background-color: rgb(248, 73, 234);
+}
+.todo-list__item-form input {
+  padding: 10px 20px;
+}
+.todo-list__item-form input:focus {
+  outline: none;
 }
 .todo-list__item {
   /* width: 100%; */
@@ -86,7 +93,7 @@
   outline: none;
 }
 .todo-list__form button,
-.todo-list__item-container button {
+.form-button {
   background-color: transparent;
   outline: none;
   border: none;
