@@ -1,6 +1,6 @@
 const boxs = document.querySelectorAll(".box");
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", () => {
   const triggerPoint = (window.innerHeight / 5) * 4;
 
   boxs.forEach((box) => {
