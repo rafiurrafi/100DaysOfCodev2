@@ -2,3 +2,49 @@
   box-sizing: border-box;
   margin: 0;
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: steelblue;
+  color: white;
+}
+.container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 40px;
+  border-radius: 5px;
+}
+.container a {
+  text-decoration: none;
+  color: lightblue;
+}
+.form-control {
+  margin-right: 20px 0 40px;
+  position: relative;
+  width: 300px;
+}
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+}
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+}
+.btn {
+  display: inline-block;
+  width: 100%;
+  background-color: lightblue;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: blue;
+  margin: 20px 0 10px;
+}
