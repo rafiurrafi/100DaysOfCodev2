@@ -48,3 +48,8 @@ body {
   color: blue;
   margin: 20px 0 10px;
 }
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
