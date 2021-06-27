@@ -41,6 +41,14 @@ body {
 .form-control input:focus {
   outline: none;
 }
+.form-control input span {
+  font-size: 18px;
+  display: inline-block;
+}
+.form-control input:focus + label span {
+  transform: translateY(-30px);
+  color: lightblue;
+}
 .form-control label {
   position: absolute;
   top: 15px;
