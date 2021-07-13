@@ -6,19 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jQuery crash course | DOM manipulation</title>
   </head>
+  <style>
+    .myClass {
+      color: green;
+    }
+  </style>
   <body>
     <header>
       <h1>jQuery crash course</h1>
     </header>
     <main id="container">
       <button class="btn">Button</button>
-      <p class="param1">Lorem ipsum dolor sit amet.</p>
-      <p class="param2">Lorem ipsum dolor sit amet.</p>
+      <p class="param1">Lorem ipsum dolor sit amet 1.</p>
+      <p class="param2">Lorem ipsum dolor sit amet 2.</p>
+      <div id="myDiv"></div>
+      <ul id="list">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+      </ul>
     </main>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script>
+      // $("p.param1").css({ color: "white", backgroundColor: "blue" });
+      // $(".param2").addClass("myClass");
+      // $(".param2").removeClass("myClass");
+      // $(".btn").click(function () {
+      //   $("p.param2").toggleClass("myClass");
+      // });
+      // $("#myDiv").text("Hello kitty");
+      // $("#myDiv").html("<h1>Hello tom</h1>");
+      // $("ul#list").append("<li>list item 5</li>");
+      // $("ul#list").prepend("<li>list item 0</li>");
+      // $(".param1").prependTo(".param2");
+      $("ul#list").before("Hello");
+      $("ul#list").after("<h3>World</h3>");
+      $("ul#list").empty();
+      $("ul#list").detach();
+    </script>
   </body>
 </html>
