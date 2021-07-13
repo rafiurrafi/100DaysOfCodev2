@@ -7,10 +7,29 @@
     <title>jQuery crash course ! Events</title>
   </head>
   <body>
+    <header>
+      <h1>jQuery crash course</h1>
+    </header>
+    <main>
+      <h1 id="heading">Heading one</h1>
+      <p class="paragraph">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error aliquam,
+        iure laboriosam enim, hic doloribus ducimus aperiam maiores quae tenetur
+        animi, cupiditate aspernatur voluptatem dolorem iusto labore laborum
+        sunt possimus?
+      </p>
+      <button id="btn1">Button 1</button>
+      <button id="btn2">Button 2</button>
+    </main>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script>
+      $("#btn1").click(function () {
+        console.log("Hello");
+      });
+    </script>
   </body>
 </html>
