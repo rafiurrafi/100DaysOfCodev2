@@ -34,14 +34,18 @@
       //   $("#btn2").on("click", function () {
       //     console.log("Hello000");
       //   });
-      $("#btn1").click(function () {
-        $(".paragraph").hide();
-      });
-      $("#btn2").on("click", function () {
-        $(".paragraph").show();
-      });
-      $("#toggle-button").on("click", function () {
-        $(".paragraph").toggle("slow");
+      //   $("#btn1").click(function () {
+      //     $(".paragraph").hide();
+      //   });
+      //   $("#btn2").on("click", function () {
+      //     $(".paragraph").show();
+      //   });
+      //   $("#toggle-button").on("click", function () {
+      //     $(".paragraph").toggle("slow");
+      //   });
+      $("#btn1").hover(function () {
+        console.log("Hello");
+        $(".paragraph").toggle();
       });
     </script>
   </body>
