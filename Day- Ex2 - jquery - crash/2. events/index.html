@@ -43,8 +43,14 @@
       //   $("#toggle-button").on("click", function () {
       //     $(".paragraph").toggle("slow");
       //   });
-      $("#btn1").hover(function () {
-        console.log("Hello");
+      // $("#btn1").hover(function () {
+      //   console.log("Hello");
+      //   $(".paragraph").toggle();
+      // });
+      $("#btn1").mousedown(function () {
+        $(".paragraph").toggle();
+      });
+      $("#btn1").mouseup(function () {
         $(".paragraph").toggle();
       });
     </script>
