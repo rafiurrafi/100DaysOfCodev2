@@ -32,6 +32,11 @@
         <li>list 5</li>
         <li>list 6</li>
       </ul>
+      <input type="text" name="" placeholder="Text" id="" />
+      <input type="button" value="Button" />
+      <input type="submit" value="Submit" />
+      <a href="https:www.google.com">Google</a>
+      <a href="https:www.yahoo.com">Yahoo</a>
     </main>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -43,10 +48,15 @@
       // $("h1").hide();
       // $("h1.heading2").hide();
       // $("p span").css("color", "red");
-      $("ul#list li:first").css("backgroundColor", "royalblue");
-      $("ul#list li:first").css("color", "white");
-      $("ul#list li:first").css("display", "inline-block");
-      $("ul#list li:nth-child(3n)").css("backgroundColor", "blue");
+      // $("ul#list li:first").css("backgroundColor", "royalblue");
+      // $("ul#list li:first").css("color", "white");
+      // $("ul#list li:first").css("display", "inline-block");
+      // $("ul#list li:nth-child(3n)").css("backgroundColor", "blue");
+
+      // $(":submit").hide();
+      // $(":text").hide();
+      // $(":button").hide();
+      $("[href = 'https:www.yahoo.com']").css("textDecoration", "none");
     </script>
   </body>
 </html>
