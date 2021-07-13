@@ -21,6 +21,8 @@
       <button id="btn1">Button 1</button>
       <button id="btn2">Button 2</button>
       <button id="toggle-button">Toggle</button>
+      <input type="text" /> <br />
+      <input type="text" />
     </main>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -47,11 +49,17 @@
       //   console.log("Hello");
       //   $(".paragraph").toggle();
       // });
-      $("#btn1").mousedown(function () {
-        $(".paragraph").toggle();
-      });
-      $("#btn1").mouseup(function () {
-        $(".paragraph").toggle();
+      // $("#btn1").mousedown(function () {
+      //   $(".paragraph").toggle();
+      // });
+      // $("#btn1").mouseup(function () {
+      //   $(".paragraph").toggle();
+      // });
+      // $("#btn1").click(function (e) {
+      //   console.log(e.currentTarget.classList.add("active"));
+      // });
+      $(document).on("mousemove", function (e) {
+        $(".paragraph").html(e.clientY + " " + e.clientX);
       });
     </script>
   </body>
