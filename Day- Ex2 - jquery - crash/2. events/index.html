@@ -20,6 +20,7 @@
       </p>
       <button id="btn1">Button 1</button>
       <button id="btn2">Button 2</button>
+      <button id="toggle-button">Toggle</button>
     </main>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -27,8 +28,20 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      //   $("#btn1").click(function () {
+      //     console.log("Hello");
+      //   });
+      //   $("#btn2").on("click", function () {
+      //     console.log("Hello000");
+      //   });
       $("#btn1").click(function () {
-        console.log("Hello");
+        $(".paragraph").hide();
+      });
+      $("#btn2").on("click", function () {
+        $(".paragraph").show();
+      });
+      $("#toggle-button").on("click", function () {
+        $(".paragraph").toggle("slow");
       });
     </script>
   </body>
