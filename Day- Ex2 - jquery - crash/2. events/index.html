@@ -21,8 +21,15 @@
       <button id="btn1">Button 1</button>
       <button id="btn2">Button 2</button>
       <button id="toggle-button">Toggle</button>
-      <input type="text" /> <br />
-      <input type="text" />
+      <form action="">
+        <input type="text" /> <br />
+        <input type="text" />
+        <select name="" id="gender">
+          <option value="male">Male</option>
+          <option value="famale">famale</option>
+        </select>
+        <input type="submit" value="Submit" />
+      </form>
     </main>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -58,8 +65,21 @@
       // $("#btn1").click(function (e) {
       //   console.log(e.currentTarget.classList.add("active"));
       // });
-      $(document).on("mousemove", function (e) {
-        $(".paragraph").html(e.clientY + " " + e.clientX);
+      // $(document).on("mousemove", function (e) {
+      //   $(".paragraph").html(e.clientY + " " + e.clientX);
+      // });
+      // $("input").focus(function () {
+      //   $(this).css("background", "blue");
+      // });
+      // $("input").blur(function () {
+      //   $(this).css("background", "white");
+      // });
+      // $("select").change(function (e) {
+      //   console.log(e.target.value);
+      // });
+      $("form").submit(function (e) {
+        e.preventDefault();
+        console.log("Submitted");
       });
     </script>
   </body>
