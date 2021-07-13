@@ -24,11 +24,29 @@
         Nesciunt, voluptate quis dignissimos praesentium ducimus itaque
         <span>debitis veritatis</span> sit suscipit?
       </p>
+      <ul id="list">
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+        <li>list 5</li>
+        <li>list 6</li>
+      </ul>
     </main>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script>
+      // $("h1#heading1").hide();
+      // $("h1").hide();
+      // $("h1.heading2").hide();
+      // $("p span").css("color", "red");
+      $("ul#list li:first").css("backgroundColor", "royalblue");
+      $("ul#list li:first").css("color", "white");
+      $("ul#list li:first").css("display", "inline-block");
+      $("ul#list li:nth-child(3n)").css("backgroundColor", "blue");
+    </script>
   </body>
 </html>
