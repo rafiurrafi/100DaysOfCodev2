@@ -6506,6 +6506,8 @@ a.text-dark:hover, a.text-dark:focus {
   text-transform: uppercase; }
 #mainNavbar .navbar-brand img {
   width: 7rem; }
+#mainNavbar .navbar-download i {
+  color: #e42329; }
 
 .section-slides,
 .caroursel,
@@ -6523,7 +6525,7 @@ a.text-dark:hover, a.text-dark:focus {
   justify-content: flex-start;
   height: 300px;
   width: 100px;
-  top: 22%;
+  top: 22.5%;
   left: -3%; }
 
 .carousel-indicators li {
@@ -6575,6 +6577,10 @@ a.text-dark:hover, a.text-dark:focus {
   list-style: none;
   margin: 0;
   padding: 0; }
+  .work-lists i {
+    background-color: greenyellow;
+    color: #fff;
+    border-radius: 50%; }
 
 .work-tab-link {
   background-color: #f1f1f1;
@@ -6600,12 +6606,32 @@ a.text-dark:hover, a.text-dark:focus {
     top: 50%;
     left: -20px; }
 
+.quick-links a {
+  color: #333; }
+
 @media (max-width: 992px) {
+  #mainNavbar .navbar-nav {
+    margin-left: 0%; }
+
   .download-form {
     padding: none; } }
 @media (max-width: 576px) {
   .download-img {
-    padding-left: 1rem; } }
+    padding-left: 1rem; }
+
+  .donwload-form .form-inline .form-control {
+    width: 100% !important; }
+
+  .donwload-form .btn.btn-primary.w-25 {
+    width: 50% !important; } }
+@media (max-width: 575px) {
+  .section-works .nav {
+    flex-direction: row !important;
+    width: 100%; }
+    .section-works .nav a {
+      width: 24%; }
+      .section-works .nav a:not(:last-of-type) {
+        margin-right: 1%; } }
 @media (max-width: 1300px) {
   .carousel-indicators {
     left: -4% !important; } }

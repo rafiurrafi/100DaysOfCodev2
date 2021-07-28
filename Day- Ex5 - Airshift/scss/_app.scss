@@ -31,6 +31,11 @@ $color-primary: #e42329;
   .navbar-brand img {
     width: 7rem;
   }
+  .navbar-download {
+    i {
+      color: $color-primary;
+    }
+  }
 }
 .section-slides,
 .caroursel,
@@ -50,7 +55,7 @@ $color-primary: #e42329;
   justify-content: flex-start;
   height: 300px;
   width: 100px;
-  top: 22%;
+  top: 22.5%;
   left: -3%;
 }
 .carousel-indicators li {
@@ -121,6 +126,11 @@ $color-primary: #e42329;
   list-style: none;
   margin: 0;
   padding: 0;
+  i {
+    background-color: greenyellow;
+    color: #fff;
+    border-radius: 50%;
+  }
 }
 .work-tab-link {
   background-color: #f1f1f1;
@@ -156,9 +166,27 @@ $color-primary: #e42329;
   }
 }
 // =====================================================
+// quick links
+// ====================================================
+.quick-links a {
+  color: #333;
+}
+// =====================================================
+// Footer
+// ====================================================
+
+.footer {
+  // background-color: #111;
+}
+// =====================================================
 // Breakpoint
 // ====================================================
 @media (max-width: 992px) {
+  #mainNavbar {
+    .navbar-nav {
+      margin-left: 0%;
+    }
+  }
   .download-form {
     padding: none;
   }
@@ -169,8 +197,25 @@ $color-primary: #e42329;
   .download-img {
     padding-left: 1rem;
   }
+  .donwload-form .form-inline .form-control {
+    width: 100% !important;
+  }
+  .donwload-form .btn.btn-primary.w-25 {
+    width: 50% !important;
+  }
 }
-
+@media (max-width: 575px) {
+  .section-works .nav {
+    flex-direction: row !important;
+    width: 100%;
+    a {
+      width: 24%;
+      &:not(:last-of-type) {
+        margin-right: 1%;
+      }
+    }
+  }
+}
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
 }
