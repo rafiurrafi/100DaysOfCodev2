@@ -6490,6 +6490,15 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem; }
+
+p {
+  font-size: 1.1rem;
+  font-weight: 300; }
+
 .about__video-link {
   position: relative; }
 .about__video-icon {
@@ -6500,10 +6509,17 @@ a.text-dark:hover, a.text-dark:focus {
   left: 50%;
   transform: translate(-50%, -50%); }
 
+.heading-main {
+  font-size: 2.5rem;
+  color: #4a4a4a;
+  font-family: "Roboto Slab", serif; }
+
 #mainNavbar .navbar-nav {
   margin-left: 10%; }
 #mainNavbar .navbar-nav .nav-link {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #757575;
+  font-size: 1.1rem; }
 #mainNavbar .navbar-brand img {
   width: 7rem; }
 #mainNavbar .navbar-download i {
@@ -6525,7 +6541,7 @@ a.text-dark:hover, a.text-dark:focus {
   justify-content: flex-start;
   height: 300px;
   width: 100px;
-  top: 22.5%;
+  top: 22.8%;
   left: -3%; }
 
 .carousel-indicators li {
@@ -6536,7 +6552,7 @@ a.text-dark:hover, a.text-dark:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 0.95rem;
   background-color: rgba(255, 255, 255, 0.9);
   cursor: pointer; }
   .carousel-indicators li.active {
@@ -6562,6 +6578,12 @@ a.text-dark:hover, a.text-dark:focus {
   width: 100%;
   object-fit: cover; }
 
+.carousel-text {
+  font-size: 1.1rem; }
+
+.carousel-btn {
+  font-size: 1.2rem; }
+
 .section-download-app .form-control {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
@@ -6572,11 +6594,18 @@ a.text-dark:hover, a.text-dark:focus {
   border-bottom-left-radius: 0; }
 .section-download-app img {
   height: 2.5rem; }
+.section-download-app .download-text {
+  color: #4a4a4a;
+  font-weight: 700; }
+.section-download-app .form-control {
+  background-color: #eee; }
 
 .work-lists {
   list-style: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 1.1rem;
+  color: #757575; }
   .work-lists i {
     background-color: greenyellow;
     color: #fff;
@@ -6588,9 +6617,15 @@ a.text-dark:hover, a.text-dark:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.25rem; }
+  font-size: 0.95rem; }
   .work-tab-link.active {
     background-color: #e42329; }
+
+.works-subheading {
+  font-size: 1.3rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  color: #4a4a4a; }
 
 .section-testimonial .testimonial__ratings {
   color: yellow; }
