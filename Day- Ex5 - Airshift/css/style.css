@@ -6504,6 +6504,8 @@ a.text-dark:hover, a.text-dark:focus {
   margin-left: 10%; }
 #mainNavbar .navbar-nav .nav-link {
   text-transform: uppercase; }
+#mainNavbar .navbar-brand img {
+  width: 7rem; }
 
 .section-slides,
 .caroursel,
@@ -6512,13 +6514,17 @@ a.text-dark:hover, a.text-dark:focus {
 .carousel-item img {
   height: 80vh; }
 
+.section-slides .carousel-inner,
+.section-slides .carousel-item {
+  position: static; }
+
 .carousel-indicators {
   flex-direction: column;
   justify-content: flex-start;
   height: 300px;
   width: 100px;
-  top: 22.5%;
-  left: -8%; }
+  top: 22%;
+  left: -3%; }
 
 .carousel-indicators li {
   height: 24%;
@@ -6562,6 +6568,8 @@ a.text-dark:hover, a.text-dark:focus {
 .section-download-app .btn.btn-primary {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
+.section-download-app img {
+  height: 2.5rem; }
 
 .work-lists {
   list-style: none;
@@ -6577,5 +6585,58 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 1.25rem; }
   .work-tab-link.active {
     background-color: #e42329; }
+
+.section-testimonial .testimonial__ratings {
+  color: yellow; }
+.section-testimonial h5 {
+  color: #e42329;
+  position: relative; }
+  .section-testimonial h5::before {
+    content: "";
+    height: 3px;
+    width: 10px;
+    background-color: #e42329;
+    position: absolute;
+    top: 50%;
+    left: -20px; }
+
+@media (max-width: 992px) {
+  .download-form {
+    padding: none; } }
+@media (max-width: 576px) {
+  .download-img {
+    padding-left: 1rem; } }
+@media (max-width: 1300px) {
+  .carousel-indicators {
+    left: -4% !important; } }
+@media (max-width: 1200px) {
+  .carousel-caption {
+    left: 21%;
+    width: 50%; } }
+@media (max-width: 1070px) {
+  .carousel-caption {
+    left: 22%;
+    width: 60%; } }
+@media (max-width: 960px) {
+  .carousel-caption {
+    left: 23%; } }
+@media (max-width: 890px) {
+  .carousel-caption {
+    left: 24%;
+    width: 75%; } }
+@media (max-width: 810px) {
+  .carousel-indicators {
+    display: none; }
+
+  .carousel-caption {
+    left: 10%;
+    width: 85%; }
+
+  .section-slides,
+  .caroursel,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item img {
+    height: 100vh; } }
 
 /*# sourceMappingURL=style.css.map */

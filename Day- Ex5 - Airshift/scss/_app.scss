@@ -28,6 +28,9 @@ $color-primary: #e42329;
   .navbar-nav .nav-link {
     text-transform: uppercase;
   }
+  .navbar-brand img {
+    width: 7rem;
+  }
 }
 .section-slides,
 .caroursel,
@@ -36,13 +39,19 @@ $color-primary: #e42329;
 .carousel-item img {
   height: 80vh;
 }
+.section-slides {
+  .carousel-inner,
+  .carousel-item {
+    position: static;
+  }
+}
 .carousel-indicators {
   flex-direction: column;
   justify-content: flex-start;
   height: 300px;
   width: 100px;
-  top: 22.5%;
-  left: -8%;
+  top: 22%;
+  left: -3%;
 }
 .carousel-indicators li {
   height: 24%;
@@ -97,12 +106,14 @@ $color-primary: #e42329;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+  img {
+    height: 2.5rem;
+  }
 }
 // =====================================================
 // Section about
 // ====================================================
-.section-about {
-}
+
 // =====================================================
 // Section download app
 // ====================================================
@@ -124,11 +135,115 @@ $color-primary: #e42329;
   }
 }
 // =====================================================
-// Section download app
+// Section testimonial
 // ====================================================
+.section-testimonial {
+  .testimonial__ratings {
+    color: yellow;
+  }
+  h5 {
+    color: $color-primary;
+    position: relative;
+    &::before {
+      content: "";
+      height: 3px;
+      width: 10px;
+      background-color: $color-primary;
+      position: absolute;
+      top: 50%;
+      left: -20px;
+    }
+  }
+}
 // =====================================================
-// Section download app
+// Breakpoint
 // ====================================================
+@media (max-width: 992px) {
+  .download-form {
+    padding: none;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .download-img {
+    padding-left: 1rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+// media query for slider
+@media (max-width: 1400px) {
+  .carousel-indicators {
+    // left: -4% !important;
+  }
+}
+@media (max-width: 1300px) {
+  .carousel-indicators {
+    left: -4% !important;
+  }
+}
+@media (max-width: 1200px) {
+  .carousel-caption {
+    left: 21%;
+    width: 50%;
+  }
+}
+@media (max-width: 1070px) {
+  .carousel-caption {
+    left: 22%;
+    width: 60%;
+  }
+}
+@media (max-width: 960px) {
+  .carousel-caption {
+    left: 23%;
+  }
+}
+@media (max-width: 890px) {
+  .carousel-caption {
+    left: 24%;
+    width: 75%;
+  }
+}
+@media (max-width: 810px) {
+  .carousel-indicators {
+    display: none;
+    // flex-direction: row;
+    // height: 100px;
+    // width: 80%;
+    // li {
+    //   width: 24%;
+    //   margin-right: 7px;
+    //   align-items: stretch;
+    // }
+  }
+  .carousel-caption {
+    left: 10%;
+    width: 85%;
+  }
+  .section-slides,
+  .caroursel,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item img {
+    height: 100vh;
+  }
+}
+@media (max-width: 700px) {
+}
+@media (max-width: 600px) {
+}
+@media (max-width: 500px) {
+}
 // =====================================================
 // Section download app
 // ====================================================
