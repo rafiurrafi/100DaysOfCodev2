@@ -39,6 +39,45 @@ p {
   color: $color-gray-dark-1;
   font-family: "Roboto Slab", serif;
 }
+// #form-vanilla {
+//   .form-control {
+//     border-top-right-radius: 0;
+//     border-bottom-right-radius: 0;
+//     &:focus {
+//       outline: 0;
+//     }
+//   }
+//   .btn.btn-primary {
+//     border-top-left-radius: 0;
+//     border-bottom-left-radius: 0;
+//   }
+// }
+.donwload-form {
+  .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #eee;
+    font-size: $subheading-size;
+    font-weight: 400;
+    &:focus {
+      outline: 0;
+    }
+  }
+  .btn.btn-primary {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: $subheading-size;
+    font-weight: 500;
+  }
+}
+.check-success {
+  background-color: #fff;
+  color: #5fcf9f;
+  border-radius: 50%;
+}
+.text-size {
+  font-size: $text-size;
+}
 // =====================================================
 // Section Navbar
 // ====================================================
@@ -121,17 +160,6 @@ p {
 // Section download app
 // ====================================================
 .section-download-app {
-  .form-control {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    &:focus {
-      outline: 0;
-    }
-  }
-  .btn.btn-primary {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
   img {
     height: 2.5rem;
   }
@@ -236,6 +264,21 @@ p {
   .donwload-form .btn.btn-primary.w-25 {
     width: 50% !important;
   }
+  .donwload-form {
+    .form-control {
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
+    .btn.btn-primary {
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+  }
+  .section-track-input {
+    .form-control {
+      width: 75% !important;
+    }
+  }
 }
 @media (max-width: 575px) {
   .section-works .nav {
@@ -332,6 +375,41 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.tracking-list-title,
+.tracking-list-title-name {
+  color: $color-gray-dark-1;
+}
+.tracking-list-title {
+  font-size: 1.43rem;
+}
+.tracking-list-title-name {
+  font-size: 1.6rem;
+  img {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.mygrid > [class*="col-"]:before {
+  content: "";
+  position: absolute;
+  background: #eee;
+  display: block;
+  top: 0;
+  right: 15px;
+  bottom: 0;
+  left: 15px;
+  z-index: -1;
+  border-radius: 5px;
+}
+.mygrid-success > [class*="col-"]:before {
+  background: #5fcf9f;
+}
+.mygrid > [class*="col-"] {
+  padding: 15px 30px;
+  margin-bottom: 10px;
 }
 // =====================================================
 // Section download app

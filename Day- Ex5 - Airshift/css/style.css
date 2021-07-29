@@ -6514,6 +6514,28 @@ p {
   color: #4a4a4a;
   font-family: "Roboto Slab", serif; }
 
+.donwload-form .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #eee;
+  font-size: 1.2rem;
+  font-weight: 400; }
+  .donwload-form .form-control:focus {
+    outline: 0; }
+.donwload-form .btn.btn-primary {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 1.2rem;
+  font-weight: 500; }
+
+.check-success {
+  background-color: #fff;
+  color: #5fcf9f;
+  border-radius: 50%; }
+
+.text-size {
+  font-size: 1.1rem; }
+
 #mainNavbar .navbar-nav .nav-link {
   text-transform: uppercase;
   color: #4a4a4a;
@@ -6580,14 +6602,6 @@ p {
 .carousel-btn {
   font-size: 1.2rem; }
 
-.section-download-app .form-control {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0; }
-  .section-download-app .form-control:focus {
-    outline: 0; }
-.section-download-app .btn.btn-primary {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0; }
 .section-download-app img {
   height: 2.5rem; }
 .section-download-app .download-text {
@@ -6654,7 +6668,17 @@ p {
     width: 100% !important; }
 
   .donwload-form .btn.btn-primary.w-25 {
-    width: 50% !important; } }
+    width: 50% !important; }
+
+  .donwload-form .form-control {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem; }
+  .donwload-form .btn.btn-primary {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem; }
+
+  .section-track-input .form-control {
+    width: 75% !important; } }
 @media (max-width: 575px) {
   .section-works .nav {
     flex-direction: row !important;
@@ -6700,5 +6724,38 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
+
+.tracking-list-title,
+.tracking-list-title-name {
+  color: #4a4a4a; }
+
+.tracking-list-title {
+  font-size: 1.43rem; }
+
+.tracking-list-title-name {
+  font-size: 1.6rem; }
+  .tracking-list-title-name img {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem; }
+
+.mygrid > [class*="col-"]:before {
+  content: "";
+  position: absolute;
+  background: #eee;
+  display: block;
+  top: 0;
+  right: 15px;
+  bottom: 0;
+  left: 15px;
+  z-index: -1;
+  border-radius: 5px; }
+
+.mygrid-success > [class*="col-"]:before {
+  background: #5fcf9f; }
+
+.mygrid > [class*="col-"] {
+  padding: 15px 30px;
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=style.css.map */
