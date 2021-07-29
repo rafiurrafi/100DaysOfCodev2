@@ -258,6 +258,14 @@ p {
     padding: none;
   }
 }
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+  .section-ceo-message {
+    .ceo-img {
+      height: 55vw;
+    }
+  }
+}
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
@@ -297,9 +305,6 @@ p {
       }
     }
   }
-}
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
 }
 
 // Large devices (desktops, 992px and up)
@@ -375,7 +380,8 @@ p {
 // =====================================================
 // =====================================================
 // ====================================================
-.jumbotron-tracking {
+.jumbotron-tracking,
+.jumbotron-about {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
@@ -418,5 +424,34 @@ p {
   margin-bottom: 10px;
 }
 // =====================================================
-// Section download app
+// =====================================================
+// =====================================================
+// About us page
+// =====================================================
+// =====================================================
 // ====================================================
+.jumbotron-tracking,
+.jumbotron-about {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/About/188433492_2687463748212994_4345649974138857625_n.jpg);
+}
+.section-about-desc p {
+  font-size: $small-size;
+  color: $color-gray-light-1;
+}
+.section-ceo-message {
+  background-color: #eee;
+  .ceo-message-quote-img {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+  }
+  .ceo-img {
+    height: 40vw;
+    width: 100% !important;
+    object-fit: cover;
+  }
+  .col-md-6:first-of-type {
+    height: 100%;
+  }
+}

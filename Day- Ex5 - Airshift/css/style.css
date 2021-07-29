@@ -6666,6 +6666,9 @@ p {
 
   .download-form {
     padding: none; } }
+@media (max-width: 768px) {
+  .section-ceo-message .ceo-img {
+    height: 55vw; } }
 @media (max-width: 576px) {
   .download-img {
     padding-left: 1rem; }
@@ -6725,7 +6728,8 @@ p {
   .carousel-item,
   .carousel-item img {
     height: 100vh; } }
-.jumbotron-tracking {
+.jumbotron-tracking,
+.jumbotron-about {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -6763,5 +6767,26 @@ p {
 .mygrid > [class*="col-"] {
   padding: 15px 30px;
   margin-bottom: 10px; }
+
+.jumbotron-tracking,
+.jumbotron-about {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/About/188433492_2687463748212994_4345649974138857625_n.jpg); }
+
+.section-about-desc p {
+  font-size: 0.95rem;
+  color: #757575; }
+
+.section-ceo-message {
+  background-color: #eee; }
+  .section-ceo-message .ceo-message-quote-img {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem; }
+  .section-ceo-message .ceo-img {
+    height: 40vw;
+    width: 100% !important;
+    object-fit: cover; }
+  .section-ceo-message .col-md-6:first-of-type {
+    height: 100%; }
 
 /*# sourceMappingURL=style.css.map */
