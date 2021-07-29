@@ -43,21 +43,13 @@ p {
 // Section Navbar
 // ====================================================
 #mainNavbar {
-  .navbar-nav {
-    margin-left: 10%;
-  }
   .navbar-nav .nav-link {
     text-transform: uppercase;
-    color: $color-gray-light-1;
-    font-size: 1.1rem;
+    color: $color-gray-dark-1;
+    font-size: 1rem;
   }
   .navbar-brand img {
     width: 9rem;
-  }
-  .navbar-download {
-    i {
-      color: $color-primary;
-    }
   }
 }
 .section-slides,

@@ -6514,16 +6514,12 @@ p {
   color: #4a4a4a;
   font-family: "Roboto Slab", serif; }
 
-#mainNavbar .navbar-nav {
-  margin-left: 10%; }
 #mainNavbar .navbar-nav .nav-link {
   text-transform: uppercase;
-  color: #757575;
-  font-size: 1.1rem; }
+  color: #4a4a4a;
+  font-size: 1rem; }
 #mainNavbar .navbar-brand img {
   width: 9rem; }
-#mainNavbar .navbar-download i {
-  color: #e42329; }
 
 .section-slides,
 .caroursel,
