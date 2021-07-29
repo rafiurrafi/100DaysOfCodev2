@@ -6518,14 +6518,14 @@ p {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   background-color: #eee;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 400; }
   .donwload-form .form-control:focus {
     outline: 0; }
 .donwload-form .btn.btn-primary {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500; }
 
 .check-success {
@@ -6535,6 +6535,12 @@ p {
 
 .text-size {
   font-size: 1.1rem; }
+
+.text-gray-dark {
+  color: #4a4a4a; }
+
+.text-gray-light {
+  color: #757575; }
 
 #mainNavbar .navbar-nav .nav-link {
   text-transform: uppercase;
