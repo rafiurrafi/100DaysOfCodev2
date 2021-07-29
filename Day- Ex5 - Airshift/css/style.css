@@ -6695,5 +6695,10 @@ p {
   .carousel-item,
   .carousel-item img {
     height: 100vh; } }
+.jumbotron-tracking {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Tracking/pexels-mart-production-7706531.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 /*# sourceMappingURL=style.css.map */
