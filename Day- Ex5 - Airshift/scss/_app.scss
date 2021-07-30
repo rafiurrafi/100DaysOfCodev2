@@ -57,7 +57,7 @@ p {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     background-color: #eee;
-    font-size: $text-size;
+    font-size: $subheading-size;
     font-weight: 400;
     &:focus {
       outline: 0;
@@ -184,14 +184,19 @@ p {
 // ====================================================
 .section-download-app {
   img {
-    height: 2.5rem;
+    height: 3.05rem;
+  }
+  .download-area {
+    .col-sm-4,
+    .col-4 {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
   }
   .download-text {
     color: $color-gray-dark-1;
     font-weight: 700;
-  }
-  .form-control {
-    background-color: #eee;
+    font-size: 0.95rem;
   }
 }
 // =====================================================
