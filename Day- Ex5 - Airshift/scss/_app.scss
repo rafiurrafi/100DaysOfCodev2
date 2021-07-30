@@ -381,7 +381,9 @@ p {
 // =====================================================
 // ====================================================
 .jumbotron-tracking,
-.jumbotron-about {
+.jumbotron-about,
+.jumbotron-blog,
+.jumbotron-faq {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
@@ -504,4 +506,36 @@ p {
       background-color: #fff;
     }
   }
+}
+// =====================================================
+// FAQ page
+// =====================================================
+.jumbotron-faq {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/FAQ/pexels-mart-production-7706586.jpg);
+}
+.faq-collapse {
+  border-left: 3px solid $color-primary;
+  &.card-body {
+    padding: 0rem 1.25rem;
+  }
+}
+.faq-link {
+  color: $color-gray-dark-1;
+  font-size: $text-size;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $color-primary;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+// =====================================================
+// Blog page
+// =====================================================
+.jumbotron-blog {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/Blog/Image3.jpg);
 }
