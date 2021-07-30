@@ -6545,7 +6545,7 @@ p {
 #mainNavbar .navbar-nav .nav-link {
   text-transform: uppercase;
   color: #4a4a4a;
-  font-size: 1rem; }
+  font-size: 0.9rem; }
 #mainNavbar .navbar-brand img {
   width: 9rem; }
 
@@ -6733,7 +6733,8 @@ p {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  padding: 3rem 2rem !important; }
 
 .tracking-list-title,
 .tracking-list-title-name {
@@ -6769,7 +6770,8 @@ p {
   margin-bottom: 10px; }
 
 .jumbotron-tracking,
-.jumbotron-about {
+.jumbotron-about,
+.jumbotron-service {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/About/188433492_2687463748212994_4345649974138857625_n.jpg); }
 
 .section-about-desc p {
@@ -6788,5 +6790,31 @@ p {
     object-fit: cover; }
   .section-ceo-message .col-md-6:first-of-type {
     height: 100%; }
+
+.jumbotron-service {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Services/pexels-liza-summer-6347560.jpg); }
+
+.tab-horizontal .nav-item {
+  width: 24%;
+  background-color: #ddd;
+  border-radius: 0.35rem;
+  text-align: center; }
+  .tab-horizontal .nav-item.active {
+    background-color: #e42329; }
+  .tab-horizontal .nav-item:not(:last-of-type) {
+    margin-right: 1%; }
+.tab-horizontal .nav-link {
+  position: relative; }
+  .tab-horizontal .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: #e42329 transparent transparent transparent;
+    border-style: solid;
+    border-width: 15px 15px 15px 15px;
+    height: 0px;
+    width: 0px; }
 
 /*# sourceMappingURL=style.css.map */
