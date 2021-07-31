@@ -6546,6 +6546,9 @@ p {
 .text-gray-light {
   color: #757575; }
 
+.text-gray-light-2 {
+  color: #9f9f9f; }
+
 .w-65 {
   width: 65% !important; }
 
@@ -6701,6 +6704,18 @@ p {
   font-size: 0.85rem; }
   .work-tab-link.active {
     background-color: #e42329; }
+    .work-tab-link.active .work-link-white {
+      display: inline-block; }
+    .work-tab-link.active .work-link-red {
+      display: none; }
+  .work-tab-link .work-link-white,
+  .work-tab-link .work-link-red {
+    width: 1.1rem;
+    height: 1.1rem; }
+  .work-tab-link .work-link-white {
+    display: none; }
+  .work-tab-link .work-link-red {
+    display: inline-block; }
 
 .works-subheading {
   font-size: 1.3rem;
@@ -6851,6 +6866,12 @@ p {
 
 .jumbotron-faq {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/FAQ/pexels-mart-production-7706586.jpg); }
+
+#accordion .card,
+#accordion2 .card,
+#accordion3 .card,
+#accordion4 .card {
+  border: none; }
 
 .faq-collapse {
   border-left: 3px solid #e42329; }

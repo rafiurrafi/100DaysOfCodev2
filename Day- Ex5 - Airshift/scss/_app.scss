@@ -88,6 +88,9 @@ p {
 .text-gray-light {
   color: $color-gray-light-1;
 }
+.text-gray-light-2 {
+  color: $color-gray-light-2;
+}
 .w-65 {
   width: 65% !important;
 }
@@ -286,6 +289,23 @@ p {
 
   &.active {
     background-color: $color-primary;
+    .work-link-white {
+      display: inline-block;
+    }
+    .work-link-red {
+      display: none;
+    }
+  }
+  .work-link-white,
+  .work-link-red {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+  .work-link-white {
+    display: none;
+  }
+  .work-link-red {
+    display: inline-block;
   }
 }
 .works-subheading {
@@ -502,6 +522,15 @@ p {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/FAQ/pexels-mart-production-7706586.jpg);
 }
+#accordion,
+#accordion2,
+#accordion3,
+#accordion4 {
+  .card {
+    border: none;
+  }
+}
+
 .faq-collapse {
   border-left: 3px solid $color-primary;
   &.card-body {
