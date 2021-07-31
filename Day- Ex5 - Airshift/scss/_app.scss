@@ -138,7 +138,7 @@ p {
 .carousel-inner,
 .carousel-item,
 .carousel-item img {
-  height: 80vh;
+  height: 85vh;
 }
 .section-slides {
   .carousel-inner,
@@ -149,9 +149,9 @@ p {
 .carousel-indicators {
   flex-direction: column;
   justify-content: flex-start;
-  height: 300px;
+  height: 70%;
   width: 100px;
-  top: 22.8%;
+  top: 14.8%;
   left: -3%;
 }
 .carousel-indicators li {
@@ -168,9 +168,34 @@ p {
   &.active {
     background-color: $color-primary;
     color: #fff;
+    .carousel-icon-red {
+      display: none;
+    }
+    .carousel-icon-white {
+      display: block;
+    }
   }
   &:not(:last-of-type) {
     margin-bottom: 7px;
+  }
+  &:first-of-type {
+    border-top-left-radius: 0.45rem;
+  }
+  &:last-of-type {
+    border-bottom-left-radius: 0.45rem;
+  }
+  .carousel-icon-white,
+  .carousel-icon-red {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+  }
+  .carousel-icon-red {
+    display: block;
+  }
+  .carousel-icon-white {
+    display: none;
   }
 
   // width: 3rem;
@@ -185,7 +210,16 @@ p {
   left: 20%;
   bottom: none;
   transform: translateY(-50%);
-  height: 300px;
+  height: 70%;
+  border-top-right-radius: 0.45rem;
+  border-bottom-right-radius: 0.45rem;
+  p {
+    margin-bottom: 0.5rem;
+    img {
+      height: 1.1rem;
+      width: 1.1rem;
+    }
+  }
 }
 .carousel-item img {
   height: 100% !important;
@@ -197,6 +231,9 @@ p {
 }
 .carousel-btn {
   font-size: $subheading-size;
+}
+.carousel-learn-link {
+  text-decoration: underline;
 }
 // =====================================================
 // Section download app
@@ -267,6 +304,7 @@ p {
   h5 {
     color: $color-primary;
     position: relative;
+    font-size: $subheading-size;
     &::before {
       content: "";
       height: 3px;
@@ -276,6 +314,9 @@ p {
       top: 50%;
       left: -20px;
     }
+  }
+  p {
+    font-size: 0.75rem;
   }
 }
 // =====================================================
@@ -550,6 +591,13 @@ p {
 }
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
+  .section-slides,
+  .caroursel,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item img {
+    height: 65vh;
+  }
   .section-ceo-message {
     .ceo-img {
       height: 55vw;
@@ -667,13 +715,11 @@ p {
   .carousel-caption {
     left: 10%;
     width: 85%;
-  }
-  .section-slides,
-  .caroursel,
-  .carousel-inner,
-  .carousel-item,
-  .carousel-item img {
-    height: 100vh;
+    border-top-left-radius: 0.45rem;
+    border-bottom-left-radius: 0.45rem;
+    .heading-main {
+      font-size: 1.9rem;
+    }
   }
 }
 @media (max-width: 700px) {
@@ -681,4 +727,8 @@ p {
 @media (max-width: 600px) {
 }
 @media (max-width: 500px) {
+  .carousel-caption {
+    width: 95%;
+    left: 2.5%;
+  }
 }

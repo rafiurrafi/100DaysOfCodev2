@@ -6586,7 +6586,7 @@ p {
 .carousel-inner,
 .carousel-item,
 .carousel-item img {
-  height: 80vh; }
+  height: 85vh; }
 
 .section-slides .carousel-inner,
 .section-slides .carousel-item {
@@ -6595,9 +6595,9 @@ p {
 .carousel-indicators {
   flex-direction: column;
   justify-content: flex-start;
-  height: 300px;
+  height: 70%;
   width: 100px;
-  top: 22.8%;
+  top: 14.8%;
   left: -3%; }
 
 .carousel-indicators li {
@@ -6614,8 +6614,26 @@ p {
   .carousel-indicators li.active {
     background-color: #e42329;
     color: #fff; }
+    .carousel-indicators li.active .carousel-icon-red {
+      display: none; }
+    .carousel-indicators li.active .carousel-icon-white {
+      display: block; }
   .carousel-indicators li:not(:last-of-type) {
     margin-bottom: 7px; }
+  .carousel-indicators li:first-of-type {
+    border-top-left-radius: 0.45rem; }
+  .carousel-indicators li:last-of-type {
+    border-bottom-left-radius: 0.45rem; }
+  .carousel-indicators li .carousel-icon-white,
+  .carousel-indicators li .carousel-icon-red {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin: 0 auto;
+    margin-bottom: 0.5rem; }
+  .carousel-indicators li .carousel-icon-red {
+    display: block; }
+  .carousel-indicators li .carousel-icon-white {
+    display: none; }
 
 .carousel-indicators li i {
   display: block; }
@@ -6627,7 +6645,14 @@ p {
   left: 20%;
   bottom: none;
   transform: translateY(-50%);
-  height: 300px; }
+  height: 70%;
+  border-top-right-radius: 0.45rem;
+  border-bottom-right-radius: 0.45rem; }
+  .carousel-caption p {
+    margin-bottom: 0.5rem; }
+    .carousel-caption p img {
+      height: 1.1rem;
+      width: 1.1rem; }
 
 .carousel-item img {
   height: 100% !important;
@@ -6639,6 +6664,9 @@ p {
 
 .carousel-btn {
   font-size: 1.2rem; }
+
+.carousel-learn-link {
+  text-decoration: underline; }
 
 .section-download-app img {
   height: 3.05rem; }
@@ -6684,7 +6712,8 @@ p {
   color: yellow; }
 .section-testimonial h5 {
   color: #e42329;
-  position: relative; }
+  position: relative;
+  font-size: 1.2rem; }
   .section-testimonial h5::before {
     content: "";
     height: 3px;
@@ -6693,6 +6722,8 @@ p {
     position: absolute;
     top: 50%;
     left: -20px; }
+.section-testimonial p {
+  font-size: 0.75rem; }
 
 .quick-links a {
   color: #333; }
@@ -6883,6 +6914,13 @@ p {
   #mainNavbar .navbar-nav {
     margin-left: 0%; } }
 @media (max-width: 768px) {
+  .section-slides,
+  .caroursel,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item img {
+    height: 65vh; }
+
   .section-ceo-message .ceo-img {
     height: 55vw; }
 
@@ -6942,13 +6980,14 @@ p {
 
   .carousel-caption {
     left: 10%;
-    width: 85%; }
-
-  .section-slides,
-  .caroursel,
-  .carousel-inner,
-  .carousel-item,
-  .carousel-item img {
-    height: 100vh; } }
+    width: 85%;
+    border-top-left-radius: 0.45rem;
+    border-bottom-left-radius: 0.45rem; }
+    .carousel-caption .heading-main {
+      font-size: 1.9rem; } }
+@media (max-width: 500px) {
+  .carousel-caption {
+    width: 95%;
+    left: 2.5%; } }
 
 /*# sourceMappingURL=style.css.map */
