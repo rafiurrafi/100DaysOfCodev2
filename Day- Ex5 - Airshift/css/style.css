@@ -6538,7 +6538,7 @@ p {
   border-radius: 50%; }
 
 .text-size {
-  font-size: 1rem; }
+  font-size: 1rem !important; }
 
 .text-gray-dark {
   color: #4a4a4a; }
@@ -6772,9 +6772,14 @@ p {
   background-size: cover;
   padding: 3rem 2rem !important; }
 
+.section-track-input .form-control,
+.section-track-input .btn.w-25[type="submit"] {
+  font-size: 1rem; }
+
 .tracking-list-title,
 .tracking-list-title-name {
-  color: #4a4a4a; }
+  color: #4a4a4a;
+  font-family: "Roboto Slab", serif; }
 
 .tracking-list-title {
   font-size: 1.43rem; }

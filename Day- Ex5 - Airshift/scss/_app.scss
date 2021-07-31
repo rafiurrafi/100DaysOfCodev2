@@ -80,7 +80,7 @@ p {
   border-radius: 50%;
 }
 .text-size {
-  font-size: $text-size;
+  font-size: $text-size !important;
 }
 .text-gray-dark {
   color: $color-gray-dark-1;
@@ -430,13 +430,19 @@ p {
   background-size: cover;
   padding: 3rem 2rem !important;
 }
+.section-track-input .form-control,
+.section-track-input .btn.w-25[type="submit"] {
+  font-size: $text-size;
+}
 .tracking-list-title,
 .tracking-list-title-name {
   color: $color-gray-dark-1;
+  font-family: "Roboto Slab", serif;
 }
 .tracking-list-title {
   font-size: 1.43rem;
 }
+
 .tracking-list-title-name {
   font-size: 1.6rem;
   img {
