@@ -5,11 +5,12 @@
 $color-primary: #e42329;
 $color-gray-dark-1: #4a4a4a;
 $color-gray-light-1: #757575;
+$color-gray-light-2: #9f9f9f;
 
-$text-size: 1.1rem; //20
+$text-size: 1rem; //20
 $heading-size: 2.5rem; //45
 $subheading-size: 1.2rem; //22;
-$small-size: 0.95rem; //18
+$small-size: 0.85rem; //18
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -18,6 +19,7 @@ body {
 p {
   font-size: $text-size;
   font-weight: 300;
+  color: $color-gray-light-2;
 }
 .about {
   &__video {
@@ -35,8 +37,8 @@ p {
   }
 }
 .heading-main {
-  font-size: 2.5rem;
-  color: $color-gray-dark-1;
+  font-size: 2.2rem;
+  color: darken($color-gray-dark-1, 1);
   font-family: "Roboto Slab", serif;
 }
 // #form-vanilla {
@@ -53,6 +55,8 @@ p {
 //   }
 // }
 .donwload-form {
+  padding-left: 6px;
+  padding-right: 0;
   .form-control {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -66,7 +70,7 @@ p {
   .btn.btn-primary {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    font-size: $text-size;
+    font-size: $subheading-size;
     font-weight: 500;
   }
 }
@@ -90,6 +94,9 @@ p {
 .w-35 {
   width: 35% !important;
 }
+.w-30 {
+  width: 30% !important;
+}
 .sidebar-title {
   border-bottom: 3px solid #eee;
   &::after {
@@ -99,6 +106,14 @@ p {
     background-color: $color-primary;
     display: block;
     margin-top: 0.75rem;
+  }
+}
+.iti__flag {
+  background-image: url("../assets/flags.png");
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("../assets/flags.png");
   }
 }
 // =====================================================
@@ -196,7 +211,9 @@ p {
   .download-text {
     color: $color-gray-dark-1;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1.01rem;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 // =====================================================
@@ -466,7 +483,9 @@ p {
   color: $color-gray-light-1;
 }
 .section-ceo-message {
-  background-color: #eee;
+  background-image: url(../assets/About/bg-map.jpg);
+  background-size: cover;
+  background-position: center;
   .ceo-message-quote-img {
     display: inline-block;
     height: 2rem;
