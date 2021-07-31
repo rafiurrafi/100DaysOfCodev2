@@ -10,6 +10,7 @@ $(document).ready(function () {
     ) {
       return "";
     },
+    separateDialCode: true,
     utilsScript: "js/utils.js",
   });
   document.querySelector(".iti.iti--allow-dropdown").classList.add("w-65");
