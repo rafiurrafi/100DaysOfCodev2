@@ -6708,7 +6708,7 @@ p {
   padding: 3rem 2rem !important; }
 
 .section-track-input .form-control,
-.section-track-input .btn.w-25[type="submit"] {
+.section-track-input .btn.btn-primary[type="submit"] {
   font-size: 1.2rem; }
 
 .tracking-list-title,
@@ -6725,6 +6725,16 @@ p {
     display: inline-block;
     height: 3rem;
     width: 3rem; }
+
+.section-tracking-download .form-inline .form-control,
+.section-track-input .form-inline .form-control {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  background-color: #eee; }
+.section-tracking-download .btn.btn-primary,
+.section-track-input .btn.btn-primary {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important; }
 
 .mygrid > [class*="col-"]:before {
   content: "";
@@ -6871,10 +6881,7 @@ p {
 
 @media (max-width: 992px) {
   #mainNavbar .navbar-nav {
-    margin-left: 0%; }
-
-  .download-form {
-    padding: none; } }
+    margin-left: 0%; } }
 @media (max-width: 768px) {
   .section-ceo-message .ceo-img {
     height: 55vw; }
@@ -6884,30 +6891,25 @@ p {
   .tab-horizontal .nav-link::after {
     display: none; } }
 @media (max-width: 576px) {
-  .download-img {
-    padding-left: 1rem; }
-
-  .donwload-form .form-inline .form-control {
-    width: 100% !important; }
-
-  .donwload-form .btn.btn-primary.w-25 {
-    width: 50% !important; }
-
-  .donwload-form .form-control {
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem; }
-  .donwload-form .btn.btn-primary {
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem; }
-
   .section-track-input .form-control {
     width: 75% !important; }
 
   .tracking-list-title-name {
     font-size: 1.15rem; }
 
-  .donwload-form .btn.btn-primary {
-    font-size: 1rem; } }
+  .quick-links {
+    font-size: 0.9rem; }
+
+  .section-tracking-download ::-webkit-input-placeholder {
+    color: transparent; }
+  .section-tracking-download :-moz-placeholder {
+    /* Firefox 18- */
+    color: transparent; }
+  .section-tracking-download ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: transparent; }
+  .section-tracking-download :-ms-input-placeholder {
+    color: transparent; } }
 @media (max-width: 575px) {
   .section-works .nav {
     flex-direction: row !important;

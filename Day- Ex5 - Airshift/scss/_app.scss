@@ -307,7 +307,7 @@ p {
   padding: 3rem 2rem !important;
 }
 .section-track-input .form-control,
-.section-track-input .btn.w-25[type="submit"] {
+.section-track-input .btn.btn-primary[type="submit"] {
   font-size: $subheading-size;
 }
 .tracking-list-title,
@@ -327,7 +327,18 @@ p {
     width: 3rem;
   }
 }
-
+.section-tracking-download,
+.section-track-input {
+  .form-inline .form-control {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    background-color: #eee;
+  }
+  .btn.btn-primary {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
 .mygrid > [class*="col-"]:before {
   content: "";
   position: absolute;
@@ -536,9 +547,6 @@ p {
       margin-left: 0%;
     }
   }
-  .download-form {
-    padding: none;
-  }
 }
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
@@ -561,25 +569,6 @@ p {
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
-  .download-img {
-    padding-left: 1rem;
-  }
-  .donwload-form .form-inline .form-control {
-    width: 100% !important;
-  }
-  .donwload-form .btn.btn-primary.w-25 {
-    width: 50% !important;
-  }
-  .donwload-form {
-    .form-control {
-      border-top-right-radius: 0.25rem;
-      border-bottom-right-radius: 0.25rem;
-    }
-    .btn.btn-primary {
-      border-top-left-radius: 0.25rem;
-      border-bottom-left-radius: 0.25rem;
-    }
-  }
   .section-track-input {
     .form-control {
       width: 75% !important;
@@ -588,8 +577,30 @@ p {
   .tracking-list-title-name {
     font-size: 1.15rem;
   }
-  .donwload-form .btn.btn-primary {
-    font-size: 1rem;
+  // .donwload-form .btn.btn-primary {
+  //   font-size: 1rem;
+  // }
+  .quick-links {
+    font-size: 0.9rem;
+  }
+  .section-tracking-download {
+    ::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    :-moz-placeholder {
+      /* Firefox 18- */
+      color: transparent;
+    }
+
+    ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: transparent;
+    }
+
+    :-ms-input-placeholder {
+      color: transparent;
+    }
   }
 }
 @media (max-width: 575px) {
