@@ -768,6 +768,10 @@ p {
         }
       }
     }
+    .slide-content {
+      height: 73%;
+      padding-top: 35%;
+    }
   }
   .section-ceo-message {
     .ceo-img {
@@ -832,19 +836,21 @@ p {
       }
     }
   }
-  .slide-content {
-    height: 66%;
-    padding-top: 17%;
-  }
-  .slide-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .heading-main {
-      font-size: 1.3rem;
+  .section-slides {
+    .slide-content {
+      height: 60%;
+      padding-top: 20%;
     }
-    .btn.btn-primary.btn-slide-sm {
-      font-size: 0.85rem;
+    .slide-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .heading-main {
+        font-size: 1.3rem;
+      }
+      .btn.btn-primary.btn-slide-sm {
+        font-size: 0.85rem;
+      }
     }
   }
 }
