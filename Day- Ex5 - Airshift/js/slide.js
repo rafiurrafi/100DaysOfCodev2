@@ -13,7 +13,7 @@ function showSlides() {
     slideIndex = 1;
   }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 6000); // Change image every 5 seconds
+  setTimeout(showSlides, 1000); // Change image every 5 seconds
 }
 
 function currentSlide(no) {

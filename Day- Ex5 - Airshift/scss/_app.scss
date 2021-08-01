@@ -749,9 +749,7 @@ p {
         padding-right: 0;
       }
       .slide-text {
-        border-bottom-left-radius: 0.45rem;
-        border-bottom-right-radius: 0.45rem;
-        border-top-right-radius: 0;
+        border-radius: 0.45rem;
         .heading-main {
           font-size: 1.3rem;
         }
@@ -840,11 +838,15 @@ p {
     .slide-content {
       height: 60%;
       padding-top: 20%;
+      padding-left: 0.9rem;
+      width: 99.5%;
     }
     .slide-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-left: 0.5rem !important;
+
       .heading-main {
         font-size: 1.3rem;
       }

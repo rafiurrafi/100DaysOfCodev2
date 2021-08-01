@@ -6942,9 +6942,7 @@ p {
     padding-left: 0;
     padding-right: 0; }
   .section-slides .mySlides .slide-text {
-    border-bottom-left-radius: 0.45rem;
-    border-bottom-right-radius: 0.45rem;
-    border-top-right-radius: 0; }
+    border-radius: 0.45rem; }
     .section-slides .mySlides .slide-text .heading-main {
       font-size: 1.3rem; }
   .section-slides .mySlides .slide-control-link {
@@ -6995,11 +6993,14 @@ p {
 
   .section-slides .slide-content {
     height: 60%;
-    padding-top: 20%; }
+    padding-top: 20%;
+    padding-left: 0.9rem;
+    width: 99.5%; }
   .section-slides .slide-text {
     display: flex;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: center;
+    padding-left: 0.5rem !important; }
     .section-slides .slide-text .heading-main {
       font-size: 1.3rem; }
     .section-slides .slide-text .btn.btn-primary.btn-slide-sm {
