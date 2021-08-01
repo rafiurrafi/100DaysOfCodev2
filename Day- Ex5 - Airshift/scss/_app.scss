@@ -146,10 +146,10 @@ p {
     height: 100%;
     width: 100%;
     &:first-of-type {
-      background-image: url(../assets/Career/1.jpg);
+      background-image: url(../assets/Blog/Image3.jpg);
     }
     &:nth-child(2) {
-      background-image: url(../assets/Career/2.jpg);
+      background-image: url(../assets/Blog/Image4.jpg);
     }
     &:nth-child(3) {
       background-image: url(../assets/home/pexels-mikhail-nilov-6613649.jpg);
@@ -177,6 +177,8 @@ p {
     }
     .slide-text {
       background-color: rgba(#fff, 0.9);
+      border-top-right-radius: 0.45rem;
+      border-bottom-right-radius: 0.45rem;
       .heading-main {
         font-size: 1.5rem;
       }
@@ -749,6 +751,7 @@ p {
       .slide-text {
         border-bottom-left-radius: 0.45rem;
         border-bottom-right-radius: 0.45rem;
+        border-top-right-radius: 0;
         .heading-main {
           font-size: 1.3rem;
         }

@@ -6594,9 +6594,9 @@ p {
     height: 100%;
     width: 100%; }
     .section-slides .mySlides:first-of-type {
-      background-image: url(../assets/Career/1.jpg); }
+      background-image: url(../assets/Blog/Image3.jpg); }
     .section-slides .mySlides:nth-child(2) {
-      background-image: url(../assets/Career/2.jpg); }
+      background-image: url(../assets/Blog/Image4.jpg); }
     .section-slides .mySlides:nth-child(3) {
       background-image: url(../assets/home/pexels-mikhail-nilov-6613649.jpg); }
     .section-slides .mySlides:last-of-type {
@@ -6616,7 +6616,9 @@ p {
     .section-slides .slide-content .col-md-2 {
       padding-left: 10px; }
     .section-slides .slide-content .slide-text {
-      background-color: rgba(255, 255, 255, 0.9); }
+      background-color: rgba(255, 255, 255, 0.9);
+      border-top-right-radius: 0.45rem;
+      border-bottom-right-radius: 0.45rem; }
       .section-slides .slide-content .slide-text .heading-main {
         font-size: 1.5rem; }
       .section-slides .slide-content .slide-text p {
@@ -6941,7 +6943,8 @@ p {
     padding-right: 0; }
   .section-slides .mySlides .slide-text {
     border-bottom-left-radius: 0.45rem;
-    border-bottom-right-radius: 0.45rem; }
+    border-bottom-right-radius: 0.45rem;
+    border-top-right-radius: 0; }
     .section-slides .mySlides .slide-text .heading-main {
       font-size: 1.3rem; }
   .section-slides .mySlides .slide-control-link {
