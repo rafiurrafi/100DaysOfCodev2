@@ -6990,10 +6990,18 @@ p {
       padding-left: 0.35rem;
       padding-right: 0.35rem; }
 
-  .slide-text .heading-main {
-    font-size: 1.3rem; }
-  .slide-text .btn.btn-primary.btn-slide-sm {
-    font-size: 0.85rem; } }
+  .slide-content {
+    height: 66%;
+    padding-top: 17%; }
+
+  .slide-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .slide-text .heading-main {
+      font-size: 1.3rem; }
+    .slide-text .btn.btn-primary.btn-slide-sm {
+      font-size: 0.85rem; } }
 @media (max-width: 575px) {
   .section-works .nav {
     flex-direction: row !important;
