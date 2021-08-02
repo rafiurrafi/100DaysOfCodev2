@@ -477,7 +477,8 @@ p {
 .jumbotron-about,
 .jumbotron-blog,
 .jumbotron-faq,
-.jumbotron-help {
+.jumbotron-help,
+.jumbotron-location {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
@@ -676,6 +677,9 @@ p {
 }
 .help-heading {
   font-size: 1.3rem; //30px
+  &--border {
+    border-bottom: 1px solid #eee;
+  }
 }
 .help-box {
   &-inner {
@@ -683,6 +687,22 @@ p {
     border-radius: 0.45rem;
   }
   img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+// =====================================================
+// Location page
+// ====================================================
+.jumbotron-location {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/Location/pexels-mart-production-7706476.jpg);
+}
+.location {
+  &-store {
+    font-weight: 400;
+  }
+  &-icon {
     height: 1.5rem;
     width: 1.5rem;
   }

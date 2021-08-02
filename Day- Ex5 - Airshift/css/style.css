@@ -6745,7 +6745,8 @@ p {
 .jumbotron-about,
 .jumbotron-blog,
 .jumbotron-faq,
-.jumbotron-help {
+.jumbotron-help,
+.jumbotron-location {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -6892,11 +6893,22 @@ p {
 
 .help-heading {
   font-size: 1.3rem; }
+  .help-heading--border {
+    border-bottom: 1px solid #eee; }
 
 .help-box-inner {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   border-radius: 0.45rem; }
 .help-box img {
+  height: 1.5rem;
+  width: 1.5rem; }
+
+.jumbotron-location {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Location/pexels-mart-production-7706476.jpg); }
+
+.location-store {
+  font-weight: 400; }
+.location-icon {
   height: 1.5rem;
   width: 1.5rem; }
 
