@@ -6540,6 +6540,9 @@ p {
 .text-size {
   font-size: 1rem !important; }
 
+.text-small {
+  font-size: 0.85rem; }
+
 .text-gray-dark {
   color: #474747; }
 
@@ -6559,7 +6562,8 @@ p {
   width: 30% !important; }
 
 .sidebar-title {
-  border-bottom: 3px solid #eee; }
+  border-bottom: 3px solid #eee;
+  font-size: 1.2rem; }
   .sidebar-title::after {
     content: "";
     height: 3px;
@@ -6918,15 +6922,37 @@ p {
 .section-instagram-gallery .row > .col-4 {
   padding: 5px; }
 
+.heading-blog {
+  font-size: 1.2rem; }
+
+.miss-out-section img {
+  height: 100px;
+  width: 100%;
+  object-fit: cover; }
+.miss-out-section .miss-blog-heading {
+  font-size: 0.85rem; }
+
 .instagram-gallery-more {
   opacity: 0.8;
-  position: relative; }
-  .instagram-gallery-more div {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    font-size: 4rem;
-    z-index: 2; }
+  position: relative;
+  background-color: #000; }
+.instagram-gallery-text {
+  position: absolute;
+  top: 050%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem; }
+
+.blog-meta-icon {
+  height: 0.75rem;
+  width: 0.75rem;
+  display: inline-block; }
+
+.pagination-blog .page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0rem;
+  border-bottom-left-radius: 0rem; }
 
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image2.jpg); }
