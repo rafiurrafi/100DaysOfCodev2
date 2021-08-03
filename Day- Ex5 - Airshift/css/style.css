@@ -6575,6 +6575,15 @@ p {
     display: block;
     margin-top: 0.75rem; }
 
+.bg-blue {
+  background-color: var(--blue); }
+
+.bg-purple {
+  background-color: var(--purple); }
+
+.bg-chocolate {
+  background-color: var(--indigo); }
+
 .iti__flag {
   background-image: url("../assets/flags.png"); }
 
@@ -6879,7 +6888,8 @@ p {
 #accordion .card,
 #accordion2 .card,
 #accordion3 .card,
-#accordion4 .card {
+#accordion4 .card,
+#accordion-offer .card {
   border: none; }
 
 .faq-collapse {
@@ -6923,6 +6933,38 @@ p {
 
 .jumbotron-offers {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/help/pexels-pavel-danilyuk-7190943.jpg); }
+
+.deal__box > div {
+  border-radius: 0.45rem; }
+.deal__box .row .col-6:first-of-type {
+  border-radius: 0 50% 50% 0; }
+.deal__percent {
+  font-size: 3rem;
+  color: white; }
+.deal__text {
+  font-size: 0.4rem;
+  color: white !important;
+  line-height: 1;
+  margin-bottom: 0; }
+.deal__promo {
+  font-size: 0.65rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400; }
+.deal__btn {
+  border: 1px dotted #e42329 !important;
+  font-size: 0.65rem; }
+
+.rewards__box-white {
+  border-radius: 0.45rem; }
+  .rewards__box-white > div {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    font-size: 2.5rem; }
+.rewards__box h3 {
+  font-size: 1rem; }
+.rewards__box p {
+  margin-bottom: 0; }
 
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image3.jpg); }
