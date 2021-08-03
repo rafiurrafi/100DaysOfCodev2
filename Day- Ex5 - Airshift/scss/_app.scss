@@ -496,7 +496,8 @@ p {
 .jumbotron-help,
 .jumbotron-location,
 .jumbotron-single,
-.jumbotron-offers {
+.jumbotron-offers,
+.jumbotron-store {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
@@ -784,6 +785,13 @@ p {
       margin-bottom: 0;
     }
   }
+}
+// =====================================================
+// Store page
+// =====================================================
+.jumbotron-store {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/Services/pexels-liza-summer-6347560.jpg);
 }
 // =====================================================
 // Blog page
