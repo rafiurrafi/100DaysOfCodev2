@@ -86,6 +86,9 @@ p {
 .text-small {
   font-size: $small-size;
 }
+.text-subheading {
+  font-size: $subheading-size;
+}
 .text-gray-dark {
   color: darken($color-gray-dark-1, 1);
 }
@@ -774,13 +777,24 @@ p {
   height: 30vw;
   object-fit: cover;
 }
-.single-inner-img img {
-  height: 200px;
-  object-fit: cover;
+
+.single-inner-img {
+  & > div {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  img {
+    height: 12.5rem; //200px
+    object-fit: cover;
+  }
 }
 .single-content {
   width: 97%;
   margin: 0 auto;
+}
+.single-paragraph {
+  font-size: 0.625rem; //14pt
+  font-weight: 400;
 }
 .share-posts {
   border-top: 2px solid #eee;
@@ -789,9 +803,15 @@ p {
     border-radius: 50%;
     height: 1.7rem;
     width: 1.7rem;
+    line-height: 1.7rem;
+    vertical-align: middle;
     display: inline-block;
+    transition: background-color 0.3s;
     &.bg-gray {
       background-color: $color-gray-dark-1;
+    }
+    &:hover {
+      background-color: $color-primary;
     }
   }
 }

@@ -6543,6 +6543,9 @@ p {
 .text-small {
   font-size: 0.85rem; }
 
+.text-subheading {
+  font-size: 1.2rem; }
+
 .text-gray-dark {
   color: #474747; }
 
@@ -6962,13 +6965,20 @@ p {
   height: 30vw;
   object-fit: cover; }
 
+.single-inner-img > div {
+  padding-left: 5px;
+  padding-right: 5px; }
 .single-inner-img img {
-  height: 200px;
+  height: 12.5rem;
   object-fit: cover; }
 
 .single-content {
   width: 97%;
   margin: 0 auto; }
+
+.single-paragraph {
+  font-size: 0.625rem;
+  font-weight: 400; }
 
 .share-posts {
   border-top: 2px solid #eee;
@@ -6977,9 +6987,14 @@ p {
     border-radius: 50%;
     height: 1.7rem;
     width: 1.7rem;
-    display: inline-block; }
+    line-height: 1.7rem;
+    vertical-align: middle;
+    display: inline-block;
+    transition: background-color 0.3s; }
     .share-posts a.bg-gray {
       background-color: #4a4a4a; }
+    .share-posts a:hover {
+      background-color: #e42329; }
 
 @media (max-width: 992px) {
   #mainNavbar .navbar-nav {
