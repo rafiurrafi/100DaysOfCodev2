@@ -485,7 +485,8 @@ p {
 .jumbotron-blog,
 .jumbotron-faq,
 .jumbotron-help,
-.jumbotron-location {
+.jumbotron-location,
+.jumbotron-single {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
@@ -793,12 +794,13 @@ p {
   margin: 0 auto;
 }
 .single-paragraph {
-  font-size: 0.625rem; //14pt
+  font-size: 0.65rem; //14pt
   font-weight: 400;
 }
 .share-posts {
   border-top: 2px solid #eee;
   border-bottom: 2px solid #eee;
+
   a {
     border-radius: 50%;
     height: 1.7rem;
@@ -881,6 +883,12 @@ p {
       }
     }
   }
+  // Blog page
+  .share-posts {
+    & > div {
+      width: 75% !important;
+    }
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -949,6 +957,12 @@ p {
       .btn.btn-primary.btn-slide-sm {
         font-size: 0.85rem;
       }
+    }
+  }
+  // Blog page
+  .share-posts {
+    & > div {
+      width: 100% !important;
     }
   }
 }
