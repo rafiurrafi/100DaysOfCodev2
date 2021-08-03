@@ -486,7 +486,8 @@ p {
 .jumbotron-faq,
 .jumbotron-help,
 .jumbotron-location,
-.jumbotron-single {
+.jumbotron-single,
+.jumbotron-offers {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
@@ -714,6 +715,14 @@ p {
     height: 1.5rem;
     width: 1.5rem;
   }
+}
+// =====================================================
+// Offers and Rewards
+// =====================================================
+
+.jumbotron-offers {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/help/pexels-pavel-danilyuk-7190943.jpg);
 }
 // =====================================================
 // Blog page
