@@ -6590,6 +6590,18 @@ p {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .iti__flag {
     background-image: url("../assets/flags.png"); } }
+.select-customize {
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 5px;
+  height: 34px;
+  font-weight: 400;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
+  -webkit-appearance: none;
+  background-position-x: 95%; }
+
 #mainNavbar .navbar-nav .nav-link {
   text-transform: uppercase;
   color: #4a4a4a;
@@ -6764,7 +6776,8 @@ p {
 .jumbotron-help,
 .jumbotron-location,
 .jumbotron-single,
-.jumbotron-offers {
+.jumbotron-offers,
+.jumbotron-store {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -6968,6 +6981,12 @@ p {
   font-size: 1rem; }
 .rewards__box p {
   margin-bottom: 0; }
+
+.jumbotron-store {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Services/pexels-liza-summer-6347560.jpg); }
+
+.section-store img {
+  width: 100%; }
 
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image3.jpg); }
