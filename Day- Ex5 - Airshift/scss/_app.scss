@@ -511,7 +511,8 @@ p {
 .jumbotron-location,
 .jumbotron-single,
 .jumbotron-offers,
-.jumbotron-store {
+.jumbotron-store,
+.jumbotron-career {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
@@ -806,6 +807,18 @@ p {
 .jumbotron-store {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Services/pexels-liza-summer-6347560.jpg);
+}
+.section-store {
+  img {
+    width: 100%;
+  }
+}
+// =====================================================
+// Career page
+// =====================================================
+.jumbotron-career {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/Career/pexels-pavel-danilyuk-6443531.jpg);
 }
 .section-store {
   img {
