@@ -6591,16 +6591,17 @@ p {
   .iti__flag {
     background-image: url("../assets/flags.png"); } }
 .select-customize {
-  padding: 5px;
-  font-size: 16px;
-  line-height: 1;
-  border: 0;
-  border-radius: 5px;
-  height: 34px;
-  font-weight: 400;
-  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
-  -webkit-appearance: none;
-  background-position-x: 95%; }
+  position: relative; }
+  .select-customize select {
+    appearance: none;
+    -webkit-appearance: none; }
+  .select-customize::after {
+    content: "\f107";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 20%;
+    right: 0.5rem;
+    color: #4a4a4a; }
 
 #mainNavbar .navbar-nav .nav-link {
   text-transform: uppercase;
@@ -6952,7 +6953,8 @@ p {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/help/pexels-pavel-danilyuk-7190943.jpg); }
 
 .deal__box > div {
-  border-radius: 0.45rem; }
+  border-radius: 0 0.45rem 0.45rem 0;
+  overflow: hidden; }
 .deal__box .row .col-6:first-of-type {
   border-radius: 0 50% 50% 0; }
 .deal__percent {
