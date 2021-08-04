@@ -6595,6 +6595,8 @@ p {
   .select-customize select {
     appearance: none;
     -webkit-appearance: none; }
+    .select-customize select option {
+      background-image: url(../assets/Others\ icon/core.jpg); }
   .select-customize::after {
     content: "\f107";
     font-family: FontAwesome;
@@ -7169,6 +7171,9 @@ p {
       font-size: 1.3rem; }
     .section-slides .slide-text .btn.btn-primary.btn-slide-sm {
       font-size: 0.85rem; }
+
+  .deal__box > div {
+    overflow: hidden; }
 
   .share-posts > div {
     width: 100% !important; }

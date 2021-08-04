@@ -141,6 +141,9 @@ p {
   select {
     appearance: none;
     -webkit-appearance: none;
+    option {
+      background-image: url(../assets/Others\ icon/core.jpg);
+    }
   }
   &::after {
     content: "\f107";
@@ -1093,6 +1096,14 @@ p {
       }
       .btn.btn-primary.btn-slide-sm {
         font-size: 0.85rem;
+      }
+    }
+  }
+  // Offers and .rewards
+  .deal {
+    &__box {
+      & > div {
+        overflow: hidden;
       }
     }
   }
