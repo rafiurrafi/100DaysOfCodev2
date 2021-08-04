@@ -534,7 +534,7 @@ p {
 }
 
 .tracking-list-title-name {
-  font-size: 1.4rem;
+  font-size: 1.4rem; //32 pt
   img {
     display: inline-block;
     height: 3rem;
@@ -820,9 +820,21 @@ p {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Career/pexels-pavel-danilyuk-6443531.jpg);
 }
-.section-store {
+.career-box {
   img {
+    height: 100%;
     width: 100%;
+    object-fit: cover;
+  }
+  h3 {
+    font-size: 1.4rem;
+    span {
+      font-weight: 400 !important;
+      color: $color-gray-light-2;
+    }
+  }
+  &__btn {
+    text-decoration: underline;
   }
 }
 // =====================================================
@@ -999,6 +1011,18 @@ p {
       width: 75% !important;
     }
   }
+  // Career page
+  .career-box {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &__header {
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -1073,6 +1097,14 @@ p {
   .share-posts {
     & > div {
       width: 100% !important;
+    }
+  }
+  // Career page
+  .career-box {
+    &__header {
+      h3 {
+        font-size: 1.1rem;
+      }
     }
   }
 }
