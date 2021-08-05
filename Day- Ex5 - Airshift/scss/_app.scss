@@ -516,7 +516,9 @@ p {
 .jumbotron-single,
 .jumbotron-offers,
 .jumbotron-store,
-.jumbotron-career {
+.jumbotron-career,
+.jumbotron-terms,
+.jumbotron-privacy {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
@@ -842,6 +844,22 @@ p {
   &__btn {
     text-decoration: underline;
   }
+}
+// =====================================================
+// Terms and Privacy page
+// =====================================================
+.jumbotron-terms {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/Terms/pexels-mart-production-7706476.jpg);
+}
+.jumbotron-privacy {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/Privacy/pexels-mart-production-7706476.jpg);
+}
+.terms-content {
+  border: 1px solid $color-gray-light-2;
+  height: 60vh;
+  overflow-y: scroll;
 }
 // =====================================================
 // Blog page

@@ -6781,7 +6781,9 @@ p {
 .jumbotron-single,
 .jumbotron-offers,
 .jumbotron-store,
-.jumbotron-career {
+.jumbotron-career,
+.jumbotron-terms,
+.jumbotron-privacy {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -7007,6 +7009,17 @@ p {
     color: #9f9f9f; }
 .career-box__btn {
   text-decoration: underline; }
+
+.jumbotron-terms {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Terms/pexels-mart-production-7706476.jpg); }
+
+.jumbotron-privacy {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Privacy/pexels-mart-production-7706476.jpg); }
+
+.terms-content {
+  border: 1px solid #9f9f9f;
+  height: 60vh;
+  overflow-y: scroll; }
 
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image3.jpg); }
