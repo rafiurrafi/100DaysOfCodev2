@@ -518,7 +518,8 @@ p {
 .jumbotron-store,
 .jumbotron-career,
 .jumbotron-terms,
-.jumbotron-privacy {
+.jumbotron-privacy,
+.jumbotron-job-details {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Tracking/pexels-mart-production-7706531.jpg);
   background-position: center;
@@ -845,6 +846,12 @@ p {
     text-decoration: underline;
   }
 }
+// Career Details Page
+.jumbotron-job-details {
+  background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
+    url(../assets/Career/Details/pexels-mart-production-7706476.jpg);
+}
+
 // =====================================================
 // Terms and Privacy page
 // =====================================================
