@@ -7060,6 +7060,10 @@ p {
   .cart__progress-text {
     transform: scaleX(1.03); }
 
+.cart-total__single img {
+  width: 2rem;
+  height: auto; }
+
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image3.jpg); }
 
