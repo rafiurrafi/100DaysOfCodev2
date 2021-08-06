@@ -1104,6 +1104,16 @@ p {
   .product-description {
     line-height: 1 !important;
   }
+  // Cart page
+  .cart__progress {
+    width: 95%;
+    margin-left: 2.5%;
+    &-text {
+      width: 98%;
+      margin-left: 1%;
+      transform: scaleX(1);
+    }
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
