@@ -906,9 +906,12 @@ p {
       background-color: white;
       height: 1rem;
       width: 1rem;
-      border: 2px solid $color-primary;
+      border: 3px solid darken($color-primary, 0.55);
       border-radius: 50%;
     }
+  }
+  &-text {
+    transform: scaleX(1.03);
   }
 }
 // =====================================================
