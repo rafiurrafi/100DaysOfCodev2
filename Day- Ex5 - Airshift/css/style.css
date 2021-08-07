@@ -7067,9 +7067,8 @@ p {
 .section-shopping-list h2 {
   border-bottom: 1px solid #4a4a4a; }
 
-.shopping-list__single .row {
-  background-color: #f9f9f9;
-  border-radius: 0.35rem; }
+.shopping-list__single .bg-gray {
+  background-color: #f9f9f9; }
 
 .shopping-list__close {
   height: 2rem;
@@ -7077,7 +7076,8 @@ p {
   line-height: 2rem;
   vertical-align: middle;
   font-size: 0.9rem;
-  background-color: var(--light);
+  color: white;
+  background-color: #4a4a4a;
   border-radius: 50%; }
 
 .jumbotron-blog {

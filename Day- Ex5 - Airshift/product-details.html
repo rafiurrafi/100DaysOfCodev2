@@ -185,7 +185,32 @@
             </p>
             <!-- quantity section  -->
             <div class="row my-2 my-md-5">
-              <div class="col-6 col-md-5 bg-light mr-3">Quantity</div>
+              <div
+                class="
+                  col-6 col-md-5
+                  bg-light
+                  mr-3
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                <div>Quality</div>
+                <div>
+                  <a
+                    href="javascript:void(0)"
+                    class="mr-1 text-gray-dark"
+                    onclick="handleProductQuantity('product-big', 'dec')"
+                    ><i class="fa fa-caret-left"></i></a
+                  ><span id="product-big">1</span
+                  ><a
+                    href="javascript:void(0)"
+                    class="ml-1 text-gray-dark"
+                    onclick="handleProductQuantity('product-big', 'inc')"
+                    ><i class="fa fa-caret-right"></i
+                  ></a>
+                </div>
+              </div>
               <div class="col-6 col-md-5">
                 <a href="#" class="product-link">
                   <div class="row">

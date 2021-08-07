@@ -926,9 +926,8 @@ p {
   }
 }
 .shopping-list__single {
-  .row {
+  .bg-gray {
     background-color: #f9f9f9;
-    border-radius: 0.35rem;
   }
 }
 .shopping-list__close {
@@ -937,7 +936,8 @@ p {
   line-height: 2rem;
   vertical-align: middle;
   font-size: 0.9rem;
-  background-color: var(--light);
+  color: white;
+  background-color: $color-gray-dark-1;
   border-radius: 50%;
 }
 // =====================================================
