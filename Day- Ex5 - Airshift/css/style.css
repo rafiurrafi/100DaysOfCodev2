@@ -7067,6 +7067,10 @@ p {
 .section-shopping-list h2 {
   border-bottom: 1px solid #4a4a4a; }
 
+.shopping-list__single .row {
+  background-color: #f9f9f9;
+  border-radius: 0.35rem; }
+
 .shopping-list__close {
   height: 2rem;
   width: 2rem;

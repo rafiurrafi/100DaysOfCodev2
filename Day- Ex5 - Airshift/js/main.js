@@ -50,6 +50,7 @@ function handleProductQuantity(productId, operation) {
     let value = +product.innerText++;
     console.log(value);
   } else {
+    // if(value ===0) break;
     let value = +product.innerText--;
     console.log(value);
   }
