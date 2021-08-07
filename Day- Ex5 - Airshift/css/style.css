@@ -7067,6 +7067,15 @@ p {
 .section-shopping-list h2 {
   border-bottom: 1px solid #4a4a4a; }
 
+.shopping-list__close {
+  height: 2rem;
+  width: 2rem;
+  line-height: 2rem;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  background-color: var(--light);
+  border-radius: 50%; }
+
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image3.jpg); }
 
