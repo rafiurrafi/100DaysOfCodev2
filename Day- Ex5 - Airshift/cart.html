@@ -129,101 +129,216 @@
     </section>
     <!-- Main content  -->
     <main class="py-3 py-md-5">
-      <section class="section-cart-progress">
-        <div class="row">
-          <div class="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
-            <div class="cart__progress">
-              <div class="cart__progress-bar bg-primary w-100"></div>
+      <div class="container">
+        <section class="section-cart-progress">
+          <div class="row">
+            <div class="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
+              <div class="cart__progress">
+                <div class="cart__progress-bar bg-primary w-100"></div>
+                <div
+                  class="
+                    cart__progress-links
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <a href=""></a>
+                  <a href=""></a>
+                  <a href=""></a>
+                  <a href=""></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
               <div
                 class="
-                  cart__progress-links
+                  cart__progress-text
                   d-flex
                   justify-content-between
                   align-items-center
+                  text-center
+                  mt-3
                 "
               >
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
+                <a class="text-gray-dark" href="cart.html">Cart</a>
+                <a class="text-gray-dark" href="checkout.html">Checkout</a>
+                <a class="text-gray-dark" href="review.html">Review Order</a>
+                <a class="text-gray-dark" href="finish.html">Finish</a>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
-            <div
-              class="
-                cart__progress-text
-                d-flex
-                justify-content-between
-                align-items-center
-                text-center
-                mt-3
-              "
-            >
-              <a class="text-gray-dark" href="cart.html">Cart</a>
-              <a class="text-gray-dark" href="checkout.html">Checkout</a>
-              <a class="text-gray-dark" href="review.html">Review Order</a>
-              <a class="text-gray-dark" href="finish.html">Finish</a>
+        </section>
+        <section class="section-shopping-list">
+          <div class="row">
+            <div class="col-lg-8">
+              <h3
+                class="help-heading pb-3 pb-md-4 font-weight-bold mb-3 mb-md-4"
+              >
+                Shopping Cart
+              </h3>
+              <div class="shopping-list__single">
+                <div class="row align-items-center">
+                  <div
+                    class="
+                      col-1
+                      text-center
+                      bg-light
+                      text-gray-dark
+                      shopping-list__close
+                    "
+                  >
+                    &times;
+                  </div>
+                  <div class="col-4 col-md-3">
+                    <img
+                      src="assets/store/Rectangle - 1.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 font-weight-bold text-center">
+                    Airshipt Mug ($59)
+                  </div>
+                  <div
+                    class="
+                      offset-1 offset-md-0
+                      col-5 col-md-3
+                      bg-light
+                      text-center
+                    "
+                  >
+                    Quantity
+                  </div>
+                  <div class="col-5 col-md-1 text-center">$116</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section class="section-shopping-list">
-        <div class="row">
-          <div class="col-lg-8">
-            <h3 class="help-heading mb-3 mb-md-4">Shopping Cart</h3>
-            <div class="shopping-list__single">
-              <div class="row align-items-center">
-                <div class="col-1 text-center">&times;</div>
-                <div class="col-4 col-md-3">
-                  <img
-                    src="assets/store/Rectangle - 1.png"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </div>
-                <div class="col-6 col-md-4 font-weight-bold text-center">
-                  Airshipt Mug ($59)
-                </div>
-                <div
+            <!-- Shopping calculation  -->
+            <div class="col-lg-4">
+              <!-- Cart total  -->
+              <h2
+                class="help-heading font-weight-bold pb-3 pb-md-4 md-3 mb-md-4"
+              >
+                Cart
+              </h2>
+              <!-- single cart total item  -->
+              <div
+                class="
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                  cart-total__single
+                  mb-3 mb-md-4
+                "
+              >
+                <img src="assets/store/Rectangle - 1.png" class="mr-3" alt="" />
+                <h3 class="text-size font-weight-bold text-gray-dark mr-auto">
+                  Airshipt Ship($58 * <span>2</span>)
+                </h3>
+                <div class="font-weight-bold">$116</div>
+              </div>
+              <!-- single cart total item  -->
+              <div
+                class="
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                  cart-total__single
+                  mb-3 mb-md-4
+                "
+              >
+                <img src="assets/store/Rectangle - 1.png" class="mr-3" alt="" />
+                <h3 class="text-size font-weight-bold text-gray-dark mr-auto">
+                  Airshipt Ship($58 * <span>2</span>)
+                </h3>
+                <div class="font-weight-bold">$116</div>
+              </div>
+              <!-- single cart total item  -->
+              <div
+                class="
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                  cart-total__single
+                  mb-3 mb-md-4
+                "
+              >
+                <img src="assets/store/Rectangle - 1.png" class="mr-3" alt="" />
+                <h3 class="text-size font-weight-bold text-gray-dark mr-auto">
+                  Airshipt Ship($58 * <span>2</span>)
+                </h3>
+                <div class="font-weight-bold">$116</div>
+              </div>
+              <div class="subtotal-section d-flex justify-content-between">
+                <p class="text-size font-weight-bold text-gray-dark">
+                  Subtotal
+                </p>
+                <p class="text-size font-weight-bold text-gray-dark">$161</p>
+              </div>
+              <!-- Apply coupon button  -->
+              <div>
+                <a href="#" class="text-gray-dark text-uppercase text-underline"
+                  >Apply Coupon</a
+                >
+              </div>
+              <!-- Shipping to section  -->
+              <div class="py-3 py-md-5 shipping-location">
+                <h3
                   class="
-                    offset-1 offset-md-0
-                    col-5 col-md-3
-                    bg-light
-                    text-center
+                    help-heading
+                    font-weight-bold
+                    mb-2 mb-md-4
+                    text-uppercase
                   "
                 >
-                  Quantity
+                  Shipping to Bangladesh
+                </h3>
+                <div
+                  class="
+                    border-bottom border-dark
+                    d-flex
+                    justify-content-between
+                    pb-3 pb-md-4
+                    mb-2 mb-md-3
+                  "
+                >
+                  <p class="text-size font-weight-bold text-gray-dark">
+                    Shipping(Flat Rate)
+                  </p>
+                  <p class="text-size font-weight-bold text-gray-dark">$161</p>
                 </div>
-                <div class="col-5 col-md-1 text-center">$116</div>
+                <!-- Total calculation  -->
+                <div class="d-flex justify-content-between pb-3 pb-md-4">
+                  <p class="text-size font-weight-bold text-gray-dark">Total</p>
+                  <p class="font-weight-bold text-gray-dark text-subheading">
+                    $201
+                  </p>
+                </div>
+                <!-- buttons cta cart  -->
+                <div class="cta-cart">
+                  <div class="row">
+                    <div class="col">
+                      <a
+                        href="#"
+                        class="btn btn-outline-primary d-block text-size px-2"
+                        >Continue shipping</a
+                      >
+                    </div>
+                    <div class="col">
+                      <a href="#" class="btn btn-primary d-block text-size px-2"
+                        >Proceed Checkout</a
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <!-- Shopping calculation  -->
-          <div class="col-lg-4">
-            <!-- Cart total  -->
-            <h3
-              class="help-heading font-weight-bold pb-3 pb-md-4 md-3 mb-md-4"
-            ></h3>
-            <div
-              class="
-                d-flex
-                justify-content-between
-                align-items-center
-                cart-total__single
-              "
-            >
-              <img src="assets/store/Rectangle - 1.png" alt="" />
-              <h3 class="text-size font-weight-bold text-gray-dark">
-                Airshipt Ship($58 * <span>2</span>)
-              </h3>
-              <div class="font-weight-bold">$116</div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
     <section class="section-quick-links py-3 py-md-5">
       <div class="container">

@@ -920,6 +920,11 @@ p {
     height: auto;
   }
 }
+.section-shopping-list {
+  h2 {
+    border-bottom: 1px solid $color-gray-dark-1;
+  }
+}
 // =====================================================
 // Blog page
 // =====================================================

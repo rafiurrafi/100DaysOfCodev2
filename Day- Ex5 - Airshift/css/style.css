@@ -7064,6 +7064,9 @@ p {
   width: 2rem;
   height: auto; }
 
+.section-shopping-list h2 {
+  border-bottom: 1px solid #4a4a4a; }
+
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image3.jpg); }
 
