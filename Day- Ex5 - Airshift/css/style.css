@@ -7009,6 +7009,9 @@ p {
 .product-link {
   width: 1.8rem; }
 
+#product-desc-tab a.active {
+  background-color: #e42329 !important; }
+
 .jumbotron-career {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Career/pexels-pavel-danilyuk-6443531.jpg); }
 
