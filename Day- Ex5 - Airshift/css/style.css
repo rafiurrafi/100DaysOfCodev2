@@ -7006,9 +7006,6 @@ p {
 .jumbotron-product-details {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Location/pexels-mart-production-x.jpg); }
 
-.product-link {
-  width: 1.8rem; }
-
 #product-desc-tab a.active {
   background-color: #e42329 !important; }
 
@@ -7208,6 +7205,9 @@ p {
   .product-description {
     line-height: 1 !important; }
 
+  .product-link__text {
+    transform: scaleX(1.05); }
+
   .cart__progress {
     width: 95%;
     margin-left: 2.5%; }
@@ -7265,7 +7265,11 @@ p {
     width: 100% !important; }
 
   .career-box__header h3 {
-    font-size: 1.1rem; } }
+    font-size: 1.1rem; }
+
+  .product-link__text {
+    font-size: 1.2rem;
+    transform: scaleX(1.15); } }
 @media (max-width: 575px) {
   .section-works .nav {
     flex-direction: row !important;

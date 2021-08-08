@@ -834,9 +834,7 @@ p {
   background-image: linear-gradient(to bottom, rgba(#000, 0.4), rgba(#000, 0.4)),
     url(../assets/Location/pexels-mart-production-x.jpg);
 }
-.product-link {
-  width: 1.8rem;
-}
+
 #product-desc-tab {
   a.active {
     background-color: $color-primary !important;
@@ -1135,6 +1133,12 @@ p {
   .product-description {
     line-height: 1 !important;
   }
+  // product details
+  .product-link {
+    &__text {
+      transform: scaleX(1.05);
+    }
+  }
   // Cart page
   .cart__progress {
     width: 95%;
@@ -1235,6 +1239,13 @@ p {
       h3 {
         font-size: 1.1rem;
       }
+    }
+  }
+  // Product page
+  .product-link {
+    &__text {
+      font-size: 1.2rem;
+      transform: scaleX(1.15);
     }
   }
 }
