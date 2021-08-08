@@ -729,6 +729,7 @@ p {
 }
 .help-heading {
   font-size: 1.3rem; //30px
+  font-family: "Roboto Slab", serif;
   &--border {
     border-bottom: 1px solid #eee;
   }
@@ -900,15 +901,15 @@ p {
   }
   &-links {
     position: absolute;
-    top: -50%;
+    top: -90%;
     left: 0;
     width: 100%;
     z-index: 1;
 
     a {
       background-color: white;
-      height: 1rem;
-      width: 1rem;
+      height: 1.5rem;
+      width: 1.5rem;
       border: 3px solid darken($color-primary, 0.55);
       border-radius: 50%;
     }
@@ -934,11 +935,11 @@ p {
   }
 }
 .shopping-list__close {
-  height: 2rem;
-  width: 2rem;
-  line-height: 2rem;
+  height: 1rem;
+  width: 1rem;
+  line-height: 1rem;
   vertical-align: middle;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: white;
   background-color: $color-gray-dark-1;
   border-radius: 50%;
@@ -1147,6 +1148,11 @@ p {
       width: 98%;
       margin-left: 1%;
       transform: scaleX(1);
+    }
+  }
+  .cta-cart {
+    .btn.btn-primary {
+      font-size: 0.9rem;
     }
   }
 }
