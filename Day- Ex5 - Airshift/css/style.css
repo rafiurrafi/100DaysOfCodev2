@@ -7041,7 +7041,7 @@ p {
 
 .terms-content {
   border: 1px solid #9f9f9f;
-  height: 60vh;
+  height: 85vh;
   overflow-y: scroll; }
 
 .jumbotron-cart {
@@ -7296,5 +7296,16 @@ p {
 
   .cta-cart .row .col:first-of-type a {
     margin-bottom: 0.5rem; } }
+/* width */
+::-webkit-scrollbar {
+  width: 15px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9a9a9a; }
 
 /*# sourceMappingURL=style.css.map */

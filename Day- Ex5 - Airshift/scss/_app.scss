@@ -891,9 +891,10 @@ p {
 }
 .terms-content {
   border: 1px solid $color-gray-light-2;
-  height: 60vh;
+  height: 85vh;
   overflow-y: scroll;
 }
+
 // =====================================================
 // Cart page
 // =====================================================
@@ -1289,4 +1290,19 @@ p {
       }
     }
   }
+}
+// custom scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lighten(#999, 0.35);
 }
