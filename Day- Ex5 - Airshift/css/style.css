@@ -7027,6 +7027,7 @@ p {
   width: 100%;
   object-fit: cover; }
 .career-box h3 {
+  font-family: "Roboto Slab", serif;
   font-size: 1.4rem; }
   .career-box h3 span {
     font-weight: 400 !important;
