@@ -1271,3 +1271,8 @@ p {
 .product-description {
   line-height: 1.5;
 }
+@media (max-width: 400px) {
+  .product-size-color {
+    display: block !important;
+  }
+}
