@@ -841,6 +841,13 @@ p {
     background-color: $color-primary !important;
   }
 }
+.product-link {
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 // =====================================================
 // Career page
 // =====================================================
