@@ -7292,6 +7292,9 @@ p {
 
 @media (max-width: 400px) {
   .product-size-color {
-    display: block !important; } }
+    display: block !important; }
+
+  .cta-cart .row .col:first-of-type a {
+    margin-bottom: 0.5rem; } }
 
 /*# sourceMappingURL=style.css.map */
