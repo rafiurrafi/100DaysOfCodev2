@@ -7272,8 +7272,8 @@ p {
     font-size: 1.1rem; }
 
   .product-link__text {
-    font-size: 1.2rem;
-    transform: scaleX(1.15); } }
+    font-size: 1.1rem;
+    transform: scaleX(1.1); } }
 @media (max-width: 575px) {
   .section-works .nav {
     flex-direction: row !important;
