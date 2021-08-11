@@ -18,10 +18,62 @@ body {
 body .container {
   background-color: white;
   border-radius: 5px;
-  padding: 80px 0;
+  padding: 30px 0;
   width: 70%;
   background-color: #f3134b;
   color: white;
+}
+
+body .todo-list__title {
+  margin-bottom: 30px;
+}
+
+body .todo-list__heading {
+  margin: 0;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+body .todo-list__text {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+body .todo-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f1c4c4;
+  margin: 10px 0;
+}
+
+body .todo-list__item-text {
+  color: #f3134b;
+  font-weight: 500;
+}
+
+body .todo-list__item-actions a {
+  color: #f3134b;
+}
+
+body .todo-list__item-actions a:not(:last-child) {
+  margin-right: 20px;
+}
+
+body .todo-list__input-content {
+  padding-top: 30px;
+}
+
+body .todo-list__input-heading {
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .px-40 {
