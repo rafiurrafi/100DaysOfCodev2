@@ -1175,7 +1175,10 @@ p {
 @media (max-width: 576px) {
   .section-track-input {
     .form-control {
-      width: 75% !important;
+      width: 71% !important;
+    }
+    .w-35.btn {
+      width: 29% !important;
     }
   }
   .tracking-list-title-name {

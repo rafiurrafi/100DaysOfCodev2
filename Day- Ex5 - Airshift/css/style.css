@@ -7231,7 +7231,9 @@ p {
     font-size: 0.9rem; } }
 @media (max-width: 576px) {
   .section-track-input .form-control {
-    width: 75% !important; }
+    width: 71% !important; }
+  .section-track-input .w-35.btn {
+    width: 29% !important; }
 
   .tracking-list-title-name {
     font-size: 1.15rem; }
