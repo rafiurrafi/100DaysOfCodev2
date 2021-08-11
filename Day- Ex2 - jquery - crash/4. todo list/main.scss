@@ -1,0 +1,21 @@
+body {
+  background-image: linear-gradient(rgb(176, 194, 245), rgb(28, 48, 102));
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  .container {
+    background-color: white;
+    border-radius: 5px;
+    padding: 80px 0;
+    width: 70%;
+    background-color: rgb(243, 19, 75);
+    color: white;
+  }
+}
+.px-40 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
