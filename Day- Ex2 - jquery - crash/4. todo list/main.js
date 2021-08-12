@@ -25,8 +25,9 @@ function displayItem(item) {
 function editItem(item, evt) {
   let itembox = evt.parentElement.parentElement;
   itembox.innerHTML = `
-    
+  <input type="text" class="todo-list__item-input" value = "${item}" />
+  <a href="javascript:void(0)" class="todo-list__item-input-submit"
+    >Submit</a
+  >
   `;
-  const storedItem = items.find((itm) => itm.title == item);
-  console.log(storedItem);
 }
