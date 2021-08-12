@@ -1060,6 +1060,56 @@ p {
     }
   }
 }
+// Modal
+.section-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(#000, 0.4);
+  z-index: 2;
+  .modal-content {
+    top: 20%;
+    position: relative;
+    &__close {
+      position: absolute;
+      right: 5%;
+      top: 5%;
+      font-size: 1.5rem;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .modal-download-btn {
+      img {
+        height: 3rem;
+      }
+    }
+  }
+  .iti {
+    width: 70%;
+  }
+  .btn.btn-primary {
+    width: 30%;
+  }
+  //form-control input
+  #modal-telephone {
+    width: 100% !important;
+  }
+}
+
+// Animations
+@keyframes openModalAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 // =====================================================
 // =====================================================
 // =====================================================
@@ -1169,6 +1219,10 @@ p {
       font-size: 0.9rem;
     }
   }
+  //modal section
+  .modal-content {
+    width: 85%;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -1272,6 +1326,22 @@ p {
     }
   }
 }
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95% !important;
+    margin-left: 2.5%;
+    .iti {
+      width: 60%;
+    }
+    .btn.btn-primary {
+      width: 40%;
+      font-size: 0.9rem;
+    }
+    .modal-content .modal-download-btn img {
+      height: 2.5rem;
+    }
+  }
+}
 @media (max-width: 575px) {
   .section-works .nav {
     flex-direction: row !important;
@@ -1314,53 +1384,4 @@ p {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: lighten(#999, 0.35);
-}
-// Modal
-.section-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(#000, 0.4);
-  z-index: 2;
-  .modal-content {
-    top: 20%;
-    position: relative;
-    &__close {
-      position: absolute;
-      right: 5%;
-      top: 5%;
-      font-size: 1.5rem;
-      &:hover {
-        text-decoration: none;
-      }
-    }
-    .modal-download-btn {
-      img {
-        height: 3rem;
-      }
-    }
-  }
-  .iti {
-    width: 70%;
-  }
-  .btn.btn-primary {
-    width: 30%;
-  }
-  //form-control input
-  #modal-telephone {
-    width: 100% !important;
-  }
-}
-
-// Animations
-@keyframes openModalAnim {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }

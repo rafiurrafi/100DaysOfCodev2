@@ -7168,6 +7168,39 @@ p {
     .share-posts a:hover {
       background-color: #e42329; }
 
+.section-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2; }
+  .section-modal .modal-content {
+    top: 20%;
+    position: relative; }
+    .section-modal .modal-content__close {
+      position: absolute;
+      right: 5%;
+      top: 5%;
+      font-size: 1.5rem; }
+      .section-modal .modal-content__close:hover {
+        text-decoration: none; }
+    .section-modal .modal-content .modal-download-btn img {
+      height: 3rem; }
+  .section-modal .iti {
+    width: 70%; }
+  .section-modal .btn.btn-primary {
+    width: 30%; }
+  .section-modal #modal-telephone {
+    width: 100% !important; }
+
+@keyframes openModalAnim {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 @media (max-width: 992px) {
   #mainNavbar .navbar-nav {
     margin-left: 0%; } }
@@ -7228,7 +7261,10 @@ p {
       transform: scaleX(1); }
 
   .cta-cart .btn.btn-primary {
-    font-size: 0.9rem; } }
+    font-size: 0.9rem; }
+
+  .modal-content {
+    width: 85%; } }
 @media (max-width: 576px) {
   .section-track-input .form-control {
     width: 71% !important; }
@@ -7286,6 +7322,17 @@ p {
   .product-link__text {
     font-size: 1.1rem;
     transform: scaleX(1.1); } }
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95% !important;
+    margin-left: 2.5%; }
+    .modal-content .iti {
+      width: 60%; }
+    .modal-content .btn.btn-primary {
+      width: 40%;
+      font-size: 0.9rem; }
+    .modal-content .modal-content .modal-download-btn img {
+      height: 2.5rem; } }
 @media (max-width: 575px) {
   .section-works .nav {
     flex-direction: row !important;
@@ -7314,39 +7361,5 @@ p {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #9a9a9a; }
-
-.section-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 2; }
-  .section-modal .modal-content {
-    top: 20%;
-    position: relative; }
-    .section-modal .modal-content__close {
-      position: absolute;
-      right: 5%;
-      top: 5%;
-      font-size: 1.5rem; }
-      .section-modal .modal-content__close:hover {
-        text-decoration: none; }
-    .section-modal .modal-content .modal-download-btn img {
-      height: 3rem; }
-  .section-modal .iti {
-    width: 70%; }
-  .section-modal .btn.btn-primary {
-    width: 30%; }
-  .section-modal #modal-telephone {
-    width: 100% !important; }
-
-@keyframes openModalAnim {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
 
 /*# sourceMappingURL=style.css.map */
