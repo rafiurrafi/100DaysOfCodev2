@@ -10,4 +10,9 @@ for (let i = 0; i < openModalBtn.length; i++) {
 modalCloseBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
 console.log(openModalBtn);
