@@ -13,9 +13,13 @@ $(document).ready(function () {
     separateDialCode: true,
     utilsScript: "js/utils.js",
   });
-  document.querySelector(".iti.iti--allow-dropdown").classList.add("w-65");
   document
-    .querySelector(".iti.iti--allow-dropdown .form-control")
+    .querySelector(".section-download-app .iti.iti--allow-dropdown")
+    .classList.add("w-65");
+  document
+    .querySelector(
+      ".section-download-app .iti.iti--allow-dropdown .form-control"
+    )
     .classList.add("w-100");
   // Tracking page
   var input = document.querySelector("#telephone-track");
