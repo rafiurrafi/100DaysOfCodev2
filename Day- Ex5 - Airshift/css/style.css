@@ -7316,6 +7316,7 @@ p {
   background: #9a9a9a; }
 
 .section-modal {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -7328,7 +7329,10 @@ p {
     .section-modal .modal-content__close {
       position: absolute;
       right: 5%;
-      top: 5%; }
+      top: 5%;
+      font-size: 1.5rem; }
+      .section-modal .modal-content__close:hover {
+        text-decoration: none; }
     .section-modal .modal-content .modal-download-btn img {
       height: 3rem; }
 
