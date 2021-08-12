@@ -4,15 +4,21 @@ const modalCloseBtn = document.querySelector(".modal-content__close");
 
 for (let i = 0; i < openModalBtn.length; i++) {
   openModalBtn[i].addEventListener("click", () => {
-    modal.style.display = "block";
+    openModal();
   });
 }
 modalCloseBtn.addEventListener("click", () => {
-  modal.style.display = "none";
+  closeModal();
 });
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
-    modal.style.display = "none";
+    closeModal();
   }
 });
-console.log(openModalBtn);
+
+function openModal() {
+  modal.style.display = "block";
+}
+function closeModal() {
+  modal.style.display = "none";
+}
