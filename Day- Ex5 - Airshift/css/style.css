@@ -7192,7 +7192,8 @@ p {
   .section-modal .iti {
     width: 70%; }
   .section-modal .btn.btn-primary {
-    width: 30%; }
+    width: 30%;
+    font-size: 1.1rem; }
   .section-modal #modal-telephone {
     width: 100% !important; }
 
@@ -7203,7 +7204,10 @@ p {
     opacity: 1; } }
 @media (max-width: 992px) {
   #mainNavbar .navbar-nav {
-    margin-left: 0%; } }
+    margin-left: 0%; }
+
+  .modal-content {
+    width: 75% !important; } }
 @media (max-width: 768px) {
   .section-slides .mySlides .slide-controls {
     flex-direction: row !important;
@@ -7330,9 +7334,9 @@ p {
       width: 60%; }
     .modal-content .btn.btn-primary {
       width: 40%;
-      font-size: 0.9rem; }
-    .modal-content .modal-content .modal-download-btn img {
-      height: 2.5rem; } }
+      font-size: 1rem; }
+    .modal-content .download-img {
+      height: 2.5rem !important; } }
 @media (max-width: 575px) {
   .section-works .nav {
     flex-direction: row !important;

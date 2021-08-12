@@ -1093,6 +1093,7 @@ p {
   }
   .btn.btn-primary {
     width: 30%;
+    font-size: 1.1rem;
   }
   //form-control input
   #modal-telephone {
@@ -1122,6 +1123,9 @@ p {
     .navbar-nav {
       margin-left: 0%;
     }
+  }
+  .modal-content {
+    width: 75% !important;
   }
 }
 // Medium devices (tablets, 768px and up)
@@ -1335,10 +1339,10 @@ p {
     }
     .btn.btn-primary {
       width: 40%;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
-    .modal-content .modal-download-btn img {
-      height: 2.5rem;
+    .download-img {
+      height: 2.5rem !important;
     }
   }
 }
