@@ -24,4 +24,9 @@ function displayItem(item) {
 // Edit item function
 function editItem(item, evt) {
   let itembox = evt.parentElement.parentElement;
+  itembox.innerHTML = `
+    
+  `;
+  const storedItem = items.find((itm) => itm.title == item);
+  console.log(storedItem);
 }

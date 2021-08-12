@@ -67,6 +67,26 @@ body .todo-list__item-actions a:not(:last-child) {
   margin-right: 20px;
 }
 
+body .todo-list__item-input {
+  width: 80%;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+body .todo-list__item-input-submit {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  text-decoration: none;
+  color: #0087d4;
+  font-weight: 700;
+}
+
+body .todo-list__item-input-submit:hover {
+  color: #f3134b;
+}
+
 body .todo-list__input-content {
   padding-top: 30px;
 }

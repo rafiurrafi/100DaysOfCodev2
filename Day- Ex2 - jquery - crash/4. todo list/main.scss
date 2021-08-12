@@ -51,6 +51,22 @@ body {
           }
         }
       }
+      &-input {
+        width: 80%;
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 3px;
+        &-submit {
+          align-self: flex-start;
+          text-decoration: none;
+          color: rgb(0, 135, 212);
+          font-weight: 700;
+          &:hover {
+            color: rgb(243, 19, 75);
+          }
+        }
+      }
     }
     &__input {
       &-content {
