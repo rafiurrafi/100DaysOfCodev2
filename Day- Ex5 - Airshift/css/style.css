@@ -7197,6 +7197,9 @@ p {
   .section-modal #modal-telephone {
     width: 100% !important; }
 
+.download-error-img img {
+  height: 3rem; }
+
 @keyframes openModalAnim {
   0% {
     opacity: 0; }
@@ -7346,7 +7349,10 @@ p {
       width: 40%;
       font-size: 1rem; }
     .modal-content .download-img {
-      height: 2.5rem !important; } }
+      height: 2.5rem !important; }
+
+  .download-error-img img {
+    height: 2.5rem !important; } }
 @media (max-width: 575px) {
   .section-works .nav {
     flex-direction: row !important;

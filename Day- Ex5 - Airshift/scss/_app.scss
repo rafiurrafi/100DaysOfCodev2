@@ -1100,6 +1100,12 @@ p {
     width: 100% !important;
   }
 }
+// Download error page
+.download-error-img {
+  img {
+    height: 3rem;
+  }
+}
 
 // Animations
 @keyframes openModalAnim {
@@ -1358,6 +1364,9 @@ p {
     .download-img {
       height: 2.5rem !important;
     }
+  }
+  .download-error-img img {
+    height: 2.5rem !important;
   }
 }
 @media (max-width: 575px) {
