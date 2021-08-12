@@ -7322,7 +7322,8 @@ p {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2; }
   .section-modal .modal-content {
     top: 20%;
     position: relative; }
@@ -7335,6 +7336,12 @@ p {
         text-decoration: none; }
     .section-modal .modal-content .modal-download-btn img {
       height: 3rem; }
+  .section-modal .iti {
+    width: 70%; }
+  .section-modal .btn.btn-primary {
+    width: 30%; }
+  .section-modal #modal-telephone {
+    width: 100% !important; }
 
 @keyframes openModalAnim {
   0% {

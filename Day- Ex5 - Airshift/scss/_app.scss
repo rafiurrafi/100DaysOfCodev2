@@ -1324,6 +1324,7 @@ p {
   height: 100%;
   width: 100%;
   background-color: rgba(#000, 0.4);
+  z-index: 2;
   .modal-content {
     top: 20%;
     position: relative;
@@ -1341,6 +1342,16 @@ p {
         height: 3rem;
       }
     }
+  }
+  .iti {
+    width: 70%;
+  }
+  .btn.btn-primary {
+    width: 30%;
+  }
+  //form-control input
+  #modal-telephone {
+    width: 100% !important;
   }
 }
 
