@@ -1315,3 +1315,27 @@ p {
 ::-webkit-scrollbar-thumb {
   background: lighten(#999, 0.35);
 }
+// Modal
+.section-modal {
+  // display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(#000, 0.4);
+  .modal-content {
+    top: 20%;
+    position: relative;
+    &__close {
+      position: absolute;
+      right: 5%;
+      top: 5%;
+    }
+    .modal-download-btn {
+      img {
+        height: 3rem;
+      }
+    }
+  }
+}

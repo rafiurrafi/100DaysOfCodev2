@@ -7315,4 +7315,21 @@ p {
 ::-webkit-scrollbar-thumb {
   background: #9a9a9a; }
 
+.section-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); }
+  .section-modal .modal-content {
+    top: 20%;
+    position: relative; }
+    .section-modal .modal-content__close {
+      position: absolute;
+      right: 5%;
+      top: 5%; }
+    .section-modal .modal-content .modal-download-btn img {
+      height: 3rem; }
+
 /*# sourceMappingURL=style.css.map */

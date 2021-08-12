@@ -300,7 +300,7 @@
                   mb-2
                   btn-slide-sm
                 "
-                >Sign up to ship product<span class="d-none d-sm-block"
+                >Sign up to ship product<span class="d-none d-sm-inline"
                   >, parcels and documents</span
                 ></a
               >
@@ -985,6 +985,49 @@
         </div>
       </div>
     </footer>
+    <!-- Modal  -->
+    <section class="section-modal">
+      <div class="modal-content w-50 mx-auto text-center p-5">
+        <a href="#" class="modal-content__close">X</a>
+        <p class="font-weight-bold text-gray-dark text-subheading">
+          Download the Airshipt app
+        </p>
+        <!-- Download image  -->
+        <div class="modal-download-btn my-3 my-md-4">
+          <a href="#" class="mr-2">
+            <img
+              src="assets/home/Group 2234.jpg"
+              class="img-fluid download-img"
+              alt=""
+            />
+          </a>
+          <a href="#">
+            <img
+              src="assets/home/Group 2235.jpg"
+              class="img-fluid download-img"
+              alt=""
+            />
+          </a>
+        </div>
+        <p class="font-weight-bold text-gray-dark text-size">
+          Enter your phone number and get Airshipt app link
+        </p>
+        <!-- Form  -->
+        <div class="w-75 donwload-form mx-auto">
+          <form class="form-inline">
+            <input
+              class="form-control mb-3 mb-sm-0 py-2 w-65"
+              type="tel"
+              id="telephone"
+              aria-label="Search"
+            />
+            <button class="btn btn-primary w-35 py-2" type="submit">
+              Get App Link
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -1003,5 +1046,6 @@
     <script src="js/intlTelInput.min.js"></script>
     <script src="js/main.js"></script>
     <script src="./js/slide.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>

@@ -23,5 +23,5 @@ function displayItem(item) {
 
 // Edit item function
 function editItem(item, evt) {
-  console.log(evt.parentElement.parentElement);
+  let itembox = evt.parentElement.parentElement;
 }
