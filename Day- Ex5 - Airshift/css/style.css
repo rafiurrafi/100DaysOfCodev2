@@ -7336,4 +7336,10 @@ p {
     .section-modal .modal-content .modal-download-btn img {
       height: 3rem; }
 
+@keyframes openModalAnim {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 /*# sourceMappingURL=style.css.map */

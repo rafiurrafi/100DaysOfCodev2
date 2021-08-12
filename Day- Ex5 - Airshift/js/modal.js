@@ -18,6 +18,8 @@ window.addEventListener("click", (e) => {
 
 function openModal() {
   modal.style.display = "block";
+  modal.style.animationName = "openModalAnim";
+  modal.style.animationDuration = "1s";
 }
 function closeModal() {
   modal.style.display = "none";
