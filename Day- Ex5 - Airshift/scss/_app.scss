@@ -1242,6 +1242,20 @@ p {
   .tracking-list-title-name {
     font-size: 1.15rem;
   }
+  .section-track-input {
+    .form-inline .form-control {
+      font-size: 1rem;
+    }
+  }
+  // Tracking page
+  .section-track-input .btn.btn-primary[type="submit"] {
+    font-size: 1rem;
+  }
+  // Tracking err
+  .tracking-error-img {
+    height: 80px;
+    width: 80px;
+  }
   // .donwload-form .btn.btn-primary {
   //   font-size: 1rem;
   // }

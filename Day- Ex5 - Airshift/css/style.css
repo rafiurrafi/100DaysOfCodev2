@@ -7278,6 +7278,16 @@ p {
   .tracking-list-title-name {
     font-size: 1.15rem; }
 
+  .section-track-input .form-inline .form-control {
+    font-size: 1rem; }
+
+  .section-track-input .btn.btn-primary[type="submit"] {
+    font-size: 1rem; }
+
+  .tracking-error-img {
+    height: 80px;
+    width: 80px; }
+
   .quick-links {
     font-size: 0.9rem; }
 
