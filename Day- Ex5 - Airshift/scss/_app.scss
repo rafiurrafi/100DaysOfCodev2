@@ -621,6 +621,9 @@ p {
   .col-md-6:first-of-type {
     height: 100%;
   }
+  .container-fluid{
+    padding-left: 0;
+  }
 }
 // =====================================================
 // =====================================================
@@ -1176,8 +1179,14 @@ p {
     }
   }
   .section-ceo-message {
+    .col-lg-6:first-of-type{
+      padding-right: 0;
+    }
     .ceo-img {
       height: 55vw;
+    }
+    #ceo-message{
+      padding-left: 22px;
     }
   }
   .tab-horizontal {
@@ -1353,6 +1362,10 @@ p {
       transform: scaleX(1.1);
     }
   }
+  // About page 
+  #ceo-message{
+    padding-left: 32px !important;
+  }
 }
 @media (max-width: 600px) {
   .modal-content {
@@ -1371,6 +1384,7 @@ p {
   .download-error-img img {
     height: 2.5rem !important;
   }
+  
 }
 @media (max-width: 575px) {
   .section-works .nav {
@@ -1415,35 +1429,3 @@ p {
 ::-webkit-scrollbar-thumb {
   background: lighten(#999, 0.35);
 }
-// New find codepane
-/* firefox */
-//firefox
-
-// .container {
-//   scrollbar-width: thin;
-//   scrollbar-color: $gray--lighter transparent;
-// }
-// .container:-webkit-scrollbar {
-//   width: 11px;
-// }
-// .container:-webkit-scrollbar-track {
-//   background: transparent;
-// }
-// .container:-webkit-scrollbar-thumb {
-//   background-color: $gray--lighter;
-//   border-radius: 6px;
-//   border: 3px solid transparent;
-// }
-
-// /* webkit browsers */
-// .container::-webkit-scrollbar,
-// .container::-webkit-scrollbar-thumb {
-//   height: 26px;
-//   border-radius: 13px;
-//   background-clip: padding-box;
-//   border: 10px solid transparent;
-// }
-
-// .container::-webkit-scrollbar-thumb {
-//   box-shadow: inset 0 0 0 10px;
-// }

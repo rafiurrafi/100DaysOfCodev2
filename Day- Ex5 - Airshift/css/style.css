@@ -6870,6 +6870,8 @@ p {
     object-fit: cover; }
   .section-ceo-message .col-md-6:first-of-type {
     height: 100%; }
+  .section-ceo-message .container-fluid {
+    padding-left: 0; }
 
 .jumbotron-service {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Services/pexels-liza-summer-6347560.jpg); }
@@ -7239,8 +7241,12 @@ p {
     height: 73%;
     padding-top: 35%; }
 
+  .section-ceo-message .col-lg-6:first-of-type {
+    padding-right: 0; }
   .section-ceo-message .ceo-img {
     height: 55vw; }
+  .section-ceo-message #ceo-message {
+    padding-left: 22px; }
 
   .tab-horizontal .nav-item {
     width: 49%; }
@@ -7341,7 +7347,10 @@ p {
 
   .product-link__text {
     font-size: 1.1rem;
-    transform: scaleX(1.1); } }
+    transform: scaleX(1.1); }
+
+  #ceo-message {
+    padding-left: 32px !important; } }
 @media (max-width: 600px) {
   .modal-content {
     width: 95% !important;
