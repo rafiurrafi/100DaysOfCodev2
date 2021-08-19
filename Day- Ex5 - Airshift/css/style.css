@@ -7269,8 +7269,7 @@ p {
     transform: scaleX(1.05); }
 
   .cart__progress {
-    width: 95%;
-    margin-left: 2.5%; }
+    width: 100%; }
     .cart__progress-text {
       width: 98%;
       margin-left: 1%;
