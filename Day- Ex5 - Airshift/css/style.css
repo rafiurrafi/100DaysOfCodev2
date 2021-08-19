@@ -7060,7 +7060,7 @@ p {
     height: 0.5rem; }
   .cart__progress-links {
     position: absolute;
-    top: -90%;
+    top: -92%;
     left: 0;
     width: 100%;
     z-index: 1; }
@@ -7070,6 +7070,10 @@ p {
       width: 1.5rem;
       border: 3px solid #e42127;
       border-radius: 50%; }
+      .cart__progress-links a:first-of-type {
+        margin-left: -7px; }
+      .cart__progress-links a:last-of-type {
+        margin-right: -7px; }
   .cart__progress-text {
     transform: scaleX(1.03); }
 
@@ -7269,7 +7273,8 @@ p {
     transform: scaleX(1.05); }
 
   .cart__progress {
-    width: 100%; }
+    width: 98%;
+    margin-left: 1%; }
     .cart__progress-text {
       width: 98%;
       margin-left: 1%;

@@ -918,7 +918,7 @@ p {
   }
   &-links {
     position: absolute;
-    top: -90%;
+    top: -92%;
     left: 0;
     width: 100%;
     z-index: 1;
@@ -929,6 +929,12 @@ p {
       width: 1.5rem;
       border: 3px solid darken($color-primary, 0.55);
       border-radius: 50%;
+      &:first-of-type{
+        margin-left: -7px;
+      }
+      &:last-of-type{
+        margin-right: -7px;
+      }
     }
   }
   &-text {
@@ -1229,7 +1235,8 @@ p {
   }
   // Cart page
   .cart__progress {
-    width: 100%;
+    width: 98%;
+    margin-left: 1%;
     &-text {
       width: 98%;
       margin-left: 1%;
