@@ -1,3 +1,6 @@
+body {
+  position: relative;
+}
 .copyMe {
   display: inline-block;
   border: 1px solid #777;
@@ -5,4 +8,8 @@
   position: absolute;
   max-width: 120px;
   cursor: pointer;
+}
+.newBorn {
+  color: red;
+  position: absolute;
 }
