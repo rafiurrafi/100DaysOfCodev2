@@ -18,7 +18,6 @@ rep.forEach((element, index) => {
       if (holder.obj.moves <= 0) {
         clearInterval(holder.obj.int);
       } else {
-        console.log(holder.obj.startX, holder.obj.startY);
         holder.obj.moves--;
         holder.obj.startX += 1;
         holder.obj.startY += 10;
@@ -27,8 +26,31 @@ rep.forEach((element, index) => {
       }
     }
 
+    dragger(holder.obj);
     document.body.append(holder.obj);
     console.log(holder.obj);
   });
   element.style.left = index * 120 + "px";
 });
+
+function dragger(element) {
+  const pos = {};
+  element.onmousedown = dragMouse;
+  function dragMouse(e) {
+    pos.nx = e.clientX;
+    pos.ny = e.clientY;
+    document.onmouseup = function () {
+      document.onmouseup = null;
+      document.onmousemove = null;
+    };
+    document.onmousemove = function (e) {
+      pos.ox = pos.nx - e.clientX;
+      pos.oy = pos.ny - e.clientY;
+      console.log(e.clientX);
+      pos.nx = e.clientX;
+      pos.ny = e.clientY;
+      element.style.top = element.offsetTop - pos.oy + "px";
+      element.style.left = element.offsetLeft - pos.ox + "px";
+    };
+  }
+}
