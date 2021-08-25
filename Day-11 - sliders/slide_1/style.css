@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .box {
   border: 1px solid orangered;
