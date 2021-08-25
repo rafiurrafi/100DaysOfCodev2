@@ -1,0 +1,8 @@
+.copyMe {
+  display: inline-block;
+  border: 1px solid #777;
+  padding: 10px;
+  position: absolute;
+  max-width: 120px;
+  cursor: pointer;
+}
