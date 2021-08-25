@@ -13,4 +13,5 @@
 .copied-box {
   position: absolute;
   color: red;
+  cursor: move;
 }
