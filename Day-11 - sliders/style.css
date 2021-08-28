@@ -1,0 +1,23 @@
+.slider {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.slider__numbers {
+  position: relative;
+  height: 50vh;
+}
+.slider__number-main {
+  font-size: 6rem;
+}
+.slider__number-clone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: tomato;
+}
+.btn {
+  text-decoration: none;
+  color: red;
+  font-size: 1.5rem;
+}
