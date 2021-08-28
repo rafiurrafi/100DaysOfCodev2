@@ -5,11 +5,12 @@ console.log(mainNumber);
 function clone() {
   const cloneNumber = mainNumber.cloneNode(true);
   cloneNumber.classList.add("slider__number-clone");
-  cloneNumber.classList.add("move-to-bottom");
+  cloneNumber.classList.add("move-to-right-bottom");
   sliderNumbers.appendChild(cloneNumber);
   setTimeout(() => {
-    sliderNumbers.removeChild(cloneNumber);
+    // sliderNumbers.removeChild(cloneNumber);
+    cloneNumber.remove();
     console.log(cloneNumber);
-  }, 500);
+  }, 600);
   console.log(sliderNumbers);
 }
