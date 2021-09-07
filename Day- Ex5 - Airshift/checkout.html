@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/intlTelInput.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>airshipt</title>
+    <style></style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNavbar">
@@ -314,6 +315,19 @@
                           placeholder="Enter email"
                         />
                       </div>
+                      <!-- Phone number form  -->
+                      <!-- Js code under this file in script section  -->
+                      <div class="form-group checkout-form">
+                        <label for="email-address">Phone</label>
+                        <div>
+                          <input
+                            class="form-control px-0 pb-3"
+                            type="tel"
+                            id="telephone-checkout"
+                            aria-label="Search"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -553,5 +567,21 @@
     <script src="js/data.js"></script>
     <script src="js/intlTelInput.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      var checkoutPhoneInput = document.querySelector("#telephone-checkout");
+
+      intlTelInput(checkoutPhoneInput, {
+        // options here
+        initialCountry: "bd",
+        customPlaceholder: function (
+          selectedCountryPlaceholder,
+          selectedCountryData
+        ) {
+          return "                         Enter phone number";
+        },
+        separateDialCode: true,
+        utilsScript: "js/utils.js",
+      });
+    </script>
   </body>
 </html>

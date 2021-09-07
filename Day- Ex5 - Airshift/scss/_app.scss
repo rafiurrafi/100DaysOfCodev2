@@ -1071,6 +1071,15 @@ p {
     }
   }
 }
+.checkout-form {
+  .iti {
+    display: block;
+    &__selected-flag {
+      background-color: transparent !important;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
 // =====================================================
 // Blog page
 // =====================================================

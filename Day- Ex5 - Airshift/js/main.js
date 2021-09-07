@@ -64,9 +64,8 @@ function handleProductQuantity(productId, operation) {
 // About page
 // .................................
 const ceoMessage = document.querySelector("#ceo-message");
-if(window.innerWidth < 783){
-  ceoMessage.classList.add("container")
-}else{
-  ceoMessage.classList.remove("container")
+if (window.innerWidth < 783) {
+  ceoMessage.classList.add("container");
+} else {
+  ceoMessage.classList.remove("container");
 }
-
