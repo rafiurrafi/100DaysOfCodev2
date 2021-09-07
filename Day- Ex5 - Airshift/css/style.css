@@ -7070,6 +7070,8 @@ p {
       width: 1.5rem;
       border: 3px solid #e42127;
       border-radius: 50%; }
+      .cart__progress-links a.active {
+        background-color: #e42127; }
       .cart__progress-links a:first-of-type {
         margin-left: -7px; }
       .cart__progress-links a:last-of-type {
@@ -7100,6 +7102,21 @@ p {
 .cart-success-text {
   font-size: 1.6rem;
   font-weight: 400; }
+
+.checkout-card {
+  border: none; }
+
+.checkout-card-header {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9f9f9f;
+  padding: 0;
+  padding-bottom: 0.2rem; }
+  .checkout-card-header button {
+    color: #4a4a4a; }
+    .checkout-card-header button span:first-of-type {
+      font-size: 1.3rem;
+      font-weight: 700; }
 
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image3.jpg); }

@@ -621,7 +621,7 @@ p {
   .col-md-6:first-of-type {
     height: 100%;
   }
-  .container-fluid{
+  .container-fluid {
     padding-left: 0;
   }
 }
@@ -929,10 +929,13 @@ p {
       width: 1.5rem;
       border: 3px solid darken($color-primary, 0.55);
       border-radius: 50%;
-      &:first-of-type{
+      &.active {
+        background-color: darken($color-primary, 0.55);
+      }
+      &:first-of-type {
         margin-left: -7px;
       }
-      &:last-of-type{
+      &:last-of-type {
         margin-right: -7px;
       }
     }
@@ -971,6 +974,27 @@ p {
 .cart-success-text {
   font-size: 1.6rem;
   font-weight: 400;
+}
+// =====================================================
+// Checkout page
+// ====================================================
+.checkout-card {
+  border: none;
+}
+.checkout-card-header {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $color-gray-light-2;
+  padding: 0;
+  padding-bottom: 0.2rem;
+
+  button {
+    color: $color-gray-dark-1;
+    span:first-of-type {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+  }
 }
 // =====================================================
 // Blog page
@@ -1185,13 +1209,13 @@ p {
     }
   }
   .section-ceo-message {
-    .col-lg-6:first-of-type{
+    .col-lg-6:first-of-type {
       padding-right: 0;
     }
     .ceo-img {
       height: 55vw;
     }
-    #ceo-message{
+    #ceo-message {
       padding-left: 22px;
     }
   }
@@ -1368,8 +1392,8 @@ p {
       transform: scaleX(1.1);
     }
   }
-  // About page 
-  #ceo-message{
+  // About page
+  #ceo-message {
     padding-left: 32px !important;
   }
 }
@@ -1390,7 +1414,6 @@ p {
   .download-error-img img {
     height: 2.5rem !important;
   }
-  
 }
 @media (max-width: 575px) {
   .section-works .nav {
