@@ -176,7 +176,7 @@
             <div class="col-lg-8 mb-4 mb-lg-0">
               <!-- Accordion here  -->
               <div id="deliver-accordion">
-                <div class="card checkout-card">
+                <div class="card checkout-card pr-lg-5">
                   <div class="card-header checkout-card-header" id="headingOne">
                     <h5 class="mb-0">
                       <button
@@ -186,6 +186,7 @@
                           justify-content-between
                           align-items-center
                           w-100
+                          px-0
                         "
                         data-toggle="collapse"
                         data-target="#deliveryCollapse"
@@ -204,26 +205,165 @@
                     aria-labelledby="headingOne"
                     data-parent="#delivery-accordion"
                   >
-                    <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life
-                      accusamus terry richardson ad squid. 3 wolf moon officia
-                      aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                      tempor, sunt aliqua put a bird on it squid single-origin
-                      coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                      helvetica, craft beer labore wes anderson cred nesciunt
-                      sapiente ea proident. Ad vegan excepteur butcher vice
-                      lomo. Leggings occaecat craft beer farm-to-table, raw
-                      denim aesthetic synth nesciunt you probably haven't heard
-                      of them accusamus labore sustainable VHS.
+                    <div class="card-body px-0">
+                      <!-- Single form group  -->
+                      <div
+                        class="
+                          form-group-container
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <div class="form-group w-45 checkout-form">
+                          <label for="exampleInputEmail1">Name</label>
+                          <input
+                            type="email"
+                            class="form-control px-0 pb-3"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email"
+                          />
+                        </div>
+                        <div class="form-group w-45 checkout-form">
+                          <label for="exampleInputEmail1">Name</label>
+                          <input
+                            type="email"
+                            class="form-control px-0 pb-3"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email"
+                          />
+                        </div>
+                      </div>
+                      <!-- Single form group  -->
+                      <div
+                        class="
+                          form-group-container
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <div class="form-group w-45 checkout-form">
+                          <label for="select-street">Address</label>
+                          <select
+                            name=""
+                            id="select-street"
+                            class="form-control px-0 select-item"
+                          >
+                            <option value="">Street</option>
+                            <option value="">Street</option>
+                            <option value="">Street</option>
+                            <option value="">Street</option>
+                            <option value="">Street</option>
+                          </select>
+                        </div>
+                        <div class="form-group w-45 checkout-form">
+                          <label for="select-city">&nbsp;</label>
+                          <select
+                            name=""
+                            id="select-city"
+                            class="form-control px-0 select-item"
+                          >
+                            <option value="">City</option>
+                            <option value="">Street</option>
+                            <option value="">Street</option>
+                            <option value="">Street</option>
+                            <option value="">Street</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <!-- Single form group  -->
+                      <div
+                        class="
+                          form-group-container
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <div class="form-group w-45 checkout-form">
+                          <label for="stateId"></label>
+                          <input
+                            type="email"
+                            class="form-control px-0 pb-3"
+                            id="stateId"
+                            aria-describedby="emailHelp"
+                            placeholder="State / Province"
+                          />
+                        </div>
+                        <div class="form-group w-45 checkout-form">
+                          <label for="ZipcodeId"></label>
+                          <input
+                            type="email"
+                            class="form-control px-0 pb-3"
+                            id="ZipcodeId"
+                            aria-describedby="emailHelp"
+                            placeholder="Zip Code/Postal Code"
+                          />
+                        </div>
+                      </div>
+                      <!-- Email address form  -->
+
+                      <div class="form-group checkout-form">
+                        <label for="email-address">Email</label>
+                        <input
+                          type="email"
+                          class="form-control px-0 pb-3"
+                          id="email-address"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <!-- Accordion end here -->
+              <!-- Accordion here  -->
+              <div id="billing-accordion">
+                <div class="card checkout-card pr-lg-5">
+                  <div class="card-header checkout-card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button
+                        class="
+                          btn btn-link
+                          d-flex
+                          justify-content-between
+                          align-items-center
+                          w-100
+                          px-0
+                        "
+                        data-toggle="collapse"
+                        data-target="#billingCollapse"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        <span>Billing address</span>
+                        <span><i class="fa fa-plus"></i></span>
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div
+                    id="billingCollapse"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-parent="#billing-accordion"
+                  >
+                    <div class="card-body px-0">
+                      <input type="checkbox" name="" id="" class="mr-2" />
+                      <label for="">Same as delivery address</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion end here -->
+              <a href="#" class="btn btn-lg btn-primary mt-3 mt-lg-5"
+                >Review Order</a
+              >
             </div>
             <!-- Shopping calculation  -->
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5 mt-lg-0">
               <!-- Cart total  -->
               <h2
                 class="help-heading font-weight-bold pb-3 pb-md-4 md-3 mb-md-4"

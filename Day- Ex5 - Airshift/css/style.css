@@ -6558,6 +6558,9 @@ p {
 .w-65 {
   width: 65% !important; }
 
+.w-45 {
+  width: 45% !important; }
+
 .w-35 {
   width: 35% !important; }
 
@@ -7105,6 +7108,8 @@ p {
 
 .checkout-card {
   border: none; }
+  .checkout-card .btn-link:hover {
+    text-decoration: none; }
 
 .checkout-card-header {
   background-color: transparent;
@@ -7117,6 +7122,23 @@ p {
     .checkout-card-header button span:first-of-type {
       font-size: 1.3rem;
       font-weight: 700; }
+
+.checkout-form label {
+  font-size: 1rem; }
+.checkout-form .form-control {
+  border: none;
+  border-bottom: 1px solid #757575;
+  color: #4a4a4a; }
+.checkout-form .form-control::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #4a4a4a;
+  font-weight: 700;
+  opacity: 1;
+  /* Firefox */ }
+.checkout-form .form-control.select-item,
+.checkout-form .form-control.select-item {
+  color: #4a4a4a;
+  font-weight: 700; }
 
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image3.jpg); }
@@ -7303,6 +7325,9 @@ p {
   .modal-content {
     width: 85%; } }
 @media (max-width: 576px) {
+  .w-45 {
+    width: 47% !important; }
+
   .section-track-input .form-control {
     width: 71% !important; }
   .section-track-input .w-35.btn {
