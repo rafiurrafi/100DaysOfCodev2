@@ -7108,8 +7108,14 @@ p {
 
 .checkout-card {
   border: none; }
-  .checkout-card .btn-link:hover {
+  .checkout-card .btn-link:hover,
+  .checkout-card .btn-link:focus,
+  .checkout-card .btn-link.focus {
     text-decoration: none; }
+  .checkout-card h3 {
+    font-size: 1.3rem; }
+  .checkout-card p {
+    font-size: 0.9rem; }
 
 .checkout-card-header {
   background-color: transparent;
@@ -7139,6 +7145,38 @@ p {
 .checkout-form .form-control.select-item {
   color: #4a4a4a;
   font-weight: 700; }
+
+.checkout-edit {
+  color: #fff;
+  background-color: #9f9f9f;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  display: inline-block;
+  line-height: 2rem;
+  vertical-align: middle; }
+  .checkout-edit:hover {
+    color: #4a4a4a; }
+
+.checkout-location img {
+  display: inline-block;
+  height: 1.5rem; }
+
+.checkout-payment h3 {
+  font-size: 1.3rem;
+  border-bottom: 1px solid #757575; }
+.checkout-payment a {
+  color: #757575; }
+  .checkout-payment a:hover {
+    text-decoration: none; }
+  .checkout-payment a span {
+    display: inline-block;
+    background-color: #e42329;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: white;
+    text-align: center;
+    border-radius: 50%; }
 
 .jumbotron-blog {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/Blog/Image3.jpg); }

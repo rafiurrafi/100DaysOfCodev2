@@ -983,8 +983,16 @@ p {
 // ====================================================
 .checkout-card {
   border: none;
-  .btn-link:hover {
+  .btn-link:hover,
+  .btn-link:focus,
+  .btn-link.focus {
     text-decoration: none;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 0.9rem;
   }
 }
 .checkout-card-header {
@@ -1021,6 +1029,46 @@ p {
   .form-control.select-item {
     color: $color-gray-dark-1;
     font-weight: 700;
+  }
+}
+.checkout-edit {
+  color: #fff;
+  background-color: $color-gray-light-2;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  display: inline-block;
+  line-height: 2rem;
+  vertical-align: middle;
+  &:hover {
+    color: $color-gray-dark-1;
+  }
+}
+.checkout-location {
+  img {
+    display: inline-block;
+    height: 1.5rem;
+  }
+}
+.checkout-payment {
+  h3 {
+    font-size: 1.3rem;
+    border-bottom: 1px solid $color-gray-light-1;
+  }
+  a {
+    color: $color-gray-light-1;
+    &:hover {
+      text-decoration: none;
+    }
+    span {
+      display: inline-block;
+      background-color: $color-primary;
+      height: 1.5rem;
+      width: 1.5rem;
+      color: white;
+      text-align: center;
+      border-radius: 50%;
+    }
   }
 }
 // =====================================================

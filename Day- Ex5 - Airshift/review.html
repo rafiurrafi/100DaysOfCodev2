@@ -173,9 +173,142 @@
         </section>
         <section class="section-shopping-list">
           <div class="row my-3 my-lg-5">
-            <div class="col-lg-8 mb-4 mb-lg-0">Review section</div>
+            <div class="col-lg-8 mb-4 mb-lg-0">
+              <!-- Accordion here  -->
+              <div id="review-delivery-accordion ">
+                <div class="card checkout-card pr-lg-5 mb-3 mb-lg-5">
+                  <div class="card-header checkout-card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button
+                        class="
+                          btn btn-link
+                          d-flex
+                          justify-content-between
+                          align-items-center
+                          w-100
+                          px-0
+                        "
+                        data-toggle="collapse"
+                        data-target="#reviewDelCollapse"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        <span>Delivery Address</span>
+                        <span><i class="fa fa-plus"></i></span>
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div
+                    id="reviewDelCollapse"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-parent="#review-delivery-accordion"
+                  >
+                    <div
+                      class="
+                        card-body
+                        px-2 px-md-3 px-lg-5
+                        bg-light
+                        mt-3
+                        d-flex
+                      "
+                    >
+                      <div class="mr-3 checkout-location">
+                        <img src="assets/Others icon/address icon.png" alt="" />
+                      </div>
+                      <div class="mr-auto">
+                        <h3 class="font-weight-bold">Dhaka Bangladesh</h3>
+                        <small class="text-gray-light-2 mb-2 d-inline-block"
+                          ><b>Adam Smith</b></small
+                        >
+                        <p class="mb-2">
+                          2369 Lauren Drive, Beloit, WI, Wisconsin, abcd
+                        </p>
+                        <p class="mb-2">Phone: 880-365-7693</p>
+                      </div>
+                      <div>
+                        <a href="#" class="checkout-edit text-center">
+                          <i class="fa fa-pencil"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion end here -->
+
+              <!-- Accordion here  -->
+              <div id="review-shipping-accordion">
+                <div class="card checkout-card pr-lg-5">
+                  <div class="card-header checkout-card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button
+                        class="
+                          btn btn-link
+                          d-flex
+                          justify-content-between
+                          align-items-center
+                          w-100
+                          px-0
+                        "
+                        data-toggle="collapse"
+                        data-target="#shippingReviewCollapse"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        <span>Shipping address</span>
+                        <span><i class="fa fa-plus"></i></span>
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div
+                    id="shippingReviewCollapse"
+                    class="collapse show"
+                    aria-labelledby="headingOne"
+                    data-parent="#review-shipping-accordion"
+                  >
+                    <div class="card-body px-2 px-md-3 px-lg-5 mt-3 d-flex">
+                      <div class="mr-3 checkout-location">
+                        <img src="assets/Others icon/address icon.png" alt="" />
+                      </div>
+                      <div class="mr-auto">
+                        <p style="font-size: 1.2rem; font-weight: 400">
+                          Same as delivery address
+                        </p>
+                      </div>
+                      <div>
+                        <a href="#" class="checkout-edit text-center">
+                          <i class="fa fa-pencil"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion end here -->
+              <div class="checkout-payment pr-lg-5 py-3">
+                <h3 class="font-weight-bold pb-2 pb-md-3">Payment</h3>
+                <a href="#" class="text-uppercase d-block my-2 my-md-3"
+                  >SslCommerz
+                  <span class="ml-2 ml-md-3"
+                    ><i class="fa fa-angle-right"></i></span
+                ></a>
+                <a href="#" class="d-block"
+                  >Paypal
+                  <span class="ml-2 ml-md-3"
+                    ><i class="fa fa-angle-right"></i></span
+                ></a>
+              </div>
+              <a
+                href="#"
+                class="btn btn-lg btn-primary text-uppercase my-3 my-lg-5"
+                >Pay now</a
+              >
+            </div>
             <!-- Shopping calculation  -->
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-5 mt-lg-0">
               <!-- Cart total  -->
               <h2
                 class="help-heading font-weight-bold pb-3 pb-md-4 md-3 mb-md-4"
