@@ -178,27 +178,14 @@
               <!-- Accordion here  -->
               <div id="deliver-accordion">
                 <div class="card checkout-card pr-lg-5">
-                  <div class="card-header checkout-card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button
-                        class="
-                          btn btn-link
-                          d-flex
-                          justify-content-between
-                          align-items-center
-                          w-100
-                          px-0
-                        "
-                        data-toggle="collapse"
-                        data-target="#deliveryCollapse"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
-                      >
-                        <span>Delivery Address</span>
-                        <span><i class="fa fa-plus"></i></span>
-                      </button>
-                    </h5>
-                  </div>
+                  <button
+                    class="card-header checkout-card-header pb-3 my-2"
+                    data-toggle="collapse"
+                    data-target="#deliveryCollapse"
+                  >
+                    <b class="header-title float-left"> Delivery address</b>
+                    <i class="fa fa-minus float-right mt-1"></i>
+                  </button>
 
                   <div
                     id="deliveryCollapse"
@@ -222,7 +209,7 @@
                             class="form-control px-0 pb-3"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
-                            placeholder="Enter email"
+                            placeholder="Enter First name"
                           />
                         </div>
                         <div class="form-group w-45 checkout-form">
@@ -232,7 +219,7 @@
                             class="form-control px-0 pb-3"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
-                            placeholder="Enter email"
+                            placeholder="Enter last name"
                           />
                         </div>
                       </div>
@@ -244,7 +231,7 @@
                           justify-content-between
                         "
                       >
-                        <div class="form-group w-45 checkout-form">
+                        <!-- <div class="form-group w-45 checkout-form">
                           <label for="select-street">Address</label>
                           <select
                             name=""
@@ -257,20 +244,38 @@
                             <option value="">Street</option>
                             <option value="">Street</option>
                           </select>
+                        </div> -->
+                        <div class="form-group w-45 checkout-form">
+                          <label for="select-street">Address</label>
+                          <div class="checkout-form__select">
+                            <select
+                              name=""
+                              id="select-street"
+                              class="form-control px-0 select-item"
+                            >
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                            </select>
+                          </div>
                         </div>
                         <div class="form-group w-45 checkout-form">
-                          <label for="select-city">&nbsp;</label>
-                          <select
-                            name=""
-                            id="select-city"
-                            class="form-control px-0 select-item"
-                          >
-                            <option value="">City</option>
-                            <option value="">Street</option>
-                            <option value="">Street</option>
-                            <option value="">Street</option>
-                            <option value="">Street</option>
-                          </select>
+                          <label for="select-city">City</label>
+                          <div class="checkout-form__select">
+                            <select
+                              name=""
+                              id="select-city"
+                              class="form-control px-0 select-item"
+                            >
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
 
@@ -333,30 +338,168 @@
                 </div>
               </div>
               <!-- Accordion end here -->
+
+              <!-- Accordion here  -->
+              <div id="deliver-accordion">
+                <div class="card checkout-card pr-lg-5">
+                  <button
+                    class="card-header checkout-card-header pb-3 my-2"
+                    data-toggle="collapse"
+                    data-target="#buyerCollapse"
+                  >
+                    <b class="header-title float-left"> Buyer address</b>
+                    <i class="fa fa-plus float-right mt-1"></i>
+                  </button>
+
+                  <div
+                    id="buyerCollapse"
+                    class="collapse"
+                    aria-labelledby="headingOne"
+                    data-parent="#delivery-accordion"
+                  >
+                    <div class="card-body px-0">
+                      <!-- Single form group  -->
+                      <div
+                        class="
+                          form-group-container
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <div class="form-group w-45 checkout-form">
+                          <label for="exampleInputEmail1">Name</label>
+                          <input
+                            type="email"
+                            class="form-control px-0 pb-3"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter First name"
+                          />
+                        </div>
+                        <div class="form-group w-45 checkout-form">
+                          <label for="exampleInputEmail1">Name</label>
+                          <input
+                            type="email"
+                            class="form-control px-0 pb-3"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter last name"
+                          />
+                        </div>
+                      </div>
+                      <!-- Single form group  -->
+                      <div
+                        class="
+                          form-group-container
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <div class="form-group w-45 checkout-form">
+                          <label for="select-street-buyer">Address</label>
+                          <div class="checkout-form__select">
+                            <select
+                              name=""
+                              id="select-street-buyer"
+                              class="form-control px-0 select-item"
+                            >
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group w-45 checkout-form">
+                          <label for="select-city-buyer">City</label>
+                          <div class="checkout-form__select">
+                            <select
+                              name=""
+                              id="select-city-buyer"
+                              class="form-control px-0 select-item"
+                            >
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                              <option value="">Street</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Single form group  -->
+                      <div
+                        class="
+                          form-group-container
+                          d-flex
+                          justify-content-between
+                        "
+                      >
+                        <div class="form-group w-45 checkout-form">
+                          <label for="stateId"></label>
+                          <input
+                            type="email"
+                            class="form-control px-0 pb-3"
+                            id="stateId"
+                            aria-describedby="emailHelp"
+                            placeholder="State / Province"
+                          />
+                        </div>
+                        <div class="form-group w-45 checkout-form">
+                          <label for="ZipcodeId"></label>
+                          <input
+                            type="email"
+                            class="form-control px-0 pb-3"
+                            id="ZipcodeId"
+                            aria-describedby="emailHelp"
+                            placeholder="Zip Code/Postal Code"
+                          />
+                        </div>
+                      </div>
+                      <!-- Email address form  -->
+
+                      <div class="form-group checkout-form">
+                        <label for="email-address">Email</label>
+                        <input
+                          type="email"
+                          class="form-control px-0 pb-3"
+                          id="email-address"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                        />
+                      </div>
+                      <!-- Phone number form  -->
+                      <!-- Js code under this file in script section  -->
+                      <div class="form-group checkout-form">
+                        <label for="email-address">Phone</label>
+                        <div>
+                          <input
+                            class="form-control px-0 pb-3"
+                            type="tel"
+                            id="telephone-checkout-2"
+                            aria-label="Search"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion end here -->
+
               <!-- Accordion here  -->
               <div id="billing-accordion">
                 <div class="card checkout-card pr-lg-5">
-                  <div class="card-header checkout-card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button
-                        class="
-                          btn btn-link
-                          d-flex
-                          justify-content-between
-                          align-items-center
-                          w-100
-                          px-0
-                        "
-                        data-toggle="collapse"
-                        data-target="#billingCollapse"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
-                      >
-                        <span>Billing address</span>
-                        <span><i class="fa fa-plus"></i></span>
-                      </button>
-                    </h5>
-                  </div>
+                  <button
+                    class="card-header checkout-card-header pb-3 my-2"
+                    data-toggle="collapse"
+                    data-target="#billingCollapse"
+                  >
+                    <b class="header-title float-left"> Billing address</b>
+                    <i class="fa fa-minus float-right mt-1"></i>
+                  </button>
 
                   <div
                     id="billingCollapse"
@@ -372,6 +515,7 @@
                 </div>
               </div>
               <!-- Accordion end here -->
+              <!-- Testing end  -->
               <a href="#" class="btn btn-lg btn-primary mt-3 mt-lg-5"
                 >Review Order</a
               >
@@ -478,7 +622,7 @@
                   </p>
                 </div>
                 <!-- buttons cta cart  -->
-                <div class="cta-cart">
+                <!-- <div class="cta-cart">
                   <div class="row">
                     <div class="col">
                       <a
@@ -499,7 +643,7 @@
                       >
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -569,6 +713,9 @@
     <script src="js/main.js"></script>
     <script>
       var checkoutPhoneInput = document.querySelector("#telephone-checkout");
+      var checkoutPhoneInputNext = document.querySelector(
+        "#telephone-checkout-2"
+      );
 
       intlTelInput(checkoutPhoneInput, {
         // options here
@@ -581,6 +728,22 @@
         },
         separateDialCode: true,
         utilsScript: "js/utils.js",
+      });
+      intlTelInput(checkoutPhoneInputNext, {
+        // options here
+        initialCountry: "bd",
+        customPlaceholder: function (
+          selectedCountryPlaceholder,
+          selectedCountryData
+        ) {
+          return "                         Enter phone number";
+        },
+        separateDialCode: true,
+        utilsScript: "js/utils.js",
+      });
+      // Toogle icon in accordin
+      $(".card-header").click(function () {
+        $(this).find("i").toggleClass("fas fa-plus fas fa-minus");
       });
     </script>
   </body>

@@ -177,27 +177,14 @@
               <!-- Accordion here  -->
               <div id="review-delivery-accordion ">
                 <div class="card checkout-card pr-lg-5 mb-3 mb-lg-5">
-                  <div class="card-header checkout-card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button
-                        class="
-                          btn btn-link
-                          d-flex
-                          justify-content-between
-                          align-items-center
-                          w-100
-                          px-0
-                        "
-                        data-toggle="collapse"
-                        data-target="#reviewDelCollapse"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
-                      >
-                        <span>Delivery Address</span>
-                        <span><i class="fa fa-plus"></i></span>
-                      </button>
-                    </h5>
-                  </div>
+                  <button
+                    class="card-header checkout-card-header pb-3 my-2"
+                    data-toggle="collapse"
+                    data-target="#reviewDelCollapse"
+                  >
+                    <b class="header-title float-left"> Delivery address</b>
+                    <i class="fa fa-minus float-right mt-1"></i>
+                  </button>
 
                   <div
                     id="reviewDelCollapse"
@@ -241,27 +228,14 @@
               <!-- Accordion here  -->
               <div id="review-shipping-accordion">
                 <div class="card checkout-card pr-lg-5">
-                  <div class="card-header checkout-card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button
-                        class="
-                          btn btn-link
-                          d-flex
-                          justify-content-between
-                          align-items-center
-                          w-100
-                          px-0
-                        "
-                        data-toggle="collapse"
-                        data-target="#shippingReviewCollapse"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
-                      >
-                        <span>Shipping address</span>
-                        <span><i class="fa fa-plus"></i></span>
-                      </button>
-                    </h5>
-                  </div>
+                  <button
+                    class="card-header checkout-card-header pb-3 my-2"
+                    data-toggle="collapse"
+                    data-target="#shippingReviewCollapse"
+                  >
+                    <b class="header-title float-left"> Shipping address</b>
+                    <i class="fa fa-minus float-right mt-1"></i>
+                  </button>
 
                   <div
                     id="shippingReviewCollapse"
@@ -409,28 +383,6 @@
                   </p>
                 </div>
                 <!-- buttons cta cart  -->
-                <div class="cta-cart">
-                  <div class="row">
-                    <div class="col">
-                      <a
-                        href="#"
-                        class="
-                          btn btn-outline-primary
-                          d-block
-                          text-size
-                          px-2
-                          mb-lg-2 mb-xl-0
-                        "
-                        >Continue shipping</a
-                      >
-                    </div>
-                    <div class="col">
-                      <a href="#" class="btn btn-primary d-block text-size px-2"
-                        >Proceed To Checkout</a
-                      >
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -498,5 +450,11 @@
     <script src="js/data.js"></script>
     <script src="js/intlTelInput.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      // Toogle icon in accordin
+      $(".card-header").click(function () {
+        $(this).find("i").toggleClass("fas fa-plus fas fa-minus");
+      });
+    </script>
   </body>
 </html>
