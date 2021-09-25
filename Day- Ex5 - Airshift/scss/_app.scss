@@ -718,6 +718,8 @@ p {
   color: $color-gray-dark-1;
   font-size: $text-size;
   text-decoration: none;
+  white-space: normal;
+  text-align: left;
   &:hover {
     text-decoration: none;
     color: $color-primary;
