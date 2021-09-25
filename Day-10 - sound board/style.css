@@ -18,7 +18,7 @@ body {
 .container {
   width: 70%;
 
-  padding: 5vh;
+  padding: 5vh 10vh;
   /* border: 1px solid #777; */
   background-color: rgba(235, 230, 230, 0.05);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
@@ -54,4 +54,11 @@ input[type="submit"] {
   margin-top: 1rem;
   cursor: pointer;
   color: white;
+}
+.wrong-input {
+  border: 1px solid orangered;
+}
+
+.right-input {
+  border: 1px solid rgb(0, 255, 136);
 }
