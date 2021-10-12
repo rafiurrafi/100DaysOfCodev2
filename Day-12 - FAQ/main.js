@@ -10,6 +10,11 @@ filters.forEach((filter) => {
       `.projects [data-filter='${selectedFilter}']`
     );
 
+    if (selectedFilter == "all") {
+      itemsToHide = [];
+      itemsToShow = document.querySelectorAll(".projects [data-filter]");
+    }
+
     itemsToHide.forEach((el) => {
       el.classList.add("hide");
       el.classList.remove("show");
