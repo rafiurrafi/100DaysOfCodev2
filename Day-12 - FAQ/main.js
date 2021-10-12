@@ -14,3 +14,12 @@ $('#fob').on('change', function() {
        elem.show();
      }
    });
+   $('li').each(function () {
+    var item_filter = $(this).data();
+    var item = $(this);
+    if(item_filter.filter.food_or_beverage != val && val != "select")  {
+     item.hide();
+    } else {
+      item.show();
+    }
+  });
