@@ -12,6 +12,29 @@
     <title>FAQ</title>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+        <label>Food or Beverage
+      <select name="food_or_beverage" id="fob" class="form-control">
+        <option value="select">Please Select</option>
+        <option value="food">Food</option>
+        <option value="beverage">Beverage</option>
+      </select>
+      </label>
+        </div>
+        <div class="col-md-6">
+      <label>Type
+      <select name="type" id="type" class="form-control">
+        <option value="select" data-filter='{"food_or_beverage": ""}'>Please Select</option>
+        <option value="fruit" data-filter='{"food_or_beverage": "food"}'>Fruit</option>
+        <option value="vegetable" data-filter='{"food_or_beverage": "food"}'>Vegetable</option>
+        <option value="juice" data-filter='{"food_or_beverage": "beverage"}'>Juice</option>
+        <option value="nojuice" data-filter='{"food_or_beverage": "beverage"}'>Nojuice</option>
+      </select>
+      </label>
+      </div>
+        </div>
     <script src="main.js"></script>
   </body>
 </html>
