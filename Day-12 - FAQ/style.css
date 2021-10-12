@@ -34,3 +34,37 @@
   }
 }
 /*  // Needed for filters */
+
+/* For decoration only */
+body {
+  font-family: sans-serif;
+}
+.projects {
+  display: flex;
+  background: gray;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+.project {
+  background: rebeccapurple;
+  width: 230px;
+  height: 100px;
+  margin: 20px;
+  padding-top: 20px;
+  text-align: center;
+}
+.project:nth-child(odd) {
+  background: greenyellow;
+}
+.filters {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+.filter {
+  margin: 20px;
+}
+.filter:hover {
+  cursor: pointer;
+}
