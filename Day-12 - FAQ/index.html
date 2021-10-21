@@ -12,37 +12,17 @@
     <title>FAQ</title>
   </head>
   <body>
-    <div class="cup">
-      <div class="smoke">
-        <span style="--smoke: 2"></span>
-        <span style="--smoke: 4"></span>
-        <span style="--smoke: 6"></span>
-        <span style="--smoke: 8"></span>
-        <span style="--smoke: 10"></span>
-        <span style="--smoke: 12"></span>
-        <span style="--smoke: 14"></span>
-        <span style="--smoke: 16"></span>
-        <span style="--smoke: 18"></span>
-        <span style="--smoke: 20"></span>
-        <span style="--smoke: 22"></span>
-        <span style="--smoke: 24"></span>
-      </div>
-      <h1>I am a headline made with HTML</h1>
-      <p>
-        And I am a simple text paragraph. The color of this text is styled with
-        CSS. Click the button below to remove me through the power JavaScript.
-      </p>
-      <button>Hide the text above</button>
-      <div class="top">
-        <div class="one"></div>
-        <div class="two"></div>
-      </div>
-      <div class="main">
-        <div class="sticker"></div>
-      </div>
-      <div class="bottom"></div>
-    </div>
-
+    <h1>0</h1>
+    <button>Increment</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js"></script>
+    <script>
+      $(document).ready(() => {
+        $("button").on("click", () => {
+          const value = Number($("h1").text());
+          $("h1").text(value + 1);
+        });
+      });
+    </script>
   </body>
 </html>
