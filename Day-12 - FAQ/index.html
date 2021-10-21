@@ -12,17 +12,20 @@
     <title>FAQ</title>
   </head>
   <body>
-    <h1>0</h1>
-    <button>Increment</button>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div id="root"></div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
     <script src="main.js"></script>
     <script>
-      $(document).ready(() => {
-        $("button").on("click", () => {
-          const value = Number($("h1").text());
-          $("h1").text(value + 1);
-        });
-      });
+      const container = document.querySelector("#root");
+      ReactDOM.render("ooo man", container);
     </script>
   </body>
 </html>
