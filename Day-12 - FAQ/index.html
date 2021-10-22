@@ -13,6 +13,9 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- <h1>0</h1>
+    <button>+</button>
+    <button id="btn2">-</button> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <script
       crossorigin
@@ -22,10 +25,25 @@
       crossorigin
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     <script src="main.js"></script>
-    <script>
-      const container = document.querySelector("#root");
-      ReactDOM.render("ooo man", container);
+    <script type="text/babel">
+      function Increment() {
+        const [count, setCount] = React.useState(0);
+        return (
+          <div>
+            <h1>{count}</h1>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+          </div>
+        );
+      }
+      ReactDOM.render(
+        <div>
+          <Increment />
+          <Increment />{" "}
+        </div>,
+        document.querySelector("#root")
+      );
     </script>
   </body>
 </html>
