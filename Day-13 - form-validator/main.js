@@ -17,6 +17,8 @@ button.addEventListener("click", (e) => {
   //     showError(passwordInput2, "Password is Empty");
   //   else showSuccess(passwordInput2);
   checkRequired([userInput, passwordInput, emailInput, passwordInput2]);
+  checkLength(userInput, 3, 15);
+  checkLength(emailInput, 3, 15);
 });
 function showError(input, msg) {
   const formControl = input.parentNode;
@@ -46,6 +48,16 @@ function checkRequired(inputs) {
 }
 function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+function checkLength(input, min, max) {
+  if (input.value.length < min)
+    showError(input, getFieldName(input) + " must be " + min + " characters");
+  else if (input.value.length > max)
+    showError(
+      input,
+      getFieldName(input) + " must be less than " + max + " characters"
+    );
+  else showSuccess(input);
 }
 // function isEmpty(input) {
 //   return !input.value.length;
