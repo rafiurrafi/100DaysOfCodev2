@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+  display: grid;
+  grid-template: 100%/3fr repeat(54, 1fr) 3fr;
+  overflow: hidden;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.cell:nth-child(1):hover ~ .content {
+  --partialString: "L";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(2):hover ~ .content {
+  --partialString: "Lo";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(3):hover ~ .content {
+  --partialString: "Lor";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(4):hover ~ .content {
+  --partialString: "Lore";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(5):hover ~ .content {
+  --partialString: "Lorem";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(6):hover ~ .content {
+  --partialString: "Lorem ";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(7):hover ~ .content {
+  --partialString: "Lorem i";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(8):hover ~ .content {
+  --partialString: "Lorem ip";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(9):hover ~ .content {
+  --partialString: "Lorem ips";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(10):hover ~ .content {
+  --partialString: "Lorem ipsu";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(11):hover ~ .content {
+  --partialString: "Lorem ipsum";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(12):hover ~ .content {
+  --partialString: "Lorem ipsum ";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(13):hover ~ .content {
+  --partialString: "Lorem ipsum d";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(14):hover ~ .content {
+  --partialString: "Lorem ipsum do";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(15):hover ~ .content {
+  --partialString: "Lorem ipsum dol";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(16):hover ~ .content {
+  --partialString: "Lorem ipsum dolo";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(17):hover ~ .content {
+  --partialString: "Lorem ipsum dolor";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(18):hover ~ .content {
+  --partialString: "Lorem ipsum dolor ";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(19):hover ~ .content {
+  --partialString: "Lorem ipsum dolor s";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(20):hover ~ .content {
+  --partialString: "Lorem ipsum dolor si";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(21):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(22):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit ";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(23):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit a";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(24):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit am";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(25):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit ame";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(26):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(27):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet ";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(28):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet c";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(29):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet co";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(30):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet con";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(31):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet cons";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(32):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet conse";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(33):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consec";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(34):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consect";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(35):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consecte";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(36):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectet";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(37):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetu";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(38):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(39):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur ";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(40):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur a";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(41):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur ad";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(42):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adi";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(43):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adip";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(44):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipi";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(45):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipis";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(46):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisi";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(47):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisic";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(48):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisici";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(49):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisicin";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(50):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisicing";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(51):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisicing ";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(52):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisicing e";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(53):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisicing el";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(54):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisicing eli";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(55):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisicing elit";
+  --size: 32px;
+  --color: #fff;
+}
+
+.cell:nth-child(56):hover ~ .content {
+  --partialString: "Lorem ipsum dolor sit amet consectetur adipisicing elit.";
+  --size: 32px;
+  --color: #fff;
+}
