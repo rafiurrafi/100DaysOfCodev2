@@ -12,66 +12,9 @@
     <title>FAQ</title>
   </head>
   <body>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-    <div class="cell"></div>
-
-    <div class="content">
-      <div class="text"></div>
-    </div>
+    <div id="root"></div>
+    <!-- <h1>0</h1>
+    <button>+Add</button> -->
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -82,6 +25,25 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     <script src="main.js"></script>
-    <script type="text/babel"></script>
+    <script type="text/babel">
+      const Elements = () => {
+        const [number, setNumber] = React.useState(0);
+        return (
+          <div>
+            <h1>{number}</h1>
+            <button onClick={() => setNumber(number + 1)}>+Add</button>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Elements />, document.querySelector("#root"));
+      // const heading = document.querySelector("h1");
+      // const button = document.querySelector("button");
+      // let number = 0;
+      // button.addEventListener("click", function (e) {
+      //   number++;
+      //   heading.textContent = number;
+      // });
+    </script>
   </body>
 </html>

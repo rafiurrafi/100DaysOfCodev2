@@ -1,13 +1,7 @@
-// const incrementBtn = document.querySelector("button");
-// // const button = document.querySelector("#btn2");
-// const count = document.querySelector("h1");
+// const heading = document.querySelector("h1");
+// const button = document.querySelector("button");
 // let number = 0;
-
-// incrementBtn.addEventListener("click", function () {
+// button.addEventListener("click", function (e) {
 //   number++;
-//   count.textContent = number;
+//   heading.textContent = number;
 // });
-// let number = 0;
-// const heading = document.createElement("h1");
-// heading.textContent = number;
-// document.body.appendChild(heading);
