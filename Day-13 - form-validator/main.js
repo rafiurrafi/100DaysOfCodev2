@@ -6,15 +6,6 @@ const passwordInput2 = document.querySelector("#password2");
 
 button.addEventListener("click", (e) => {
   e.preventDefault();
-  // if (userInput.value == "") showError(userInput, "Username cannot be empty");
-  // else showSuccess(userInput);
-  // if (emailInput.value == "") showError(emailInput, "email cannot be empty");
-  // else showSuccess(emailInput);
-  // if (password.value == "") showError(password, "Password cannot be empty");
-  // else showSuccess(password);
-  // if (passwordInput2.value == "")
-  //   showError(passwordInput2, "password2 cannot be empty");
-  // else showSuccess(passwordInput2);
   checkRequired([userInput, emailInput, passwordInput, passwordInput2]);
   checkLength(userInput, 3, 15);
 });
