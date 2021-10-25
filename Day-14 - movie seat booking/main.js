@@ -9,14 +9,16 @@ seats.forEach((seat) => {
   seat.addEventListener("click", () => {
     seat.classList.toggle("selected");
 
-    const selectedSeat = container.querySelectorAll(".seat.selected");
-    seatCount.innerHTML = selectedSeat.length;
-    totalPrice.textContent = selectedSeat.length * ticketPrice;
+    updateTicketPrice();
   });
 });
 selectMovie.addEventListener("change", (e) => {
   ticketPrice = e.target.value;
+  updateTicketPrice();
+});
+
+function updateTicketPrice() {
   const selectedSeat = container.querySelectorAll(".seat.selected");
   seatCount.innerHTML = selectedSeat.length;
   totalPrice.textContent = selectedSeat.length * ticketPrice;
-});
+}
