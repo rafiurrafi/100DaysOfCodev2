@@ -1,7 +1,13 @@
-// const heading = document.querySelector("h1");
-// const button = document.querySelector("button");
-// let number = 0;
-// button.addEventListener("click", function (e) {
-//   number++;
-//   heading.textContent = number;
-// });
+const button = document.querySelector("button");
+const img = document.querySelector("img");
+button.addEventListener("click", (e) => {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      const dog = JSON.parse(xhr.responseText);
+      img.src = dog.message;
+    }
+  };
+  xhr.open("GET", "https://dog.ceo/api/breeds/image/random");
+  xhr.send();
+});
