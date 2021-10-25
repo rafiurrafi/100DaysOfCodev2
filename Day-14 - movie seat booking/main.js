@@ -14,3 +14,9 @@ seats.forEach((seat) => {
     totalPrice.textContent = selectedSeat.length * ticketPrice;
   });
 });
+selectMovie.addEventListener("change", (e) => {
+  ticketPrice = e.target.value;
+  const selectedSeat = container.querySelectorAll(".seat.selected");
+  seatCount.innerHTML = selectedSeat.length;
+  totalPrice.textContent = selectedSeat.length * ticketPrice;
+});
