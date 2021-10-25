@@ -36,6 +36,13 @@ body {
   margin-right: 10px;
   text-align: center;
 }
+.showcase li {
+  display: flex;
+  margin-right: 15px;
+}
+.showcase li small {
+  margin-left: 5px;
+}
 .seat {
   background-color: #444451;
   height: 12px;
@@ -71,4 +78,18 @@ body {
 
 .row:nth-of-type(7) {
   margin-bottom: 10px;
+}
+.screen {
+  height: 70px;
+  width: 100%;
+  margin: 15px 0;
+  background-color: #fff;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+.container {
+  perspective: 1500;
+}
+.text {
+  margin-top: 20px;
 }
