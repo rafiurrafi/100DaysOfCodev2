@@ -12,7 +12,10 @@
     <title>FAQ</title>
   </head>
   <body>
-    <div id="root"></div>
+    <h2>
+      Current bitcoin price
+      <span style="color: rgb(0, 70, 128)" id="btc-price"></span>
+    </h2>
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -22,25 +25,7 @@
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-    <script type="text/babel">
-      const Element = () => {
-        return (
-          <div>
-            <h1>0</h1>
-            <button>+Add</button>
-          </div>
-        );
-      };
-      ReactDOM.render(<Element />, document.querySelector("#root"));
-
-      const h1 = document.querySelector("h1");
-      const button = document.querySelector("button");
-      let number = 0;
-      button.addEventListener("click", () => {
-        number++;
-        h1.textContent = number;
-      });
-    </script>
+    <script type="text/babel"></script>
     <script src="main.js"></script>
   </body>
 </html>

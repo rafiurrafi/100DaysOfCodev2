@@ -1,9 +1,9 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   const h1 = document.querySelector("h1");
-//   const button = document.querySelector("button");
-//   let number = 0;
-//   button.addEventListener("click", () => {
-//     number++;
-//     h1.textContent = number;
-//   });
-// });
+const price = document.querySelector("#btc-price");
+const xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    price.textContent = JSON.parse(xhr.responseText).bpi.EUR.rate;
+  }
+};
+xhr.open("GET", "https://api.coindesk.com/v1/bpi/currentprice.json");
+xhr.send();
