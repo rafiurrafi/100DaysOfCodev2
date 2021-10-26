@@ -14,6 +14,7 @@ seats.forEach((seat) => {
 });
 selectMovie.addEventListener("change", (e) => {
   ticketPrice = e.target.value;
+  setMovieData(e.target.index, e.target.value);
   updateTicketPrice();
 });
 
@@ -21,4 +22,15 @@ function updateTicketPrice() {
   const selectedSeat = container.querySelectorAll(".seat.selected");
   seatCount.innerHTML = selectedSeat.length;
   totalPrice.textContent = selectedSeat.length * ticketPrice;
+
+  const seatIndex = [...selectedSeat].map((seat) => {
+    return [...seats].indexOf(seat);
+  });
+  localStorage.setItem("selectedSeats", JSON.stringify(seatIndex));
+}
+
+//save selected movie index and price
+function setMovieData(movieIndex, moviePrice) {
+  localStorage.setItem("movieIndex", movieIndex);
+  localStorage.setItem("moviePrice", moviePrice);
 }
