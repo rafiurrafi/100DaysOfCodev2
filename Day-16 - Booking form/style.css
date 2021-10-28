@@ -22,11 +22,28 @@ body {
   color: white;
   justify-content: flex-start;
   border-radius: 5px;
+  padding: 10px 15px;
 }
 .header > div {
   width: 25%;
   flex: 1;
-  padding: 10px 20px;
+}
+/* Main section Booking  */
+.booking-list {
+  display: flex;
+  padding: 10px 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+.booking-list input {
+  display: inline-block;
+  width: 25%;
+  border: none;
+  text-align: center;
+  border-left: 1px solid #777;
+}
+.booking-list input:focus {
+  outline: none;
 }
 /* action section  */
 .action {
