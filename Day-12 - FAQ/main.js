@@ -1,7 +1,12 @@
-const btn = document.querySelector("button");
+var one = document.querySelector(".js-one");
+var button = document.querySelector(".js-button");
 
-btn.addEventListener("click", function () {
-  fetch("https://api.github.com/user/rafiurrafi")
-    .then((res) => res.json())
-    .then((data) => console.log(data));
+button.addEventListener("click", function () {
+  var first = parseInt(one.value);
+  var result = (first - 32) / 1.8;
+  if (first !== NaN) {
+    alert(result);
+  } else {
+    alert(" You need to input a value.");
+  }
 });
