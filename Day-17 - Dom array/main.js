@@ -1,10 +1,14 @@
 const main = document.querySelector("#main");
-const addUser = document.querySelector("#add-user");
-const showMillionaries = document.querySelector("#show-millionaries");
-const sort = document.querySelector("#sort");
-const caleculateWealth = document.querySelector("#calculate-wealth");
+const addUserBtn = document.querySelector("#add-user");
+const showMillionariesBtn = document.querySelector("#show-millionaries");
+const sortBtn = document.querySelector("#sort");
+const caleculateWealthBtn = document.querySelector("#calculate-wealth");
 
 const data = [];
+
+getRandomUser();
+getRandomUser();
+getRandomUser();
 
 //fetch data
 async function getRandomUser() {
@@ -21,4 +25,22 @@ async function getRandomUser() {
 
 function addData(user) {
   data.push(user);
+
+  updateDOM();
 }
+
+function updateDOM(providedData = data) {
+  providedData.forEach((item) => {
+    const element = document.createElement("div");
+    element.classList.add("person");
+    element.innerHTML = `<strong>${item.name}</strong> ${formateMoney(
+      item.money
+    )}`;
+    main.appendChild(element);
+  });
+}
+function formateMoney(money) {
+  return "$" + money + ".00";
+}
+
+addUserBtn.addEventListener("click", getRandomUser);
