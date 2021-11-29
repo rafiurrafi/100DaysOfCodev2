@@ -85,6 +85,7 @@ h1 {
   padding: 15px 20px;
   position: absolute;
   bottom: -65px;
+  transition: transform 0.2s;
 }
 .notification-container.show {
   transform: translateY(-65px);
