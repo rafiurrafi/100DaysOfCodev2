@@ -8,10 +8,10 @@ const figureParts = document.querySelectorAll(".figure-part");
 
 const words = ["Application", "programming", "interface", "apple"];
 
-const selectedWord = words[Math.floor(Math.random() * words.length)];
+let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const correctedLetters = [];
-const worngLetters = [];
+const wrongLetters = [];
 
 // show hidden word
 function displayWord() {
@@ -46,8 +46,8 @@ window.addEventListener("keydown", (e) => {
         showNotification();
       }
     } else {
-      if (!worngLetters.includes(letter)) {
-        worngLetters.push(letter);
+      if (!wrongLetters.includes(letter)) {
+        wrongLetters.push(letter);
         updateWrongLetterEl();
       } else {
         showNotification();
@@ -59,7 +59,21 @@ displayWord();
 
 //function update the wrong letters
 function updateWrongLetterEl() {
-  console.log("Wrong letters");
+  wrongLetters.innerHTML = `
+    ${wrongLetters.length > 0 ? "<p>Wrong</p>" : ""}
+    ${wrongLetters.map((letter) => "<span>${letter}</span>")}
+  `;
+  figureParts.forEach((part, index) => {
+    const errors = wrongLetters.length;
+    if (index < errors) {
+      part.style.display = "block";
+    } else part.style.display = "none";
+  });
+
+  if (wrongLetters.length === figureParts.length) {
+    finalMessage.innerHTML = "Unfortunately you've lost 😥";
+    popup.style.display = "flex";
+  }
 }
 function showNotification() {
   notification.classList.add("show");
@@ -67,3 +81,11 @@ function showNotification() {
     notification.classList.remove("show");
   }, 2000);
 }
+playAgainBtn.addEventListener("click", () => {
+  correctedLetters.splice(0);
+  wrongLetters.splice(0);
+  selectedWord = words[Math.floor(Math.random() * words.length)];
+  displayWord();
+  updateWrongLetterEl();
+  popup.style.display = "none";
+});
