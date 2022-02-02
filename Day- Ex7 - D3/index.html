@@ -8,19 +8,26 @@
     <title>D3 - exploring</title>
   </head>
   <body>
-    <svg width="400" height="60">
-      <rect
-        x="0"
-        y="0"
-        fill="green"
-        height="50"
-        width="50"
-        stroke="grey"
-        stroke-width="5"
-      ></rect>
-      <!-- <Circle cx="90" cy="25" r="25" fill="red" /> -->
-      <ellipse cx="145" cy="25" rx="20" ry="25" />
-    </svg>
+    <div class="container">
+      <div class="row">
+        <div id="chart-area"></div>
+      </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.1/d3.min.js"></script>
+    <script>
+      const svg = d3
+        .select("#chart-area")
+        .append("svg")
+        .attr("height", 400)
+        .attr("width", 400);
+      svg
+        .append("rect")
+        .attr("x", 200)
+        .attr("y", 200)
+        .attr("height", 25)
+        .attr("width", 25)
+        .attr("fill", "green");
+      console.log(svg);
+    </script>
   </body>
 </html>
