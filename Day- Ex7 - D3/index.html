@@ -15,27 +15,46 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.1/d3.min.js"></script>
     <script>
-      const data = [25, 20, 10, 12, 15];
+      d3.json("data/data/buildings.json").then(function (data) {
+        console.log(data);
+      });
+      const x = d3.scaleLog().domain([30, 800]).range([0, 400]);
+      const y = d3.scaleLinear().domain([0, 828]).range([0, 300]);
+      const timeScale = d3
+        .scaleTime()
+        .domain([new Date(2000, 0, 0), new Date(2001, 0, 0)])
+        .range([0, 400]);
+      const color = d3
+        .scaleOrdinal()
+        .domain(["A", "B", "C", "D"])
+        .range(["red", "green", "blue", "yellow", "green"]);
+      const color = d3
+        .scaleOrdinal()
+        .domain(["A", "B", "C", "D"])
+        .range(d3.schemeCategory10);
+      console.log(x(100));
+      console.log(x.invert(18.2));
+      // const data = [25, 20, 10, 12, 15];
 
-      const svg = d3
-        .select("#chart-area")
-        .append("svg")
-        .attr("width", 400)
-        .attr("height", 400);
+      // const svg = d3
+      //   .select("#chart-area")
+      //   .append("svg")
+      //   .attr("width", 400)
+      //   .attr("height", 400);
 
-      svg
-        .selectAll("circle")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("cx", function (d, i) {
-          return i * 50 + 25;
-        })
-        .attr("cy", 25)
-        .attr("r", function (d) {
-          return d;
-        })
-        .attr("fill", "red");
+      // svg
+      //   .selectAll("circle")
+      //   .data(data)
+      //   .enter()
+      //   .append("circle")
+      //   .attr("cx", function (d, i) {
+      //     return i * 50 + 25;
+      //   })
+      //   .attr("cy", 25)
+      //   .attr("r", function (d) {
+      //     return d;
+      //   })
+      //   .attr("fill", "red");
     </script>
   </body>
 </html>
