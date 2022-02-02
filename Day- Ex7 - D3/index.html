@@ -8,16 +8,19 @@
     <title>D3 - exploring</title>
   </head>
   <body>
-    <h1>My notes.</h1>
-    <div id="notes">
-      <p class="note">Need to go to the store.</p>
-      <p class="note">What's the name of that movie with that guy?</p>
-      <p class="note">Here's another note.</p>
-    </div>
-    <form id="new-note">
-      <input type="text" />
-      <button>Add Note</button>
-    </form>
+    <svg width="400" height="60">
+      <rect
+        x="0"
+        y="0"
+        fill="green"
+        height="50"
+        width="50"
+        stroke="grey"
+        stroke-width="5"
+      ></rect>
+      <!-- <Circle cx="90" cy="25" r="25" fill="red" /> -->
+      <ellipse cx="145" cy="25" rx="20" ry="25" />
+    </svg>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.1/d3.min.js"></script>
   </body>
 </html>

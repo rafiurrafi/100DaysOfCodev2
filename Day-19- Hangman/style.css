@@ -71,7 +71,6 @@ h1 {
   left: 0;
   bottom: 0;
   right: 0;
-  /* display: flex; */
   display: none;
   justify-content: center;
   align-items: center;
@@ -80,7 +79,7 @@ h1 {
   background-color: #2980b9;
   padding: 12px 20px;
   border-radius: 4px;
-}
+} 
 .notification-container {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 15px 20px;

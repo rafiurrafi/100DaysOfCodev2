@@ -47,6 +47,6 @@ button:focus {
 }
 svg {
   border: 1px solid blue;
-  width: 650px;
-  height: 100vh;
+  /* width: 650px;
+  height: 100vh; */
 }
