@@ -4,24 +4,14 @@
  *    3.2 - Linear scales
  */
 
-const svg = d3
-  .select("#chart-area")
-  .append("svg")
-  .attr("height", 500)
-  .attr("width", 500);
+const margin = { left: 10, right: 10, top: 10, bottom: 10 };
+const width = 960 - margin.left - margin.right;
+const height = 1000 - margin.top - margin.bottom;
 
-d3.json("data/buildings.json").then((data) => {
-  data.forEach((d) => {
-    d.height = +d.height;
-  });
-  svg
-    .selectAll("rect")
-    .data(data)
-    .enter()
-    .append("rect")
-    .attr("height", (d) => d.height)
-    .attr("width", 40)
-    .attr("x", (d, i) => i * 60)
-    .attr("y", 20)
-    .attr("color", "grey");
-});
+const g = d3
+  .select("body")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.right + ")");
