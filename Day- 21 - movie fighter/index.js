@@ -7,4 +7,8 @@ async function fetchDate(searchTerm) {
   });
   console.log(data);
 }
-fetchDate();
+
+const onInput = (event) => fetchDate(event.target.value);
+const firstMovieInput = document.querySelector("#firstMovieInput");
+
+firstMovieInput.addEventListener("input", debounce(onInput));
