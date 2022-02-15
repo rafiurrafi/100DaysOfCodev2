@@ -1,75 +1,113 @@
 /*
  *    main.js
  *    Mastering Data Visualization with D3.js
- *    3.2 - Linear scales
- * "Burj Khalifa",
-      "Shanghai Tower",
-      "Abraj Al-Bait Clock Tower",
-      "Ping An Finance Centre",
-      "Lotte World Tower",
+ *    5.3 - Adding an update function
  */
-const margin = { bottom: 50, top: 10, right: 10, left: 50 };
-const width = 450 - margin.left - margin.right;
-const height = 500 - margin.top - margin.left;
+/*
+ *    main.js
+ *    Mastering Data Visualization with D3.js
+ *    5.3 - Adding an update function
+ */
+
+const MARGIN = { LEFT: 100, RIGHT: 10, TOP: 10, BOTTOM: 100 };
+const WIDTH = 600 - MARGIN.LEFT - MARGIN.RIGHT;
+const HEIGHT = 400 - MARGIN.TOP - MARGIN.BOTTOM;
+
+let flag = true;
+
 const svg = d3
   .select("#chart-area")
   .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.left + margin.right);
+  .attr("width", WIDTH + MARGIN.LEFT + MARGIN.RIGHT)
+  .attr("height", HEIGHT + MARGIN.TOP + MARGIN.BOTTOM);
 
 const g = svg
   .append("g")
-  .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
+  .attr("transform", `translate(${MARGIN.LEFT}, ${MARGIN.TOP})`);
 
-const x = d3.scaleBand().range([0, width]).paddingInner(0.2).paddingOuter(0.2);
-const y = d3.scaleLinear().range([0, height]);
+// X label
+g.append("text")
+  .attr("class", "x axis-label")
+  .attr("x", WIDTH / 2)
+  .attr("y", HEIGHT + 60)
+  .attr("font-size", "20px")
+  .attr("text-anchor", "middle")
+  .text("Month");
+
+// Y label
+const yLabel = g
+  .append("text")
+  .attr("class", "y axis-label")
+  .attr("x", -(HEIGHT / 2))
+  .attr("y", -60)
+  .attr("font-size", "20px")
+  .attr("text-anchor", "middle")
+  .attr("transform", "rotate(-90)")
+  .text("Revenue ($)");
+
+const x = d3.scaleBand().range([0, WIDTH]).paddingInner(0.3).paddingOuter(0.2);
+
+const y = d3.scaleLinear().range([HEIGHT, 0]);
 
 const xAxisGroup = g
   .append("g")
-  .attr("class", "x-axis")
-  .attr("transform", "translate(0, " + height + ")");
-// .selectAll("text")
-// .attr("text-anchor", "end")
-// .attr("transform", "rotate(-40)");
+  .attr("class", "x axis")
+  .attr("transform", `translate(0, ${HEIGHT})`);
 
-const yAxisGroup = g.append("g").attr("class", "y-axis");
-g.append("text")
-  .attr("x", width / 2)
-  .attr("y", height + 140)
-  .attr("text-anchor", "middle")
-  .text("World large tallest buildings");
-d3.json("data/buildings.json").then((data) => {
+const yAxisGroup = g.append("g").attr("class", "y axis");
+
+d3.csv("data/revenues.csv").then((data) => {
   data.forEach((d) => {
-    d.height = +d.height;
+    d.revenue = Number(d.revenue);
+    d.profit = +d.profit;
   });
 
   d3.interval(() => {
-    console.log("Run");
     update(data);
+    flag = !flag;
   }, 1000);
-});
-function update(data) {
-  x.domain(data.map((d) => d.name));
-  y.domain([0, d3.max(data, (d) => d.height)]);
-  const xAxisCall = d3.axisBottom(x);
-  xAxisGroup.call(xAxisCall);
 
-  const yAxisCall = d3.axisLeft(y);
+  update(data);
+});
+
+function update(data) {
+  const value = flag ? "revenue" : "profit";
+  x.domain(data.map((d) => d.month));
+  y.domain([0, d3.max(data, (d) => d[value])]);
+
+  const xAxisCall = d3.axisBottom(x);
+  xAxisGroup
+    .call(xAxisCall)
+    .selectAll("text")
+    .attr("y", "10")
+    .attr("x", "-5")
+    .attr("text-anchor", "end")
+    .attr("transform", "rotate(-40)");
+
+  const yAxisCall = d3
+    .axisLeft(y)
+    .ticks(3)
+    .tickFormat((d) => d + "m");
   yAxisGroup.call(yAxisCall);
-  const rects = g.selectAll("rect").data(data).enter();
+
+  const rects = g.selectAll("rect").data(data);
 
   rects.exit().remove();
-  rects
-    .attr("x", (d) => x(d.name))
-    .attr("y", 20)
-    .attr("height", (d) => y(d.height))
-    .attr("width", x.bandwidth);
 
   rects
-    .append("rect")
-    .attr("x", (d) => x(d.name))
-    .attr("y", 20)
-    .attr("height", (d) => y(d.height))
+    .attr("y", (d) => y(d[value]))
+    .attr("x", (d) => x(d.month))
     .attr("width", x.bandwidth)
+    .attr("height", (d) => HEIGHT - y(d[value]));
+  rects
+    .enter()
+    .append("rect")
+    .attr("y", (d) => y(d[value]))
+    .attr("x", (d) => x(d.month))
+    .attr("width", x.bandwidth)
+    .attr("height", (d) => HEIGHT - y(d[value]))
     .attr("fill", "grey");
+
+  const label = flag ? "Revenue" : "Profit";
+  yLabel.text(label);
 }
