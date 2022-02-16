@@ -26,6 +26,11 @@ const resultWrapper = document.querySelector(".results");
 
 const onInput = async (event) => {
   const movies = await fetchDate(event.target.value);
+
+  if (!movies.length) {
+    dropdown.classList.remove("is-active");
+    return;
+  }
   //   if (!movies) return;
   resultWrapper.innerHTML = "";
   dropdown.classList.add("is-active");
@@ -36,6 +41,10 @@ const onInput = async (event) => {
         <img src = "${movie.Poster === "N/A" ? "" : movie.Poster}" />
         <h1>${movie.Title}</h1>
       `;
+    option.addEventListener("click", () => {
+      dropdown.classList.remove("is-active");
+      input.value = movie.Title;
+    });
     resultWrapper.appendChild(option);
   }
 };
@@ -43,3 +52,7 @@ const onInput = async (event) => {
 const firstMovieInput = document.querySelector(".input");
 
 firstMovieInput.addEventListener("input", debounce(onInput));
+
+document.addEventListener("click", (event) => {
+  if (!root.contains(event.target)) dropdown.classList.remove("is-active");
+});
