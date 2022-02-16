@@ -5,10 +5,22 @@ async function fetchDate(searchTerm) {
       s: searchTerm,
     },
   });
-  console.log(data);
+  if (data.Error) return [];
+  return data.Search;
 }
 
-const onInput = (event) => fetchDate(event.target.value);
+const onInput = async (event) => {
+  const movies = await fetchDate(event.target.value);
+  //   if (!movies) return;
+  for (let movie of movies) {
+    const div = document.createElement("div");
+    div.innerHTML = `
+        <img src = "${movie.Poster}" />
+        <h1>${movie.Title}</h1>
+      `;
+    document.querySelector("#target").appendChild(div);
+  }
+};
 const firstMovieInput = document.querySelector("#firstMovieInput");
 
 firstMovieInput.addEventListener("input", debounce(onInput));
