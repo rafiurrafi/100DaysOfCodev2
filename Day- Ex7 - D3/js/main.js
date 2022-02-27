@@ -8,32 +8,36 @@
  *    Mastering Data Visualization with D3.js
  *    5.3 - Adding an update function
  */
+
 const svg = d3
   .select("#chart-area")
   .append("svg")
   .attr("width", 400)
   .attr("height", 400);
 
-d3.json("data/revenues.json").then(function (data) {
-  data.forEach((d) => {
-    d.revenue = +d.revenue;
-  });
+d3.json("data/revenues.json").then((data) => {
+  data.forEach((d) => (d.revenue = +d.revenue));
+  const months = data.map((d) => d.month);
 
-  const xScale = d3
+  const x = d3
     .scaleBand()
-    .domain(data.map((d) => d.name))
+    .domain(data.map((d) => d.month))
     .range([0, 400])
-    .paddingInner(0.2)
-    .paddingOuter(0.2);
+    .paddingInner(0.3)
+    .paddingOuter(0.3);
+  const y = d3
+    .scaleLinear()
+    .domain([d3.min(data, (d) => d.revenue), d3.max(data, (d) => d.revenue)])
+    .range([0, 400]);
 
   const rect = svg
     .selectAll("rect")
     .data(data)
     .enter()
     .append("rect")
-    .attr("height", (d) => d.revenue)
+    .attr("x", (d, i) => x(d.month))
+    .attr("y", 20)
+    .attr("height", (d) => y(d.revenue))
     .attr("width", x.bandwidth)
-    .attr("x", (d, i) => i * 40)
-    .attr("Y", 20)
-    .attr("fill", "red");
+    .attr("fill", "gray");
 });
