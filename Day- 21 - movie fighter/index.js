@@ -9,58 +9,15 @@ async function fetchDate(searchTerm) {
   return data.Search;
 }
 
-const root = document.querySelector(".autocomplete");
-
-root.innerHTML = `
-  <label><b>Search For a Movie </b></label>
-  <input class = "input" />
-  <div class = "dropdown">
-    <div class = "dropdown-menu">
-      <div class = "dropdown-content results"></div>
-    </div>
-  </div>
-`;
-const input = document.querySelector(".input");
-const dropdown = document.querySelector(".dropdown");
-const resultWrapper = document.querySelector(".results");
-
-const onInput = async (event) => {
-  const movies = await fetchDate(event.target.value);
-
-  if (!movies.length) {
-    dropdown.classList.remove("is-active");
-    return;
-  }
-  //   if (!movies) return;
-  resultWrapper.innerHTML = "";
-  dropdown.classList.add("is-active");
-  for (let movie of movies) {
-    const option = document.createElement("a");
-    option.classList.add("dropdown-item");
-    option.innerHTML = `
-        <img src = "${movie.Poster === "N/A" ? "" : movie.Poster}" />
-        <h1>${movie.Title}</h1>
-      `;
-    option.addEventListener("click", () => {
-      dropdown.classList.remove("is-active");
-      input.value = movie.Title;
-      //make request
-      onMovieSelect(movie.imdbID);
-      //get data
-      //render to site
-    });
-    resultWrapper.appendChild(option);
-  }
-};
-
-const firstMovieInput = document.querySelector(".input");
-
-firstMovieInput.addEventListener("input", debounce(onInput));
-
-document.addEventListener("click", (event) => {
-  if (!root.contains(event.target)) dropdown.classList.remove("is-active");
+createAutoComplete({
+  root: document.querySelector(".autocomplete"),
+  renderOptions(movie) {
+    return `
+      <img src = "${movie.Poster === "N/A" ? "" : movie.Poster}" />
+      <h1>${movie.Title}</h1>
+    `;
+  },
 });
-
 //helper function
 async function onMovieSelect(movieId) {
   const movie = await axios.get("http://www.omdbapi.com", {
@@ -87,5 +44,25 @@ const movieTemplate = (movie) => {
         </div>
       </div>
     </article>
+    <article class="notification is-primary">
+        <p class="title">${movie.Awards}</p>
+        <p class="sub-title">Awards</p>
+      </article>
+      <article class="notification is-primary">
+          <p class="title">${movie.BoxOffice}</p>
+          <p class="sub-title">Awards</p>
+        </article>
+        <article class="notification is-primary">
+            <p class="title">${movie.Metascore}</p>
+            <p class="sub-title">Awards</p>
+          </article>
+          <article class="notification is-primary">
+              <p class="title">${movie.imdbRating}</p>
+              <p class="sub-title">Awards</p>
+            </article>
+            <article class="notification is-primary">
+                <p class="title">${movie.imdbVotes}</p>
+                <p class="sub-title">Awards</p>
+              </article>
   `;
 };
