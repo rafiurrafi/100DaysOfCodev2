@@ -36,3 +36,20 @@ body {
   background-color: black;
   color: red;
 }
+.menu-vertical {
+  width: 50px;
+  background-color: #888;
+}
+.menu-vertical a {
+  display: block;
+  font-size: 2rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+}
+.menu-vertical a:hover {
+  background-color: greenyellow;
+}
