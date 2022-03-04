@@ -1,0 +1,38 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+.container {
+  width: 400px;
+  height: 500px;
+  border: 1px solid #ccc;
+}
+.menu-container {
+  width: 100%;
+  background-color: #777;
+  text-align: center;
+}
+.menu-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.menu-container a {
+  width: 10%;
+  /* display: inline-block; */
+  float: left;
+  background-color: red;
+  padding: 2rem;
+  font-size: 2rem;
+}
+.menu-container a:hover {
+  background-color: black;
+  color: red;
+}
