@@ -11,7 +11,7 @@ body {
 }
 .container {
   width: 400px;
-  height: 500px;
+  min-height: 500px;
   border: 1px solid #ccc;
 }
 .menu-container {
@@ -52,4 +52,34 @@ body {
 }
 .menu-vertical a:hover {
   background-color: greenyellow;
+}
+/* section accordion  */
+.section-accordion {
+  padding: 3rem 0;
+  font-size: 1.6rem;
+}
+.section-accordion button {
+  width: 100%;
+  display: block;
+  border: none;
+  background-color: #ddd;
+  padding: 1rem;
+  cursor: point;
+}
+.section-accordion button:focus {
+  outline: none;
+}
+.accordion {
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+.panel {
+  /* padding: 1.5rem 2.5rem; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s;
+}
+.panel.active {
+  display: block;
 }

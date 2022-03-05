@@ -9,25 +9,38 @@
  *    5.3 - Adding an update function
  */
 
+var margin = { top: 10, right: 10, bottom: 100, left: 100 },
+  width = 960 - margin.left - margin.right,
+  height = 640 - margin.top - margin.bottom;
+
+// var svg = d3
+//   .select("body")
+//   .append("svg")
+//   .attr("width", width + margin.left + margin.right)
+//   .attr("height", height + margin.top + margin.bottom)
+
 const svg = d3
   .select("#chart-area")
   .append("svg")
-  .attr("width", 400)
-  .attr("height", 400);
-
-d3.json("data/revenues.json").then((data) => {
-  data.forEach((d) => (d.revenue = +d.revenue));
-  const months = data.map((d) => d.month);
+  .attr("height", height + margin.top + margin.bottom)
+  .attr("width", width.margin.left + margin.right)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+d3.json("data/buildings.json").then((data) => {
+  data.forEach((d) => {
+    d.height = +d.height;
+  });
 
   const x = d3
     .scaleBand()
-    .domain(data.map((d) => d.month))
+    .domain(data.map((d) => d.name))
     .range([0, 400])
-    .paddingInner(0.3)
-    .paddingOuter(0.3);
+    .paddingInner(0.2)
+    .paddingOuter(0.2);
+
   const y = d3
     .scaleLinear()
-    .domain([d3.min(data, (d) => d.revenue), d3.max(data, (d) => d.revenue)])
+    .domain([d3.min(data, (d) => d.height), d3.max(data, (d) => d.height)])
     .range([0, 400]);
 
   const rect = svg
@@ -35,9 +48,9 @@ d3.json("data/revenues.json").then((data) => {
     .data(data)
     .enter()
     .append("rect")
-    .attr("x", (d, i) => x(d.month))
-    .attr("y", 20)
-    .attr("height", (d) => y(d.revenue))
+    .attr("height", (d) => y(d.height))
     .attr("width", x.bandwidth)
-    .attr("fill", "gray");
+    .attr("x", (d) => x(d.name))
+    .attr("y", 50)
+    .attr("fill", "tomato");
 });
