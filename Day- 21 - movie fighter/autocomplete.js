@@ -1,4 +1,10 @@
-function createAutoComplete({ root, renderOption }) {
+function createAutoComplete({
+  root,
+  renderOption,
+  onOptionSelect,
+  inputValue,
+  fetchDate,
+}) {
   root.innerHTML = `
   <label><b>Search For a Movie </b></label>
   <input class = "input" />
@@ -13,24 +19,24 @@ function createAutoComplete({ root, renderOption }) {
   const resultWrapper = root.querySelector(".results");
 
   const onInput = async (event) => {
-    const movies = await fetchDate(event.target.value);
+    const items = await fetchDate(event.target.value);
 
-    if (!movies.length) {
+    if (!items.length) {
       dropdown.classList.remove("is-active");
       return;
     }
     //   if (!movies) return;
     resultWrapper.innerHTML = "";
     dropdown.classList.add("is-active");
-    for (let movie of movies) {
+    for (let item of items) {
       const option = document.createElement("a");
       option.classList.add("dropdown-item");
-      option.innerHTML = renderOption(movie);
+      option.innerHTML = renderOption(item);
       option.addEventListener("click", () => {
         dropdown.classList.remove("is-active");
-        input.value = movie.Title;
+        input.value = inputValue(item);
         //make request
-        onMovieSelect(movie.imdbID);
+        onOptionSelect(item.imdbID);
         //get data
         //render to site
       });
