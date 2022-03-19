@@ -83,3 +83,25 @@ function movieTemplate(movie) {
     </article>
   `;
 }
+// import axios from "axios";
+
+var options = {
+  method: "GET",
+  url: "https://shopify-products.p.rapidapi.com/product",
+  params: {
+    url: "https://partakefoods.com/products/crunchy-cookie-variety-pack",
+  },
+  headers: {
+    "x-rapidapi-host": "shopify-products.p.rapidapi.com",
+    "x-rapidapi-key": "b6ac20d5e4msh07aa770ccc79e04p1ba9c0jsn9581b3f23a03",
+  },
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
