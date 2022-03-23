@@ -13,52 +13,37 @@
     <title>Practise basic components of website</title>
   </head>
   <body>
-    <div class="container">
-      <div class="menu-container">
-        <a href=""><i class="fa fa-home"></i></a>
-        <a href=""><i class="fa fa-search"></i></a>
-        <a href=""><i class="fa fa-envelope"></i></a>
-        <a href=""><i class="fa fa-globe"></i></a>
-        <a href=""><i class="fa fa-trash"></i></a>
-      </div>
-      <!-- accordion  -->
-      <section class="section-accordion">
-        <div class="accordion">
-          <button>Accordion 1</button>
-          <div class="panel">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure ab
-            illo porro repellat? Quaerat sunt cumque unde numquam delectus
-            quidem natus facere quasi aut explicabo non, eum aspernatur
-            doloremque quod!
-          </div>
-        </div>
-        <div class="accordion">
-          <button>Accordion 1</button>
-          <div class="panel">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure ab
-            illo porro repellat? Quaerat sunt cumque unde numquam delectus
-            quidem natus facere quasi aut explicabo non, eum aspernatur
-            doloremque quod!
-          </div>
-        </div>
-        <div class="accordion">
-          <button>Accordion 1</button>
-          <div class="panel">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure ab
-            illo porro repellat? Quaerat sunt cumque unde numquam delectus
-            quidem natus facere quasi aut explicabo non, eum aspernatur
-            doloremque quod!
-          </div>
-        </div>
-      </section>
-      <div class="menu-vertical">
-        <a href=""><i class="fa fa-home"></i></a>
-        <a href=""><i class="fa fa-search"></i></a>
-        <a href=""><i class="fa fa-envelope"></i></a>
-        <a href=""><i class="fa fa-globe"></i></a>
-        <a href=""><i class="fa fa-trash"></i></a>
+    <style>
+      #paragraph {
+        max-height: 0;
+        overflow: hidden;
+        background-color: red;
+        transition: max-height 0.3s;
+      }
+      /* .content {
+        height: 0;
+      } */
+    </style>
+    <button>Click</button>
+    <div id="paragraph">
+      <div class="content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, ad
+        ipsum culpa voluptatum assumenda expedita inventore quia impedit
+        delectus tempore possimus consequatur quidem eligendi itaque commodi
+        quasi, ex eum cum.
       </div>
     </div>
+
     <script src="main.js"></script>
+    <script>
+      const button = document.querySelector("button");
+      const paragraph = document.querySelector("#paragraph");
+      const content = document.querySelector(".content");
+      button.addEventListener("click", (e) => {
+        if (!paragraph.style.maxHeight)
+          paragraph.style.maxHeight = paragraph.scrollHeight + "px";
+        else paragraph.style.maxHeight = null;
+      });
+    </script>
   </body>
 </html>
