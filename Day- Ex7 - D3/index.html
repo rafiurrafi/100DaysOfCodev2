@@ -15,20 +15,26 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <!-- <nav class="navbar navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="#"
           ><img id="logo" src="img/logo.png"
         /></a>
       </div>
-    </nav>
+    </nav> -->
 
     <!-- Bootstrap grid setup -->
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div id="chart-area"></div>
       </div>
-    </div>
+    </div> -->
+    <!-- Add 2 buttons -->
+    <button onclick="update(data1)">Variable 1</button>
+    <button onclick="update(data2)">Variable 2</button>
+
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
 
     <!-- External JS libraries -->
     <script src="https://d3js.org/d3.v5.min.js"></script>

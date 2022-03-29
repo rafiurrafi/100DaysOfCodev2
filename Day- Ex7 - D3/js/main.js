@@ -9,73 +9,73 @@
  *    5.3 - Adding an update function
  */
 
-const margin = { top: 10, right: 10, bottom: 100, left: 100 },
-  width = 500 - margin.left - margin.right,
+// create 2 data_set
+var data1 = [
+  { group: "A", value: 4 },
+  { group: "B", value: 16 },
+  { group: "C", value: 8 },
+];
+
+var data2 = [
+  { group: "A", value: 7 },
+  { group: "B", value: 1 },
+  { group: "C", value: 20 },
+];
+
+// set the dimensions and margins of the graph
+var margin = { top: 30, right: 30, bottom: 70, left: 60 },
+  width = 460 - margin.left - margin.right,
   height = 400 - margin.top - margin.bottom;
 
-const svg = d3
-  .select("#chart-area")
+// append the svg object to the body of the page
+var svg = d3
+  .select("#my_dataviz")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
-  .style("background-color", "#f1f1f1")
-  .style("margin", "20px 0");
-const g = svg
   .append("g")
-  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("data/buildings.json").then((data) => {
-  data.forEach((d) => {
-    d.height = +d.height;
-  });
+// X axis
+var x = d3
+  .scaleBand()
+  .range([0, width])
+  .domain(
+    data1.map(function (d) {
+      return d.group;
+    })
+  )
+  .padding(0.2);
+svg
+  .append("g")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(x));
 
-  const x = d3
-    .scaleBand()
-    .domain(data.map((d) => d.name))
-    .range([0, 400])
-    .paddingInner(0.2)
-    .paddingOuter(0.3);
+// Add Y axis
+var y = d3.scaleLinear().domain([0, 20]).range([height, 0]);
+svg.append("g").attr("class", "myYaxis").call(d3.axisLeft(y));
 
-  const xAxisCall = d3.axisBottom(x);
-  g.append("g")
-    .attr("class", "x-axis")
-    .attr("transform", `translate(0, ${height})`)
-    .call(xAxisCall)
-    .selectAll("text")
-    .attr("text-anchor", "end")
-    .attr("transform", "rotate(-40)");
+// A function that create / update the plot for a given variable:
+function update(data) {
+  var u = svg.selectAll("rect").data(data);
 
-  // xlabel
-  g.append("text")
-    .attr("class", "x-label")
-    .attr("x", width / 2)
-    .attr("y", height + 100)
-    .attr("text-anchor", "middle")
-    .text("World's largest buildings");
-
-  // ylabel
-  g.append("text")
-    .attr("class", "y-label")
-    .attr("x", -1)
-    .attr("y", height / 2)
-    .attr("transform", "rotate(90)")
-    .text("height");
-
-  const y = d3
-    .scaleLinear()
-    .domain([d3.min(data, (d) => d.height), d3.max(data, (d) => d.height)])
-    .range([height, 100]);
-
-  const yAxisCall = d3.axisLeft(y);
-  g.append("g").attr("class", "y-axis").call(yAxisCall);
-  g.selectAll("rect")
-    .data(data)
-    .enter()
+  u.enter()
     .append("rect")
-    .attr("x", (d) => x(d.name))
-    // .attr("y", (d) => y(d.height))
-    .attr("y", 40)
-    .attr("height", (d) => height - y(d.height))
-    .attr("width", x.bandwidth)
-    .attr("fill", "gray");
-});
+    .merge(u)
+    .transition()
+    .duration(1000)
+    .attr("x", function (d) {
+      return x(d.group);
+    })
+    .attr("y", function (d) {
+      return y(d.value);
+    })
+    .attr("width", x.bandwidth())
+    .attr("height", function (d) {
+      return height - y(d.value);
+    })
+    .attr("fill", "#69b3a2");
+}
+
+// Initialize the plot with the first dataset
+update(data1);
