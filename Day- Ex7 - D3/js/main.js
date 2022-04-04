@@ -64,13 +64,17 @@ function update(data) {
     .merge(u)
     .transition()
     .duration(1000)
-    .attr("x", function (d) {
-      return x(d.group);
+    .attr("x", function (d, i) {
+      // return x(d.group);
+      if (i === 0) return 65 + "px";
+      else if (i === 1) return 180 + "px";
+      else if (i === 2) return 295 + "px";
     })
     .attr("y", function (d) {
       return y(d.value);
     })
-    .attr("width", x.bandwidth())
+    // .attr("width", x.bandwidth())
+    .attr("width", 10)
     .attr("height", function (d) {
       return height - y(d.value);
     })
