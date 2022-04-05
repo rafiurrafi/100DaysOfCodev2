@@ -11,15 +11,15 @@
 
 // create 2 data_set
 var data1 = [
-  { group: "A", value: 4 },
-  { group: "B", value: 16 },
-  { group: "C", value: 8 },
+  { group: "A", value: 4, color: "#00AFDD" },
+  { group: "B", value: 16, color: "#166589" },
+  { group: "C", value: 8, color: "#213E7B" },
 ];
 
 var data2 = [
-  { group: "A", value: 7 },
-  { group: "B", value: 1 },
-  { group: "C", value: 20 },
+  { group: "A", value: 7, color: "#00AFDD" },
+  { group: "B", value: 1, color: "#166589" },
+  { group: "C", value: 20, color: "#213E7B" },
 ];
 
 // set the dimensions and margins of the graph
@@ -44,8 +44,10 @@ var x = d3
     data1.map(function (d) {
       return d.group;
     })
-  )
-  .padding(0.2);
+  );
+// .padding(0.2)
+// .align(0.5);
+// .paddingOuter(1);
 svg
   .append("g")
   .attr("class", "x-axis")
@@ -80,10 +82,12 @@ function update(data) {
     .transition()
     .duration(1000)
     .attr("x", function (d, i) {
-      // return x(d.group);
-      if (i === 0) return 65 + "px";
-      else if (i === 1) return 180 + "px";
-      else if (i === 2) return 295 + "px";
+      console.log(x(d.group));
+      return x(d.group) + 55 + "px";
+      // if (i === 0) return 65 + "px";
+      // else if (i === 1) return 180 + "px";
+      // else if (i === 2) return 295 + "px";
+      // return (i + )
     })
     .attr("y", function (d) {
       return y(d.value);
@@ -93,7 +97,8 @@ function update(data) {
     .attr("height", function (d) {
       return height - y(d.value);
     })
-    .attr("fill", "#69b3a2");
+    .attr("rx", 7)
+    .attr("fill", (d) => d.color);
 }
 
 // Initialize the plot with the first dataset
