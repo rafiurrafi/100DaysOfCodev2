@@ -48,12 +48,27 @@ var x = d3
   .padding(0.2);
 svg
   .append("g")
+  .attr("class", "x-axis")
   .attr("transform", "translate(0," + height + ")")
   .call(d3.axisBottom(x));
 
 // Add Y axis
 var y = d3.scaleLinear().domain([0, 20]).range([height, 0]);
-svg.append("g").attr("class", "myYaxis").call(d3.axisLeft(y));
+svg.append("g").attr("class", "myYaxis ").call(d3.axisLeft(y));
+
+// xtra start
+var yGridLine = d3.axisLeft(y).tickSize(-width, 0, 0).tickFormat("");
+
+// var ordinalColorScale = d3.scale.category20();
+
+svg
+  .append("g")
+  .classed("gridLine", true)
+  .attr("transform", "translate(0,0)")
+  .call(yGridLine)
+  .style("stroke-dasharray", "25 15");
+
+// xtra end
 
 // A function that create / update the plot for a given variable:
 function update(data) {

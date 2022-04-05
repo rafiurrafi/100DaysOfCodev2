@@ -81,7 +81,7 @@ g.append("g")
 
 // Y Axis
 const yAxisCall = d3.axisLeft(y);
-g.append("g").attr("class", "y axis").call(yAxisCall);
+g.append("g").attr("class", "y axis gridLine").call(yAxisCall);
 
 const continents = ["europe", "asia", "americas", "africa"];
 

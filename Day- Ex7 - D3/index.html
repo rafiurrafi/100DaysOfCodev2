@@ -13,6 +13,26 @@
     />
     <!-- Custom styling -->
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* .axis path,
+      .axis line {
+        fill: none;
+        stroke: black;
+      } */
+      .myYaxis > path {
+        opacity: 0;
+      }
+
+      .tick line {
+        opacity: 0.2;
+        stroke-dasharray: 35, 20;
+      }
+      .domain,
+      .x-axis .tick line,
+      .myYaxis .tick line {
+        stroke: white;
+      }
+    </style>
   </head>
   <body>
     <!-- <nav class="navbar navbar-light bg-light">
