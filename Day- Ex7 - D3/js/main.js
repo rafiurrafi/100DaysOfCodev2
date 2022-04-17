@@ -11,15 +11,15 @@
 
 // create 2 data_set
 var data1 = [
-  { group: "A", value: 4, color: "#00AFDD" },
-  { group: "B", value: 16, color: "#166589" },
-  { group: "C", value: 8, color: "#213E7B" },
+  { name: "online", value: 4, color: "#00AFDD" },
+  { name: "inperson", value: 16, color: "#166589" },
+  { name: "hybrid", value: 8, color: "#213E7B" },
 ];
 
 var data2 = [
-  { group: "A", value: 7, color: "#00AFDD" },
-  { group: "B", value: 1, color: "#166589" },
-  { group: "C", value: 20, color: "#213E7B" },
+  { name: "online", value: 7, color: "#00AFDD" },
+  { name: "inperson", value: 1, color: "#166589" },
+  { name: "hybrid", value: 20, color: "#213E7B" },
 ];
 
 // set the dimensions and margins of the graph
@@ -42,7 +42,7 @@ var x = d3
   .range([0, width])
   .domain(
     data1.map(function (d) {
-      return d.group;
+      return d.name;
     })
   );
 // .padding(0.2)
@@ -82,8 +82,8 @@ function update(data) {
     .transition()
     .duration(1000)
     .attr("x", function (d, i) {
-      console.log(x(d.group));
-      return x(d.group) + 55 + "px";
+      console.log(x(d.name));
+      return x(d.name) + 55 + "px";
       // if (i === 0) return 65 + "px";
       // else if (i === 1) return 180 + "px";
       // else if (i === 2) return 295 + "px";
