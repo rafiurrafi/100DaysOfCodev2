@@ -1,6 +1,25 @@
-// []
+// Bug Action types
 
-import { BUG_ADDED, BUG_REMOVED } from "./actionTypes";
+export const BUG_ADDED = "bugAdded";
+export const BUG_REMOVED = "bugRemoved";
+
+// actions
+export function bugAdded() {
+  return {
+    type: BUG_ADDED,
+    payload: {
+      description: "bug 1",
+    },
+  };
+}
+export function bugRemoved() {
+  return {
+    type: BUG_REMOVED,
+    payload: {
+      id: 1,
+    },
+  };
+}
 
 let lastId = 0;
 export default function reducer(state, action) {
