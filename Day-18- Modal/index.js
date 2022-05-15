@@ -3,13 +3,10 @@ import store from "./src/store";
 store.subscribe(() => {
   console.log("Store changed", store.getState);
 });
-
-store.dispatch({
-  type: BUG_ADDED,
-  payload: {
-    discription: "bug added",
-  },
+store.subscribe(() => {
+  console.log("State changed");
 });
+store.dispatch({ type: BUG_ADDED, payload: { id: 1 } });
 store.dispatch({
   type: BUG_REMOVED,
   payload: {
