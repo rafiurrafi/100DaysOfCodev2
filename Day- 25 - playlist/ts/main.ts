@@ -1,0 +1,1 @@
+let myFunc : (a : string, b : string) => void
