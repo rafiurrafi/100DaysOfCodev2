@@ -20,6 +20,17 @@ nameInput.addEventListener("input", () => {
   drawImage();
 });
 downloadBtn.addEventListener("click", () => {
-  downloadBtn.href = canvas.toDataURL();
-  downloadBtn.download = "Certificate " + nameInput.value;
+  if (nameInput.value.length > 3) {
+    downloadBtn.href = canvas.toDataURL();
+    downloadBtn.download = "Certificate " + nameInput.value;
+  } else {
+    showToast();
+  }
 });
+function showToast() {
+  const toast = document.querySelector("#toast");
+  toast.classList.add("active");
+  setTimeout(() => {
+    toast.classList.remove("active");
+  }, 1000);
+}

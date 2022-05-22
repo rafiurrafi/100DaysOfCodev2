@@ -1,0 +1,19 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.8rem;
+  overflow-x: hidden;
+}
+
+#toast {
+  background-color: red;
+  position: absolute;
+  top: 2rem;
+  right: -100%;
+  padding: 1rem 1.5rem;
+  transition: right 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#toast.active {
+  right: 0;
+}
