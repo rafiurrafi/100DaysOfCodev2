@@ -18,6 +18,14 @@
       .clone-item {
         color: white;
       }
+      .garbage {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        height: 70px;
+        width: 70px;
+        background-color: black;
+      }
     </style>
     <h2>🐕‍🦺DOM💃</h2>
     <div class="copy-items">
@@ -26,15 +34,17 @@
       <div class="copy-item">nice</div>
       <div class="copy-item">Cat</div>
     </div>
+    <div class="garbage"></div>
     <script>
       const copyItems = document.querySelectorAll(".copy-item");
+      const garbage = document.querySelector(".garbage");
       const holder = {};
       copyItems.forEach((item, index) => {
         item.style.left = index * 80 + "px";
         item.addEventListener("click", function () {
           holder.obj = item.cloneNode(true);
 
-          holder.obj.style.backgroundColor = "red";
+          holder.obj.style.backgroundColor = getColor();
           holder.obj.style.cursor = "move";
           holder.obj.startX = item.offsetLeft;
           holder.obj.startY = item.offsetTop;
@@ -52,7 +62,6 @@
               holder.obj.style.top = holder.obj.startY + "px";
             }
           }
-
           holder.obj.classList.add("clone-item");
           dragger(holder.obj);
           document.body.appendChild(holder.obj);
@@ -70,6 +79,10 @@
             document.onmousemove = null;
           };
           document.onmousemove = function (e) {
+            if (isColide(element)) {
+              element.onmousedown = null;
+              element.parentElement.removeChild(element);
+            } else console.log("ok");
             pos.updatedX = pos.x - e.clientX;
             pos.updatedY = pos.y - e.clientY;
 
@@ -79,7 +92,29 @@
             element.style.top = element.offsetTop - pos.updatedY + "px";
             element.style.left = element.offsetLeft - pos.updatedX + "px";
           };
+          function isColide(element) {
+            // const aBoundery = element.getBoundingClientRect();
+            // const bBoundery = garbage.getBoundingClientRect();
+            const a = element.getBoundingClientRect();
+            const b = garbage.getBoundingClientRect();
+
+            return !(
+              a.right < b.left ||
+              a.left > b.right ||
+              a.bottom < b.top ||
+              a.top > b.bottom
+            );
+          }
         }
+      }
+      function getColor() {
+        const c = () => {
+          const hex = Math.floor(Math.random() * 255).toString(16);
+          const updatedHex = ("0" + hex).substr(-2);
+          return updatedHex;
+        };
+        const generatedColor = "#" + c() + c() + c();
+        return generatedColor;
       }
     </script>
   </body>
