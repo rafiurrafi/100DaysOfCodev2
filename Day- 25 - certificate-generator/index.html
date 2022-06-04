@@ -11,11 +11,13 @@
     <!-- Menu section -->
     <div class="menu">
       <button id="add-text">Add text</button>
+      <input type="file" id="bg-img" accept="image/png, image/jpg" />
       <h4>Change text</h4>
-      <input type="text" id="input-text" />
+      <input type="text" id="input-text" /> <br />
+      Text color : <input type="color" id="text-color" />
       <div class="select">
         <p>select Text</p>
-        <ul class="select__options">
+        <ul class="select__options d-none">
           <li><span class="courier">Courier New', Courier, monospace</span></li>
           <li><span class="arial">Arial, Helvetica, sans-serif</span></li>
           <li>
@@ -28,14 +30,7 @@
           </li>
         </ul>
       </div>
-      <select name="" id="">
-        <option value="Courier New', Courier, monospace"></option>
-        <option value="Arial, Helvetica, sans-serif"></option>
-        <option value="Verdana, Geneva, Tahoma, sans-serif"></option>
-        <option
-          value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
-        ></option>
-      </select>
+
       <button id="update-text-btn">Update text</button>
     </div>
     <!-- playground -->

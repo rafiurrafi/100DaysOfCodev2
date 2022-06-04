@@ -3,6 +3,9 @@
   width: 400px;
   border: 1px solid orange;
   position: relative;
+  background-position: center;
+  background-size: cover;
+  /* z-index: -1; */
 }
 .courier {
   font-family: "Courier New", Courier, monospace;
@@ -18,12 +21,16 @@
 }
 .select {
   position: relative;
-  height: 10rem;
+  /* height: 10rem; */
 }
 .select__options {
+  background-color: red;
+  z-index: 2;
   list-style: none;
   padding: 0;
   margin: 0;
   position: absolute;
+}
+.d-none {
   display: none;
 }

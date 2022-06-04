@@ -2,9 +2,10 @@ const playground = document.querySelector(".playground");
 const addTextBtn = document.querySelector("#add-text");
 const textInput = document.querySelector("#input-text");
 const updateTextBtn = document.querySelector("#update-text-btn");
+const textColor = document.querySelector("#text-color");
 
 const select = document.querySelector(".select");
-const selectOptionsContainer = document.querySelectorAll(".select__options");
+const selectOptionsContainer = select.querySelector(".select__options");
 const selectOptions = document.querySelectorAll(".select__options li");
 const selectText = document.querySelector(".select > p");
 
@@ -14,6 +15,7 @@ addTextBtn.addEventListener("click", () => {
   const p = document.createElement("p");
   p.textContent = "Hello" + Math.random();
   p.style.position = "absolute";
+  p.style.zIndex = 1;
   p.style.cursor = "move";
   p.ondblclick = change;
   playground.appendChild(p);
@@ -50,10 +52,27 @@ function change(e) {
 }
 updateTextBtn.addEventListener("click", function () {
   selected.obj.textContent = textInput.value;
+  selected.obj.style.fontFamily = selected.obj.fontFamily;
+  selected.obj.style.color = `${textColor.value}`;
 });
 
 select.addEventListener("click", function () {
-  if (selectOptionsContainer.style.display === "none")
-    selectOptionsContainer.style.display = "block";
-  else selectOptionsContainer.style.display = "none";
+  selectOptionsContainer.classList.toggle("d-none");
+});
+selectOptions.forEach((option) => {
+  option.addEventListener("click", function () {
+    selected.obj.fontFamily = option.querySelector("span").textContent;
+  });
+});
+
+//add background image
+const bgImg = document.querySelector("#bg-img");
+let uploadedImg = "";
+bgImg.addEventListener("change", function () {
+  const reader = new FileReader();
+  reader.addEventListener("load", function () {
+    uploadedImg = reader.result;
+    playground.style.backgroundImage = `url(${uploadedImg})`;
+  });
+  reader.readAsDataURL(this.files[0]);
 });
