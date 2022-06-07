@@ -18,9 +18,8 @@ addTextBtn.addEventListener("click", () => {
   p.style.zIndex = 1;
   p.style.cursor = "move";
   p.ondblclick = change;
-  playground.appendChild(p);
-
   dragger(p);
+  playground.appendChild(p);
 });
 function dragger(element) {
   let pos = {};
@@ -29,18 +28,16 @@ function dragger(element) {
   function dragMouse(e) {
     pos.x = e.clientX;
     pos.y = e.clientY;
-
     document.onmouseup = function () {
       document.onmouseup = null;
       document.onmousemove = null;
     };
-
     document.onmousemove = function (e) {
       pos.ux = pos.x - e.clientX;
       pos.uy = pos.y - e.clientY;
       pos.x = e.clientX;
       pos.y = e.clientY;
-      console.log(pos.x, pos.y);
+
       element.style.left = element.offsetLeft - pos.ux + "px";
       element.style.top = element.offsetTop - pos.uy + "px";
     };

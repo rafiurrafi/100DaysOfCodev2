@@ -11,129 +11,76 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Practise basic components of website</title>
-    <style>
-      .apexcharts-bar-area {
-        stroke-width: 10;
-      }
-    </style>
   </head>
   <body>
-    <div id="chart"></div>
-    <button onclick="f('1d')">1d</button>
-    <button onclick="f('7d')">7d</button>
-    <button onclick="f('1m')">1m</button>
-    <button onclick="f('1y')">1y</button>
-    <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+      .item {
+        height: 40px;
+        width: 80px;
+        text-align: center;
+        line-height: 40px;
+        vertical-align: middle;
+        border: 1px solid red;
+        position: absolute;
+      }
+    </style>
+    <div class="items">
+      <div class="item">This</div>
+      <div class="item">is</div>
+      <div class="item">red</div>
+      <div class="item">cow</div>
+    </div>
     <script>
-      var dataSet = {
-        "1d": [
-          {
-            x: "Online",
-            y: 10,
-          },
-          {
-            x: "In person",
-            y: 18,
-          },
-          {
-            x: "category C",
-            y: 13,
-          },
-        ],
-        "7d": [
-          {
-            x: "Online",
-            y: 9,
-          },
-          {
-            x: "In person",
-            y: 15,
-          },
-          {
-            x: "category C",
-            y: 13,
-          },
-        ],
-        "1m": [
-          {
-            x: "Online",
-            y: 12,
-          },
-          {
-            x: "In person",
-            y: 19,
-          },
-          {
-            x: "category C",
-            y: 15,
-          },
-        ],
-        "1y": [
-          {
-            x: "Online",
-            y: 2,
-          },
-          {
-            x: "In person",
-            y: 5,
-          },
-          {
-            x: "category C",
-            y: 6,
-          },
-        ],
-      };
-      var data = dataSet["1d"];
-      let options = {
-        chart: {
-          type: "bar",
-        },
-        bar: {
-          borderRadius: 10,
-        },
-        grid: {
-          strokeDashArray: 30,
-        },
-        yaxis: {
-          tickAmount: 10,
-        },
-        series: [
-          {
-            data: data,
-          },
-        ],
-      };
-      console.log(options.series[0]);
+      const items = document.querySelectorAll(".item");
+      let holder = {};
+      items.forEach((item, index) => {
+        item.style.left = index * 120 + "px";
+        item.addEventListener("click", function (e) {
+          holder.obj = item.cloneNode(true);
+          holder.obj.startX = item.offsetLeft;
+          holder.obj.startY = item.offsetTop;
+          console.log(holder.obj.startX, holder.obj.startY);
+          holder.obj.style.cursor = "move";
 
-      var chart = new ApexCharts(document.querySelector("#chart"), options);
-      chart.render();
+          holder.obj.moves = Math.floor(Math.random() * 25);
+          holder.obj.int = setInterval(mover, 25);
 
-      //call function after button pressed
-      function f(value) {
-        var data = dataSet[value];
-        let options = {
-          chart: {
-            type: "bar",
-          },
-          bar: {
-            borderRadius: 10,
-          },
-          grid: {
-            strokeDashArray: 30,
-          },
-          yaxis: {
-            tickAmount: 10,
-          },
-          series: [
-            {
-              data: data,
-            },
-          ],
+          function mover() {
+            if (holder.obj.moves <= 0) clearInterval(holder.obj.int);
+            else {
+              holder.obj.moves--;
+              holder.obj.startX += 1;
+              holder.obj.startY += 10;
+              holder.obj.style.left = holder.obj.startX + "px";
+              holder.obj.style.top = holder.obj.startY + "px";
+            }
+          }
+
+          document.body.appendChild(holder.obj);
+          dragger(holder.obj);
+        });
+      });
+      function dragger(element) {
+        let pos = {};
+        element.onmousedown = function (e) {
+          pos.x = e.clientX;
+          pos.y = e.clientX;
+
+          document.onmouseup = function () {
+            document.onmouseup = null;
+            document.onmousemove = null;
+          };
+          document.onmousemove = function (e) {
+            pos.ux = pos.x - e.clientX;
+            pos.uy = pos.y - e.clientY;
+
+            pos.x = e.clientX;
+            pos.y = e.clientY;
+
+            element.style.left = element.offsetLeft - pos.ux + "px";
+            element.style.top = element.offsetTop - pos.uy + "px";
+          };
         };
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-        chart.render();
       }
     </script>
   </body>
