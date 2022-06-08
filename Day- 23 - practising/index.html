@@ -14,39 +14,53 @@
   </head>
   <body>
     <style>
+      body {
+        position: relative;
+      }
       .item {
         height: 40px;
         width: 40px;
-        background-color: orange;
+        background-color: orangered;
         position: absolute;
+        cursor: move;
       }
     </style>
-    <div class="item"></div>
+    <button>Add</button>
+    <div class="item-container"></div>
     <script>
-      const item = document.querySelector("item");
-      item.addEventListener("mousedown", mousedown);
-      function mousedown(e) {
-        window.addEventListener("mousemove", mousemove);
-        window.addEventListener("mouseup", mouseup);
+      const button = document.querySelector("button");
+      const itemContainer = document.querySelector(".item-container");
 
-        let prevX = e.clientX;
-        let prevY = e.clientY;
-        function mousemove(e) {
-          let newX = prevX - e.clientX;
-          let newY = prevY - e.clientY;
+      button.addEventListener("click", function () {
+        const item = document.createElement("div");
+        item.classList.add("item");
+        itemContainer.appendChild(item);
+        dragItem(item);
+      });
+      function dragItem(item) {
+        item.addEventListener("mousedown", function (e) {
+          let pos = {};
+          pos.x = e.clientX;
+          pos.y = e.clientY;
+          document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+          };
+          document.onmousemove = function (e) {
+            pos.ux = pos.x - e.clientX;
+            pos.uy = pos.y - e.clientY;
 
-          const rect = item.getBoundingClientRect();
-          item.style.left = rect.left - newX + "px";
-          item.style.top = rect.top - newY + "px";
+            pos.x = e.clientX;
+            pos.y = e.clientY;
+            // console.log(pos);
 
-          prevX = e.clientX;
-          prevY = e.clientY;
-        }
-        function mouseup() {
-          window.removeEventListener("mousemove", mousemove);
-          window.removeEventListener("mouseup", mouseup);
-        }
+            item.style.left = item.offsetLeft - pos.ux + "px";
+            item.style.top = item.offsetTop - pos.uy + "px";
+            console.log(item.style.left, item.style.top);
+          };
+        });
       }
+      // const item = document.querySelector(".item");
     </script>
   </body>
 </html>
