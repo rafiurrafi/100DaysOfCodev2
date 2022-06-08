@@ -79,7 +79,12 @@ bgImg.addEventListener("change", function () {
 
 //working with image
 const image = document.querySelector("#img");
+const heightImg = document.querySelector("#height");
+const widthImg = document.querySelector("#width");
+const updateImageBtn = document.querySelector("#update-img");
+
 let updatedImage = "";
+const selectedImg = {};
 image.addEventListener("change", function () {
   const imageReader = new FileReader();
   imageReader.addEventListener("load", function () {
@@ -89,8 +94,18 @@ image.addEventListener("change", function () {
     img.classList.add("image");
     img.style.height = "100px";
     img.style.width = "100px";
+    img.ondblclick = changeImage;
     dragger(img);
     playground.appendChild(img);
   });
   imageReader.readAsDataURL(this.files[0]);
+});
+function changeImage(e) {
+  selectedImg.obj = e.target;
+  heightImg.value = selectedImg.obj.style.height.slice(0, -2);
+  widthImg.value = selectedImg.obj.style.width.slice(0, -2);
+}
+updateImageBtn.addEventListener("click", (e) => {
+  selectedImg.obj.style.height = heightImg.value + "px";
+  selectedImg.obj.style.width = widthImg.value + "px";
 });
