@@ -34,3 +34,8 @@
 .d-none {
   display: none;
 }
+.image {
+  background-size: cover;
+  background-position: top;
+  position: absolute;
+}
