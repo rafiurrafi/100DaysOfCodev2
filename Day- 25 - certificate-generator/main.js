@@ -12,15 +12,17 @@ const selectText = document.querySelector(".select > p");
 let holder = {};
 let selected = {};
 addTextBtn.addEventListener("click", () => {
-  const p = document.createElement("p");
-  p.textContent = "Hello" + Math.random();
-  p.style.position = "absolute";
-  p.style.zIndex = 1;
-  p.style.cursor = "move";
-  p.ondblclick = change;
-  dragger(p);
-  playground.appendChild(p);
+  holder.obj = document.createElement("p");
+  holder.obj.textContent = "Hello" + Math.random();
+  holder.obj.style.position = "absolute";
+  holder.obj.style.zIndex = 1;
+  holder.obj.style.cursor = "move";
+  holder.obj.ondblclick = change;
+
+  dragger(holder.obj);
+  playground.appendChild(holder.obj);
 });
+// under observation
 function dragger(element) {
   let pos = {};
   element.onmousedown = dragMouse;
@@ -43,6 +45,7 @@ function dragger(element) {
     };
   }
 }
+//observation till this point
 function change(e) {
   textInput.value = e.target.textContent;
   selected.obj = e.target;
@@ -73,3 +76,20 @@ bgImg.addEventListener("change", function () {
   });
   reader.readAsDataURL(this.files[0]);
 });
+
+//working with image
+// const image = document.querySelector("#img");
+// let updatedImage = "";
+// image.addEventListener("change", function () {
+//   const imageReader = new FileReader();
+//   imageReader.addEventListener("load", function () {
+//     updatedImage = imageReader.result;
+//     const img = document.createElement("img");
+//     img.src = updatedImage;
+//     img.style.height = "100px";
+//     img.style.width = "100px";
+//     console.log(img);
+//     playground.appendChild(img);
+//   });
+//   imageReader.readAsDataURL(this.files[0]);
+// });

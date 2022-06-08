@@ -16,71 +16,36 @@
     <style>
       .item {
         height: 40px;
-        width: 80px;
-        text-align: center;
-        line-height: 40px;
-        vertical-align: middle;
-        border: 1px solid red;
+        width: 40px;
+        background-color: orange;
         position: absolute;
       }
     </style>
-    <div class="items">
-      <div class="item">This</div>
-      <div class="item">is</div>
-      <div class="item">red</div>
-      <div class="item">cow</div>
-    </div>
+    <div class="item"></div>
     <script>
-      const items = document.querySelectorAll(".item");
-      let holder = {};
-      items.forEach((item, index) => {
-        item.style.left = index * 120 + "px";
-        item.addEventListener("click", function (e) {
-          holder.obj = item.cloneNode(true);
-          holder.obj.startX = item.offsetLeft;
-          holder.obj.startY = item.offsetTop;
-          console.log(holder.obj.startX, holder.obj.startY);
-          holder.obj.style.cursor = "move";
+      const item = document.querySelector("item");
+      item.addEventListener("mousedown", mousedown);
+      function mousedown(e) {
+        window.addEventListener("mousemove", mousemove);
+        window.addEventListener("mouseup", mouseup);
 
-          holder.obj.moves = Math.floor(Math.random() * 25);
-          holder.obj.int = setInterval(mover, 25);
+        let prevX = e.clientX;
+        let prevY = e.clientY;
+        function mousemove(e) {
+          let newX = prevX - e.clientX;
+          let newY = prevY - e.clientY;
 
-          function mover() {
-            if (holder.obj.moves <= 0) clearInterval(holder.obj.int);
-            else {
-              holder.obj.moves--;
-              holder.obj.startX += 1;
-              holder.obj.startY += 10;
-              holder.obj.style.left = holder.obj.startX + "px";
-              holder.obj.style.top = holder.obj.startY + "px";
-            }
-          }
+          const rect = item.getBoundingClientRect();
+          item.style.left = rect.left - newX + "px";
+          item.style.top = rect.top - newY + "px";
 
-          document.body.appendChild(holder.obj);
-          dragger(holder.obj);
-        });
-      });
-      function dragger(element) {
-        let pos = {};
-        element.onmousedown = function (e) {
-          pos.x = e.clientX;
-          pos.y = e.clientX;
-
-          document.onmouseup = function () {
-            document.onmouseup = null;
-            document.onmousemove = null;
-          };
-          document.onmousemove = function (e) {
-            pos.ux = pos.x - e.clientX;
-            pos.uy = pos.y - e.clientY;
-
-            pos.x = e.clientX;
-            pos.y = e.clientY;
-
-            element.style.left = element.offsetLeft - pos.ux + "px";
-            element.style.top = element.offsetTop - pos.uy + "px";
-          };
-        };
+          prevX = e.clientX;
+          prevY = e.clientY;
+        }
+        function mouseup() {
+          window.removeEventListener("mousemove", mousemove);
+          window.removeEventListener("mouseup", mouseup);
+        }
       }
     </script>
   </body>

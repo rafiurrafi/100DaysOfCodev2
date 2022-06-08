@@ -1,18 +1,4 @@
-enum Role {
-  ADMIN,
-  READ_ONLY,
+function add(number1: number, number2: number) {
+  return number1 + number2;
 }
-const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: Role;
-} = {
-  name: "a",
-  age: 20,
-  hobbies: ["Sports", "Coocking"],
-  role: Role.ADMIN,
-};
-
-let favorites: string[];
-favorites = ["Hello"];
+add("hello", 1);
