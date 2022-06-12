@@ -13,17 +13,29 @@
     <title>Practise basic components of website</title>
   </head>
   <body>
-    <h3>Enter your name</h3>
-    <input type="text" />
-    <button>Greet</button>
+    <div class="output"></div>
+    <button>Show time</button>
     <script>
-      const message = document.querySelector("h3");
-      const tipInput = document.querySelector("input");
-      const calculateBtn = document.querySelector("button");
+      const output = document.querySelector(".output");
+      const button = document.querySelector("button");
 
-      calculateBtn.addEventListener("click", () => {
-        message.innerHTML = "Cheers   " + tipInput.value + " !!!!!!!!";
+      button.addEventListener("click", () => {
+        const time = new Date();
+        output.style.height = "100px";
+        output.style.width = "100px";
+        output.style.backgroundColor = getColor();
+        let message = "It's ";
+        if (time.getHours() < 12) message += "morning";
+        else message += " afternoon";
+        output.textContent = message;
       });
+      function getColor() {
+        function c() {
+          const hex = Math.floor(Math.random() * 256).toString(16);
+          return "0" + hex.substr(0, -2);
+        }
+        return "#" + c() + c() + c();
+      }
     </script>
   </body>
 </html>
