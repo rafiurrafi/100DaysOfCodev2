@@ -13,7 +13,7 @@ let holder = {};
 let selected = {};
 addTextBtn.addEventListener("click", () => {
   holder.obj = document.createElement("div");
-  holder.obj.textContent = "Hello" + Math.random();
+  holder.obj.textContent = "Name";
   holder.obj.style.position = "absolute";
   holder.obj.style.zIndex = 1;
   holder.obj.style.cursor = "move";
@@ -45,6 +45,7 @@ function dragger(element) {
     };
   }
 }
+
 //observation till this point
 function change(e) {
   textInput.value = e.target.textContent;
@@ -62,6 +63,8 @@ select.addEventListener("click", function () {
 selectOptions.forEach((option) => {
   option.addEventListener("click", function () {
     selected.obj.fontFamily = option.querySelector("span").textContent;
+    document.querySelector(".select-menu").textContent =
+      option.querySelector("span").textContent;
   });
 });
 

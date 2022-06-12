@@ -4,49 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="custom-input.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Generate Certificate</title>
   </head>
   <body>
-    <!-- Menu section -->
-    <div class="menu">
-      <button id="add-text">Add text</button>
-      <br />
-      <input type="file" id="img" accept="image/png, image/jpg" />
-      <br />
-      Background Image
-      <input type="file" id="bg-img" accept="image/png, image/jpg" />
-      <h4>Change text</h4>
-      <input type="text" id="input-text" /> <br />
-      Text color : <input type="color" id="text-color" />
-      <div class="select">
-        <p>select Text</p>
-        <ul class="select__options d-none">
-          <li><span class="courier">Courier New', Courier, monospace</span></li>
-          <li><span class="arial">Arial, Helvetica, sans-serif</span></li>
-          <li>
-            <span class="verdana">Verdana, Geneva, Tahoma, sans-serif</span>
-          </li>
-          <li>
-            <span class="impact"
-              >Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif</span
-            >
-          </li>
-        </ul>
+    <div class="certificate-container">
+      <!-- Menu section -->
+      <div class="menu">
+        <h2 class="logo">Logo_</h2>
+        <h3 class="title">Add sections</h3>
+        <button id="add-text">Add text</button>
+        <h3 class="title">Add Image</h3>
+        <input
+          type="file"
+          id="img"
+          class="custom-file-input"
+          accept="image/png, image/jpg"
+        />
+
+        <h3 class="title">Background Image</h3>
+        <input
+          type="file"
+          id="bg-img"
+          class="custom-file-input custom-bg-input"
+          accept="image/png, image/jpg"
+        />
+        <h4 class="title">Change text</h4>
+        <input type="text" id="input-text" /> <br />
+        Text color : <input type="color" id="text-color" />
+        <div class="select">
+          <p class="select-menu">select Text</p>
+          <ul class="select__options d-none">
+            <li>
+              <span class="courier">Courier New', Courier, monospace</span>
+            </li>
+            <li><span class="arial">Arial, Helvetica, sans-serif</span></li>
+            <li>
+              <span class="verdana">Verdana, Geneva, Tahoma, sans-serif</span>
+            </li>
+            <li>
+              <span class="impact"
+                >Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <button id="update-text-btn">Update text</button>
+        <h3 class="title">Update image</h3>
+        <label for="height">Height</label>
+        <input type="text" id="height" />
+        <label for="height">Width</label>
+        <input type="text" id="width" />
+        <br />
+        <button id="update-img">Update Image</button>
+        <button class="download-btn">Download</button>
+        <a id="download">Download</a>
       </div>
-
-      <button id="update-text-btn">Update text</button>
-      <p>Update image</p>
-      <label for="height">Height</label>
-      <input type="text" id="height" />
-      <label for="height">Height</label>
-      <input type="text" id="width" />
-      <br />
-      <button id="update-img">Update Image</button>
+      <!-- playground -->
+      <div class="playground"></div>
     </div>
-    <!-- playground -->
-    <div class="playground"></div>
-
     <script src="main.js"></script>
   </body>
 </html>

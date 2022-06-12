@@ -13,8 +13,23 @@
     <title>Practise basic components of website</title>
   </head>
   <body>
-    <input type="file" id="input-img" accept="image/png, image/jpg" />
-    <div id="display-img"></div>
-    <script></script>
+    <h3>Enter amount</h3>
+    <input type="text" />
+    <button>Calculate tip</button>
+    <script>
+      const message = document.querySelector("h3");
+      const tipInput = document.querySelector("input");
+      const calculateBtn = document.querySelector("button");
+
+      calculateBtn.addEventListener("click", () => {
+        console.log(typeof +tipInput.value);
+        if (!tipInput.value.length) {
+          console.log("Enter an amount");
+          return;
+        }
+
+        message.innerHTML = "You have got $" + tipInput.value + " tip";
+      });
+    </script>
   </body>
 </html>

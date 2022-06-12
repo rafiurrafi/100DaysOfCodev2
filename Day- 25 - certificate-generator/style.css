@@ -1,10 +1,49 @@
+.certificate-container {
+  display: flex;
+}
+/* Reusable  */
+.title {
+  color: white;
+  margin-bottom: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.logo {
+  font-size: 30px;
+  color: red;
+  margin-bottom: 30px;
+}
+/* menu  */
+.menu {
+  flex: 0 0 20%;
+  background-color: gray;
+  color: whtie;
+  min-height: 100vh;
+  padding: 10px 20px;
+}
+button {
+  border: none;
+  background-color: red;
+  color: white;
+  padding: 10px 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+/* playground  */
 .playground {
-  height: 300px;
-  width: 400px;
+  flex: 0 0 1;
+  height: 500px;
+  width: 700px;
   border: 1px solid orange;
   position: relative;
   background-position: center;
   background-size: cover;
+  margin-top: 10%;
+  margin-left: 10%;
+
   /* z-index: -1; */
 }
 .courier {
@@ -24,12 +63,16 @@
   /* height: 10rem; */
 }
 .select__options {
-  background-color: red;
+  background-color: #f1f1f1;
   z-index: 2;
   list-style: none;
   padding: 0;
   margin: 0;
   position: absolute;
+}
+.select__options li:hover {
+  cursor: pointer;
+  background-color: #ccc;
 }
 .d-none {
   display: none;
@@ -38,4 +81,21 @@
   background-size: cover;
   background-position: top;
   position: absolute;
+}
+.download-btn {
+  width: 100%;
+  padding: 10px 0;
+  display: block;
+  margin: 40px 0;
+  background-color: red;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  border: none;
+}
+.select-menu {
+  cursor: pointer;
+  margin: 10px 0;
+  border: 1px solid #f1f1f1;
+  padding: 5px 15px;
 }
