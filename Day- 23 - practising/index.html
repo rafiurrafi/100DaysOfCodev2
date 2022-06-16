@@ -13,28 +13,54 @@
     <title>Practise basic components of website</title>
   </head>
   <body>
-    <div class="output"></div>
-    <button>Show time</button>
+    <div class="message"></div>
+    <textarea disabled cols="30" rows="5" style="width: 100%"></textarea>
+    <button>Start</button>
     <script>
-      const output = document.querySelector(".output");
+      const words = [
+        "Do you like javascript as much as I do?",
+        "Hope you are making fun this is a simple game you can make",
+        "Source code is included so that you can create your own version of this challenge",
+      ];
+      const message = document.querySelector(".message");
+      const playText = document.querySelector("textarea");
       const button = document.querySelector("button");
+      let startTime, endTime;
 
-      button.addEventListener("click", () => {
-        const time = new Date();
-        output.style.height = "100px";
-        output.style.width = "100px";
-        output.style.backgroundColor = getColor();
-        let message = "It's ";
-        if (time.getHours() < 12) message += "morning";
-        else message += " afternoon";
-        output.textContent = message;
-      });
-      function getColor() {
-        function c() {
-          const hex = Math.floor(Math.random() * 256).toString(16);
-          return "0" + hex.substr(0, -2);
+      button.addEventListener("click", function () {
+        if (this.innerText === "Start") {
+          playText.disabled = false;
+          playGame();
+        } else if (this.innerText == "Done") {
+          playText.disabled = true;
+          this.innerText = "Start";
+          terminatePlay();
         }
-        return "#" + c() + c() + c();
+      });
+      function playGame() {
+        const randomValue = getRandomValue(words);
+        const sentence = words[randomValue];
+        message.innerText = sentence;
+
+        const date = new Date();
+        startTime = date.getTime();
+        button.innerText = "Done";
+      }
+      function terminatePlay() {
+        const date = new Date();
+        endTime = date.getTime();
+        const totalTime = (endTime - startTime) / 1000;
+
+        const writtenWord = playText.value;
+        const totalWord = wordCount(writtenWord);
+        const speed = Math.round((totalWord / totalTime) * 60);
+        console.log(speed);
+      }
+      function getRandomValue(arr) {
+        return Math.floor(Math.random() * arr.length);
+      }
+      function wordCount(words) {
+        return words.split(" ").length;
       }
     </script>
   </body>
