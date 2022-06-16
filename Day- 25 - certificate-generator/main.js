@@ -1,6 +1,7 @@
 const playground = document.querySelector(".playground");
 const addTextBtn = document.querySelector("#add-text");
 const textInput = document.querySelector("#input-text");
+const fontSizeInput = document.querySelector("#font-size-input");
 const updateTextBtn = document.querySelector("#update-text-btn");
 const textColor = document.querySelector("#text-color");
 
@@ -13,8 +14,9 @@ let holder = {};
 let selected = {};
 addTextBtn.addEventListener("click", () => {
   holder.obj = document.createElement("div");
-  holder.obj.textContent = "Name";
+  holder.obj.textContent = "<FULLNAME>";
   holder.obj.style.position = "absolute";
+  holder.obj.style.fontSize = "30px";
   holder.obj.style.zIndex = 1;
   holder.obj.style.cursor = "move";
   holder.obj.ondblclick = change;
@@ -49,11 +51,13 @@ function dragger(element) {
 //observation till this point
 function change(e) {
   textInput.value = e.target.textContent;
+  fontSizeInput.value = e.target.style.fontSize.slice(0, -2);
   selected.obj = e.target;
 }
 updateTextBtn.addEventListener("click", function () {
   selected.obj.textContent = textInput.value;
   selected.obj.style.fontFamily = selected.obj.fontFamily;
+  selected.obj.style.fontSize = fontSizeInput.value + "px";
   selected.obj.style.color = `${textColor.value}`;
 });
 
@@ -63,6 +67,7 @@ select.addEventListener("click", function () {
 selectOptions.forEach((option) => {
   option.addEventListener("click", function () {
     selected.obj.fontFamily = option.querySelector("span").textContent;
+
     document.querySelector(".select-menu").textContent =
       option.querySelector("span").textContent;
   });

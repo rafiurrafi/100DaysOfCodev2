@@ -13,31 +13,46 @@
       <!-- Menu section -->
       <div class="menu">
         <h2 class="logo">Logo_</h2>
-        <h3 class="title">Add sections</h3>
-        <button id="add-text">Add text</button>
-        <h3 class="title">Add Image</h3>
-        <input
-          type="file"
-          id="img"
-          class="custom-file-input"
-          accept="image/png, image/jpg"
-        />
 
-        <h3 class="title">Background Image</h3>
-        <input
-          type="file"
-          id="bg-img"
-          class="custom-file-input custom-bg-input"
-          accept="image/png, image/jpg"
-        />
-        <h4 class="title">Change text</h4>
+        <div class="add-name-container">
+          <h3 class="title">Add sections</h3>
+          <button id="add-text">Add text</button>
+        </div>
+
+        <div class="add-image-container">
+          <h3 class="title">Add Image</h3>
+          <input
+            type="file"
+            id="img"
+            class="custom-file-input"
+            accept="image/png, image/jpg"
+          />
+        </div>
+
+        <div class="add-background-image-container">
+          <h3 class="title">Background Image</h3>
+          <input
+            type="file"
+            id="bg-img"
+            class="custom-file-input custom-bg-input"
+            accept="image/png, image/jpg"
+          />
+        </div>
+        <h4 class="text-white mb-1">Change text</h4>
         <input type="text" id="input-text" /> <br />
-        Text color : <input type="color" id="text-color" />
+        <div class="my-2">
+          <span class="text-white">Text color </span>:
+          <input type="color" id="text-color" />
+        </div>
+        <div class="my-2">
+          <label for="">Font size</label>
+          <input type="text" id="font-size-input" style="width: 100px" />
+        </div>
         <div class="select">
-          <p class="select-menu">select Text</p>
+          <p class="select-menu text-white">Select Text</p>
           <ul class="select__options d-none">
             <li>
-              <span class="courier">Courier New', Courier, monospace</span>
+              <span class="courier"> Times, serif</span>
             </li>
             <li><span class="arial">Arial, Helvetica, sans-serif</span></li>
             <li>
@@ -51,16 +66,18 @@
           </ul>
         </div>
 
-        <button id="update-text-btn">Update text</button>
-        <h3 class="title">Update image</h3>
-        <label for="height">Height</label>
+        <button id="update-text-btn" style="margin-top: 20px">
+          Update text
+        </button>
+        <h3 class="title text-white" style="margin-top: 40px">Update image</h3>
+        <label for="height">H</label>
         <input type="text" id="height" />
-        <label for="height">Width</label>
+        <label id="width-label" for="height">W</label>
         <input type="text" id="width" />
         <br />
         <button id="update-img">Update Image</button>
-        <button class="download-btn">Download</button>
-        <a id="download">Download</a>
+        <!-- <button class="download-btn">Download</button> -->
+        <!-- <a id="download">Download</a> -->
       </div>
       <!-- playground -->
       <div class="playground"></div>
