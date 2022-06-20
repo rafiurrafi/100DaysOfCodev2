@@ -81,6 +81,11 @@ bgImg.addEventListener("change", function () {
   reader.addEventListener("load", function () {
     uploadedImg = reader.result;
     playground.style.backgroundImage = `url(${uploadedImg})`;
+    // style the playground
+    playground.style.height = "500px";
+    playground.style.width = "700px";
+    playground.style.backgroundSize = "cover";
+    playground.style.backgroundPosition = "center";
   });
   reader.readAsDataURL(this.files[0]);
 });
@@ -99,9 +104,13 @@ image.addEventListener("change", function () {
     updatedImage = imageReader.result;
     const img = document.createElement("div");
     img.style.backgroundImage = `url(${updatedImage})`;
-    img.classList.add("image");
+
+    // style
     img.style.height = "100px";
     img.style.width = "100px";
+    img.style.backgroundSize = "cover";
+    img.style.backgroundPosition = "top";
+    img.style.position = "absolute";
     img.ondblclick = changeImage;
     dragger(img);
     playground.appendChild(img);
@@ -116,4 +125,14 @@ function changeImage(e) {
 updateImageBtn.addEventListener("click", (e) => {
   selectedImg.obj.style.height = heightImg.value + "px";
   selectedImg.obj.style.width = widthImg.value + "px";
+});
+
+// Download btn functionalities
+const a = document.querySelector("#download-btn");
+
+a.addEventListener("click", () => {
+  a.download = "certificate.html";
+  a.href =
+    "data:text/html," +
+    document.getElementById("playground-container").innerHTML;
 });
