@@ -32,33 +32,44 @@
     let endTime;
 
     button.addEventListener("click", function () {
-      if (this.innerHTML === "Start") {
-        textArea.disabled = false;
-        this.innerHTML = "Done";
-        playGame();
-      } else if (this.innerHTML === "Done") {
-        textArea.disabled = true;
-        this.innerHTML = "Start";
-        endPlay();
-      }
+      if (this.innerText === "Start") playGame(this);
+      else if (this.textContent === "Done") endGame(this);
     });
-    function playGame() {
-      const randomNumber = Math.floor(Math.random() * words.length);
-      message.innerHTML = words[randomNumber];
+    function playGame(e) {
+      e.textContent = "Done";
+      textArea.disabled = false;
+      message.textContent = getSentence(words);
       const date = new Date();
       startTime = date.getTime();
     }
-    function endPlay() {
+    function endGame(e) {
+      e.textContent = "Start";
+      textArea.disabled = true;
       const date = new Date();
       endTime = date.getTime();
       const duration = (endTime - startTime) / 1000;
       const sentence = textArea.value;
-      const wordCount = wordCounter(sentence);
-      const speed = Math.floor((wordCount / duration) * 60);
-      message.innerHTML = `You type ${speed} words per minute`;
+      const writtenWord = wordCounter(sentence);
+      const speed = Math.floor((writtenWord / duration) * 60);
+      let result = "You have word " + speed + " words per min";
+      result += compareWords(message.innerHTML, sentence);
+      message.textContent = result;
+    }
+    function getSentence(words) {
+      const random = Math.floor(Math.random() * words.length);
+      return words[random];
     }
     function wordCounter(sentence) {
       return sentence.split(" ").length;
+    }
+    function compareWords(words1, words2) {
+      const w1 = words1.split(" ");
+      const w2 = words2.split(" ");
+      let count = 0;
+      w1.forEach((word, index) => {
+        if (word === w2[index]) count++;
+      });
+      return "You have correct " + count + " out of " + w1.length + 1;
     }
   </script>
 </html>
