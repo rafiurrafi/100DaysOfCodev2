@@ -17,4 +17,48 @@
     <textarea name="" id="" cols="30" rows="10" disabled></textarea>
     <button>Start</button>
   </body>
+  <script>
+    const words = [
+      "I am a little boy and I love eating",
+      "Do you love to go to restaurant with me",
+      "Do you like chicken or shall I order something else",
+      "I love beef and mutton with polao as curry",
+    ];
+    const message = document.querySelector(".message");
+    const textArea = document.querySelector("textarea");
+    const button = document.querySelector("button");
+
+    let startTime;
+    let endTime;
+
+    button.addEventListener("click", function () {
+      if (this.innerHTML === "Start") {
+        textArea.disabled = false;
+        this.innerHTML = "Done";
+        playGame();
+      } else if (this.innerHTML === "Done") {
+        textArea.disabled = true;
+        this.innerHTML = "Start";
+        endPlay();
+      }
+    });
+    function playGame() {
+      const randomNumber = Math.floor(Math.random() * words.length);
+      message.innerHTML = words[randomNumber];
+      const date = new Date();
+      startTime = date.getTime();
+    }
+    function endPlay() {
+      const date = new Date();
+      endTime = date.getTime();
+      const duration = (endTime - startTime) / 1000;
+      const sentence = textArea.value;
+      const wordCount = wordCounter(sentence);
+      const speed = Math.floor((wordCount / duration) * 60);
+      message.innerHTML = `You type ${speed} words per minute`;
+    }
+    function wordCounter(sentence) {
+      return sentence.split(" ").length;
+    }
+  </script>
 </html>
