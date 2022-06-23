@@ -12,70 +12,55 @@
     <link rel="stylesheet" href="style.css" />
     <title>Practise basic components of website</title>
   </head>
-  <body>
-    <p class="message"></p>
-    <textarea name="" id="" cols="30" rows="10" disabled></textarea>
-    <button>Start</button>
-  </body>
+  <body></body>
   <script>
-    const words = [
-      "I am a little boy and I love eating",
-      "Do you love to go to restaurant with me",
-      "Do you like chicken or shall I order something else",
-      "I love beef and mutton with polao as curry",
-    ];
-    const message = document.querySelector(".message");
-    const textArea = document.querySelector("textarea");
-    const button = document.querySelector("button");
-
-    let startTime;
-    let endTime;
-
-    button.addEventListener("click", function () {
-      if (this.innerHTML === "Start") {
-        textArea.disabled = false;
-        this.textContent = "Done";
-        playGame();
-      } else if (this.innerHTML === "Done") {
-        textArea.disabled = true;
-        this.textContent = "Start";
-        endGame();
-      }
+    let block;
+    document.addEventListener("DOMContentLoaded", function () {
+      block = document.createElement("div");
+      block.textContent = "Hello Kitty";
+      block.style.height = "100px";
+      block.style.width = "100px";
+      block.style.textAlign = "center";
+      block.style.position = "absolute";
+      block.style.left = "100px";
+      block.style.top = "100px";
+      block.style.lineHeight = "100px";
+      block.style.verticalAlign = "middle  ";
+      block.style.backgroundColor = "red";
+      block.style.color = "white";
+      document.body.appendChild(block);
     });
-    function playGame() {
-      //show message
-      const word = getWord(words);
-      message.innerHTML = word;
-      //count the start time
-      const date = new Date();
-      startTime = date.getTime();
-    }
-    function endGame() {
-      const date = new Date();
-      endTime = date.getTime();
-      const duration = (endTime - startTime) / 1000;
-      const str = textArea.value;
-      const countWord = wordCounter(str);
-      const speed = Math.floor((countWord / duration) * 60);
-      const result = compareWord(message.innerHTML, str);
-      message.innerHTML = `You have typerd ${speed} word per minute <br /> ${result}`;
-    }
-    function getWord(words) {
-      const random = Math.floor(Math.random() * words.length);
-      return words[random];
-    }
-    function wordCounter(str) {
-      return str.split(" ").length;
-    }
-    function compareWord(str1, str2) {
-      const words1 = str1.split(" ");
-      const words2 = str2.split(" ");
-      let count = 0;
 
-      words1.forEach((word, index) => {
-        if (word === words2[index]) count++;
-      });
-      return "Correct " + count + " out of " + words1.length + 1;
+    document.addEventListener("keydown", (e) => {
+      if (e.keyCode == 37) goLeft();
+      else if (e.keyCode == 38) goTop();
+      else if (e.keyCode == 39) goRight();
+      else if (e.keyCode == 40) goBottom();
+      else if (e.keyCode === 67) block.style.backgroundColor = colorGenerator();
+    });
+
+    function goLeft() {
+      let temp = block.offsetLeft;
+      temp -= 50;
+      block.style.left = temp + "px";
+    }
+    function goRight() {
+      let temp = block.offsetLeft;
+      temp += 50;
+      block.style.left = temp + "px";
+    }
+    function goBottom() {
+      let temp = block.offsetTop;
+      temp += 50;
+      block.style.top = temp + "px";
+    }
+    function goTop() {
+      let temp = block.offsetTop;
+      temp -= 50;
+      block.style.top = temp + "px";
+    }
+    function colorGenerator() {
+      return "#" + Math.random().toString(16).substr(-6);
     }
   </script>
 </html>
