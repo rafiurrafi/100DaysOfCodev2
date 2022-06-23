@@ -32,44 +32,50 @@
     let endTime;
 
     button.addEventListener("click", function () {
-      if (this.innerText === "Start") playGame(this);
-      else if (this.textContent === "Done") endGame(this);
+      if (this.innerHTML === "Start") {
+        textArea.disabled = false;
+        this.textContent = "Done";
+        playGame();
+      } else if (this.innerHTML === "Done") {
+        textArea.disabled = true;
+        this.textContent = "Start";
+        endGame();
+      }
     });
-    function playGame(e) {
-      e.textContent = "Done";
-      textArea.disabled = false;
-      message.textContent = getSentence(words);
+    function playGame() {
+      //show message
+      const word = getWord(words);
+      message.innerHTML = word;
+      //count the start time
       const date = new Date();
       startTime = date.getTime();
     }
-    function endGame(e) {
-      e.textContent = "Start";
-      textArea.disabled = true;
+    function endGame() {
       const date = new Date();
       endTime = date.getTime();
       const duration = (endTime - startTime) / 1000;
-      const sentence = textArea.value;
-      const writtenWord = wordCounter(sentence);
-      const speed = Math.floor((writtenWord / duration) * 60);
-      let result = "You have word " + speed + " words per min";
-      result += compareWords(message.innerHTML, sentence);
-      message.textContent = result;
+      const str = textArea.value;
+      const countWord = wordCounter(str);
+      const speed = Math.floor((countWord / duration) * 60);
+      const result = compareWord(message.innerHTML, str);
+      message.innerHTML = `You have typerd ${speed} word per minute <br /> ${result}`;
     }
-    function getSentence(words) {
+    function getWord(words) {
       const random = Math.floor(Math.random() * words.length);
       return words[random];
     }
-    function wordCounter(sentence) {
-      return sentence.split(" ").length;
+    function wordCounter(str) {
+      return str.split(" ").length;
     }
-    function compareWords(words1, words2) {
-      const w1 = words1.split(" ");
-      const w2 = words2.split(" ");
+    function compareWord(str1, str2) {
+      const words1 = str1.split(" ");
+      const words2 = str2.split(" ");
       let count = 0;
-      w1.forEach((word, index) => {
-        if (word === w2[index]) count++;
+
+      words1.forEach((word, index) => {
+        if (word === words2[index]) count++;
       });
-      return "You have correct " + count + " out of " + w1.length + 1;
+      return "Correct " + count + " out of " + words1.length + 1;
     }
   </script>
 </html>
