@@ -15,6 +15,8 @@
   <body></body>
   <script>
     let block;
+    let functionContainer;
+    const funs = [];
     document.addEventListener("DOMContentLoaded", function () {
       block = document.createElement("div");
       block.textContent = "Hello Kitty";
@@ -29,14 +31,17 @@
       block.style.backgroundColor = "red";
       block.style.color = "white";
       document.body.appendChild(block);
+      functionContainer = document.createElement("div");
+      document.body.appendChild(functionContainer);
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.keyCode == 37) goLeft();
-      else if (e.keyCode == 38) goTop();
-      else if (e.keyCode == 39) goRight();
-      else if (e.keyCode == 40) goBottom();
+      if (e.keyCode == 37) addFunction("left");
+      else if (e.keyCode == 38) addFunction("top");
+      else if (e.keyCode == 39) addFunction("right");
+      else if (e.keyCode == 40) addFunction("down");
       else if (e.keyCode === 67) block.style.backgroundColor = colorGenerator();
+      else if (e.keyCode === 13 || e.keyCode === 32) mover();
     });
 
     function goLeft() {
@@ -59,8 +64,37 @@
       temp -= 50;
       block.style.top = temp + "px";
     }
+    function addFunction(value) {
+      const span = document.createElement("span");
+      span.textContent = "+" + value;
+      span.style.padding = "10px";
+      span.style.border = "1px solid orangered";
+      span.addEventListener("mouseover", function () {
+        this.style.backgroundColor = "red";
+        this.style.color = "white";
+      });
+      span.addEventListener("mouseout", function () {
+        this.style.backgroundColor = "transparent";
+        this.style.color = "black";
+      });
+
+      functionContainer.appendChild(span);
+      funs.push(span);
+    }
     function colorGenerator() {
       return "#" + Math.random().toString(16).substr(-6);
+    }
+    function mover() {
+      if (funs.length > 0) {
+        let current = block.getBoundingClientRect();
+        const el = funs.shift();
+        let item = el.textContent.replace("+", "");
+        functionContainer.removeChild(el);
+        if (item === "left") block.style.left = current.left - 30 + "px";
+        if (item === "top") block.style.top = current.top - 30 + "px";
+        if (item === "right") block.style.left = current.left + 30 + "px";
+        if (item === "bottom") block.style.bottom = current.top + 30 + "px";
+      }
     }
   </script>
 </html>
