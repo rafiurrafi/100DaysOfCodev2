@@ -1,15 +1,14 @@
-const restaurants = [
-  "martin.com",
-  "rolex.com",
-  "relax.com",
-  "rolexDhaka.com",
-  "rolexBiriany.com",
-  "rolexTandur.com",
-  "rolexDoiGhor.com",
+const meals = [
+  "rice",
+  "meat",
+  "beef",
+  "chicken",
+  "chicken tanduri",
+  "chicken sizzling",
+  "chicken curry",
 ];
-const searchRestaurant = (searchQuery, db) => {
-  const result = db.filter((restaurant) => restaurant.includes(searchQuery));
-  return result.length > 3 ? result.slice(0, 3) : result;
+const searchMeal = (item, db) => {
+  const items = db.filter((meal) => meal.includes(item));
+  return items.length > 3 ? items.slice(0, 3) : items;
 };
-
-module.exports = searchRestaurant;
+module.exports = searchMeal;

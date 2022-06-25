@@ -1,9 +1,18 @@
-const searchRestaurant = require("./script");
+const searchMeal = require("./script");
+meals = [
+  "rice",
+  "meat",
+  "beef",
+  "chicken",
+  "chicken tanduri",
+  "chicken sizzling",
+  "chicken curry",
+];
 
-dbMock = ["home.com", "homePalace.com", "homeSite.com", "katherine.com"];
-it("is a silly test", () => {
-  expect("hello").toBe("hello");
+it("can test silly file", () => {
+  expect(10).toBe(10);
 });
-it("can search a restaurant", () => {
-  expect(searchRestaurant("home", dbMock).length).toEqual(3);
+
+it("can test chicken item", () => {
+  expect(searchMeal("chicken", meals).length).toEqual(3);
 });

@@ -2,7 +2,8 @@
   "name": "day--24--tesing",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
+  "type": "module",
   "scripts": {
     "test": "jest --watch *.js"
   },
@@ -10,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^28.1.1"
+  },
+  "dependencies": {
+    "node-fetch": "^2.1.2"
   }
 }
