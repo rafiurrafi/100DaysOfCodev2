@@ -13,4 +13,8 @@ const getPeopleAwait = async (fetch) => {
   const response = await fetch("https://swapi.co/api/people");
   const data = await response.json();
 };
-console.log(getPeople(fetch));
+
+module.export = {
+  getPeople,
+  getPeopleAwait,
+};
