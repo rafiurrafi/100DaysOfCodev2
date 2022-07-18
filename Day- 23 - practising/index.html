@@ -12,89 +12,51 @@
     <link rel="stylesheet" href="style.css" />
     <title>Practise basic components of website</title>
   </head>
-  <body></body>
+  <body>
+    <p id="message"></p>
+    <textarea name="" disabled id="" cols="30" rows="10"></textarea>
+    <button>Start</button>
+  </body>
   <script>
-    let block;
-    let functionContainer;
-    const funs = [];
-    document.addEventListener("DOMContentLoaded", function () {
-      block = document.createElement("div");
-      block.textContent = "Hello Kitty";
-      block.style.height = "100px";
-      block.style.width = "100px";
-      block.style.textAlign = "center";
-      block.style.position = "absolute";
-      block.style.left = "100px";
-      block.style.top = "100px";
-      block.style.lineHeight = "100px";
-      block.style.verticalAlign = "middle  ";
-      block.style.backgroundColor = "red";
-      block.style.color = "white";
-      document.body.appendChild(block);
-      functionContainer = document.createElement("div");
-      document.body.appendChild(functionContainer);
+    const message = document.querySelector("#message");
+    const textarea = document.querySelector("textarea");
+    const button = document.querySelector("button");
+
+    let startTime;
+    let endTime;
+
+    button.addEventListener("click", function () {
+      if (this.innerHTML === "Start") {
+        playGame(this);
+      } else if (this.innerHTML === "Done") endGame(this);
     });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.keyCode == 37) addFunction("left");
-      else if (e.keyCode == 38) addFunction("top");
-      else if (e.keyCode == 39) addFunction("right");
-      else if (e.keyCode == 40) addFunction("down");
-      else if (e.keyCode === 67) block.style.backgroundColor = colorGenerator();
-      else if (e.keyCode === 13 || e.keyCode === 32) mover();
-    });
-
-    function goLeft() {
-      let temp = block.offsetLeft;
-      temp -= 50;
-      block.style.left = temp + "px";
+    function playGame(e) {
+      e.innerHTML = "Done";
+      textarea.disabled = false;
+      const date = new Date();
+      startTime = date.getTime();
     }
-    function goRight() {
-      let temp = block.offsetLeft;
-      temp += 50;
-      block.style.left = temp + "px";
+    function endGame(event) {
+      event.innerHTML = "Start";
+      textarea.disabled = true;
+      const date = new Date();
+      endTime = date.getTime();
+      const duration = (endTime - startTime) / 1000; //sec
+      const writtenText = textarea.value;
+      const totalWord = wordCounter(writtenText);
+      const speed = Math.round((totalWord / duration) * 60);
+      console.log(speed);
     }
-    function goBottom() {
-      let temp = block.offsetTop;
-      temp += 50;
-      block.style.top = temp + "px";
+    function wordCounter(str) {
+      return str.split(" ").length;
     }
-    function goTop() {
-      let temp = block.offsetTop;
-      temp -= 50;
-      block.style.top = temp + "px";
-    }
-    function addFunction(value) {
-      const span = document.createElement("span");
-      span.textContent = "+" + value;
-      span.style.padding = "10px";
-      span.style.border = "1px solid orangered";
-      span.addEventListener("mouseover", function () {
-        this.style.backgroundColor = "red";
-        this.style.color = "white";
+    function compare(src, des) {
+      let count = 0;
+      const words1 = src.split(" ");
+      const words2 = des.split(" ");
+      words1.forEach((item, index) => {
+        if (item === words2[index]) count++;
       });
-      span.addEventListener("mouseout", function () {
-        this.style.backgroundColor = "transparent";
-        this.style.color = "black";
-      });
-
-      functionContainer.appendChild(span);
-      funs.push(span);
-    }
-    function colorGenerator() {
-      return "#" + Math.random().toString(16).substr(-6);
-    }
-    function mover() {
-      if (funs.length > 0) {
-        let current = block.getBoundingClientRect();
-        const el = funs.shift();
-        let item = el.textContent.replace("+", "");
-        functionContainer.removeChild(el);
-        if (item === "left") block.style.left = current.left - 30 + "px";
-        if (item === "top") block.style.top = current.top - 30 + "px";
-        if (item === "right") block.style.left = current.left + 30 + "px";
-        if (item === "bottom") block.style.bottom = current.top + 30 + "px";
-      }
     }
   </script>
 </html>
