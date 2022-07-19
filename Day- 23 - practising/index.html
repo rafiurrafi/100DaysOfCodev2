@@ -12,51 +12,104 @@
     <link rel="stylesheet" href="style.css" />
     <title>Practise basic components of website</title>
   </head>
-  <body>
-    <p id="message"></p>
-    <textarea name="" disabled id="" cols="30" rows="10"></textarea>
-    <button>Start</button>
-  </body>
+  <body></body>
   <script>
-    const message = document.querySelector("#message");
-    const textarea = document.querySelector("textarea");
-    const button = document.querySelector("button");
-
-    let startTime;
-    let endTime;
-
-    button.addEventListener("click", function () {
-      if (this.innerHTML === "Start") {
-        playGame(this);
-      } else if (this.innerHTML === "Done") endGame(this);
+    let block;
+    let listContainer;
+    let list = [];
+    const movementArray = ["top", "bottom", "right", "left"];
+    document.addEventListener("DOMContentLoaded", function () {
+      block = document.createElement("div");
+      block.innerText = "Hello World";
+      block.style.height = "100px";
+      block.style.width = "100px";
+      block.style.backgroundColor = genRandomColor();
+      block.style.color = "white";
+      block.style.position = "absolute";
+      block.style.lineHeight = "100px";
+      block.style.textAlign = "center";
+      block.style.top = "100px";
+      block.style.left = "100px";
+      document.body.appendChild(block);
+      listContainer = document.createElement("div");
+      document.body.appendChild(listContainer);
     });
-    function playGame(e) {
-      e.innerHTML = "Done";
-      textarea.disabled = false;
-      const date = new Date();
-      startTime = date.getTime();
+    document.addEventListener("keydown", (e) => {
+      e.preventDefault();
+      if (e.keyCode === 37) addItem("left");
+      if (e.keyCode === 38) addItem("top");
+      if (e.keyCode === 39) addItem("right");
+      if (e.keyCode === 40) addItem("bottom");
+      if (e.keyCode === 67) block.style.backgroundColor = genRandomColor();
+      if (e.keyCode === 13 || e.keyCode === 32) mover();
+      if (e.keyCode === 82) addRandomMove();
+    });
+    function mover() {
+      const current = block.getBoundingClientRect();
+      const el = list.shift();
+      const text = el.textContent.replace("+", "");
+      listContainer.removeChild(el);
+      block.textContent = "move : " + text;
+      if (text === "left")
+        block.style.left = current.left - current.width + "px";
+      if (text === "right")
+        block.style.left = current.left + current.width + "px";
+      if (text === "top") block.style.top = current.top - current.height + "px";
+      if (text === "bottom")
+        block.style.top = current.top + current.height + "px";
+      // setTimeout(() => {
+      //   mover;
+      // }, 300);
     }
-    function endGame(event) {
-      event.innerHTML = "Start";
-      textarea.disabled = true;
-      const date = new Date();
-      endTime = date.getTime();
-      const duration = (endTime - startTime) / 1000; //sec
-      const writtenText = textarea.value;
-      const totalWord = wordCounter(writtenText);
-      const speed = Math.round((totalWord / duration) * 60);
-      console.log(speed);
+    function addRandomMove() {
+      const temp = movementArray(
+        Math.floor(Math.random() * movementArray.length)
+      );
+      addItem(temp);
     }
-    function wordCounter(str) {
-      return str.split(" ").length;
+    function goLeft() {
+      let temp = block.offsetLeft;
+      temp -= 50;
+      block.style.left = temp + "px";
     }
-    function compare(src, des) {
-      let count = 0;
-      const words1 = src.split(" ");
-      const words2 = des.split(" ");
-      words1.forEach((item, index) => {
-        if (item === words2[index]) count++;
+    function goRight() {
+      let temp = block.offsetLeft;
+      temp += 50;
+      block.style.left = temp + "px";
+    }
+    function goTop() {
+      let temp = block.offsetTop;
+      temp -= 50;
+      block.style.top = temp + "px";
+    }
+    function goBottom() {
+      let temp = block.offsetTop;
+      temp += 50;
+      block.style.top = temp + "px";
+    }
+    function genRandomColor() {
+      return "#" + Math.random().toString(16).substr(-6);
+    }
+    function addItem(item) {
+      const span = document.createElement("span");
+      span.textContent = "+" + item;
+      span.style.border = "1px solid red";
+      span.style.padding = "10px";
+      span.addEventListener("mouseover", function () {
+        this.style.backgroundColor = "red";
+        this.style.color = "white";
       });
+      span.addEventListener("mouseout", function () {
+        this.style.backgroundColor = "white";
+        this.style.color = "black";
+      });
+      span.addEventListener("click", function () {
+        const currentIndex = list.indexOf(this);
+        let remove = list.splice(currentIndex, 1);
+        listContainer.removeChild(this);
+      });
+      list.push(span);
+      listContainer.appendChild(span);
     }
   </script>
 </html>
