@@ -17,84 +17,37 @@
     let block;
     let listContainer;
     let list = [];
-    const movementArray = ["top", "bottom", "right", "left"];
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", () => {
       block = document.createElement("div");
-      block.innerText = "Hello World";
+      block.textContent = "Hello";
       block.style.height = "100px";
       block.style.width = "100px";
-      block.style.backgroundColor = genRandomColor();
-      block.style.color = "white";
+      block.style.backgroundColor = "red";
       block.style.position = "absolute";
-      block.style.lineHeight = "100px";
-      block.style.textAlign = "center";
       block.style.top = "100px";
       block.style.left = "100px";
+      // block.style.height = "";
+      // block.style.height = "";
+      // block.style.height = "";
       document.body.appendChild(block);
+
       listContainer = document.createElement("div");
       document.body.appendChild(listContainer);
     });
-    document.addEventListener("keydown", (e) => {
-      e.preventDefault();
+    document.addEventListener("keydown", function (e) {
+      console.log(e.keyCode);
       if (e.keyCode === 37) addItem("left");
       if (e.keyCode === 38) addItem("top");
       if (e.keyCode === 39) addItem("right");
       if (e.keyCode === 40) addItem("bottom");
-      if (e.keyCode === 67) block.style.backgroundColor = genRandomColor();
       if (e.keyCode === 13 || e.keyCode === 32) mover();
-      if (e.keyCode === 82) addRandomMove();
     });
-    function mover() {
-      const current = block.getBoundingClientRect();
-      const el = list.shift();
-      const text = el.textContent.replace("+", "");
-      listContainer.removeChild(el);
-      block.textContent = "move : " + text;
-      if (text === "left")
-        block.style.left = current.left - current.width + "px";
-      if (text === "right")
-        block.style.left = current.left + current.width + "px";
-      if (text === "top") block.style.top = current.top - current.height + "px";
-      if (text === "bottom")
-        block.style.top = current.top + current.height + "px";
-      // setTimeout(() => {
-      //   mover;
-      // }, 300);
-    }
-    function addRandomMove() {
-      const temp = movementArray(
-        Math.floor(Math.random() * movementArray.length)
-      );
-      addItem(temp);
-    }
-    function goLeft() {
-      let temp = block.offsetLeft;
-      temp -= 50;
-      block.style.left = temp + "px";
-    }
-    function goRight() {
-      let temp = block.offsetLeft;
-      temp += 50;
-      block.style.left = temp + "px";
-    }
-    function goTop() {
-      let temp = block.offsetTop;
-      temp -= 50;
-      block.style.top = temp + "px";
-    }
-    function goBottom() {
-      let temp = block.offsetTop;
-      temp += 50;
-      block.style.top = temp + "px";
-    }
-    function genRandomColor() {
-      return "#" + Math.random().toString(16).substr(-6);
-    }
-    function addItem(item) {
+
+    function addItem(value) {
       const span = document.createElement("span");
-      span.textContent = "+" + item;
-      span.style.border = "1px solid red";
+      span.textContent = "+" + value;
       span.style.padding = "10px";
+      span.style.border = "1px solid red";
       span.addEventListener("mouseover", function () {
         this.style.backgroundColor = "red";
         this.style.color = "white";
@@ -103,13 +56,25 @@
         this.style.backgroundColor = "white";
         this.style.color = "black";
       });
-      span.addEventListener("click", function () {
-        const currentIndex = list.indexOf(this);
-        let remove = list.splice(currentIndex, 1);
-        listContainer.removeChild(this);
-      });
+      span.addEventListener("click", function () {});
       list.push(span);
       listContainer.appendChild(span);
+    }
+    function mover() {
+      if (!!list) {
+        const current = block.getBoundingClientRect();
+        const removeItem = list.shift();
+        const txt = removeItem.textContent.replace("+", "");
+        listContainer.removeChild(removeItem);
+        if (txt === "left")
+          block.style.left = current.left - current.width + "px";
+        if (txt === "right")
+          block.style.left = current.left + current.width + "px";
+        if (txt === "top")
+          block.style.top = current.top - current.height + "px";
+        if (txt === "bottom")
+          block.style.top = current.top + current.height + "px";
+      }
     }
   </script>
 </html>
