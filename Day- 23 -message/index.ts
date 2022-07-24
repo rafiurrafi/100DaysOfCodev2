@@ -1,32 +1,18 @@
-function kgToLbs(weight: string | number): number {
-  if (typeof weight === "string") return parseInt(weight) * 2.2;
-  return weight * 2.2;
-}
-type Draggable = {
-  drag: () => void;
-};
-type Resizable = {
-  resize: () => void;
-};
-const UIWidget: Draggable & Resizable = {
-  drag: () => console.log("Drag"),
-  resize: () => console.log("Resize"),
-};
-
-type Value = 50 | 100;
-let value: Value = 100;
-type Metric = "cm" | "inch";
-
-function greet(name: string | null | undefined) {
-  if (name) console.log(name.toUpperCase());
-  else console.log("Hola");
+class Account {
+  id: number;
+  owner: string;
+  balance: number;
+  constructor(id: number, owner: string, amount: number) {
+    this.id = id;
+    this.owner = owner;
+    this.balance = amount;
+  }
+  deposite(amount: number): void {
+    if (amount <= 0) throw new Error("Invalid amount " + amount);
+    this.balance += amount;
+  }
 }
 
-type Customer = {
-  birthday: Date;
-};
-function getCustomerBirthday(id: number): null | Customer {
-  return id === 0 ? null : { birthday: new Date() };
-}
-let customer = getCustomerBirthday(0);
-if (customer !== null) console.log(customer?.birthday);
+const account = new Account(1, "Honu", 0);
+account.deposite(100);
+console.log(account);

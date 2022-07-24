@@ -12,69 +12,31 @@
     <link rel="stylesheet" href="style.css" />
     <title>Practise basic components of website</title>
   </head>
-  <body></body>
+  <body>
+    <h3>Ask your ques</h3>
+    <input type="text" />
+    <button>Ask</button>
+    <div id="output"></div>
+  </body>
   <script>
-    let block;
-    let listContainer;
-    let list = [];
-    document.addEventListener("DOMContentLoaded", () => {
-      block = document.createElement("div");
-      block.textContent = "Hello";
-      block.style.height = "100px";
-      block.style.width = "100px";
-      block.style.backgroundColor = "red";
-      block.style.position = "absolute";
-      block.style.top = "100px";
-      block.style.left = "100px";
-      // block.style.height = "";
-      // block.style.height = "";
-      // block.style.height = "";
-      document.body.appendChild(block);
-
-      listContainer = document.createElement("div");
-      document.body.appendChild(listContainer);
+    const input = document.querySelector("input");
+    const button = document.querySelector("button");
+    const shwOutput = document.querySelector("#output");
+    const answers = ["Yes", "no", "ok", "sure", "fine"];
+    button.addEventListener("click", function () {
+      shwOutput.textContent = "";
+      const response = getRandomRes(answers);
+      const showQues = document.createElement("h4");
+      showQues.textContent = input.value;
+      const showAns = document.createElement("span");
+      showAns.textContent = response;
+      shwOutput.append(showQues);
+      shwOutput.append(showAns);
+      input.value = "";
     });
-    document.addEventListener("keydown", function (e) {
-      console.log(e.keyCode);
-      if (e.keyCode === 37) addItem("left");
-      if (e.keyCode === 38) addItem("top");
-      if (e.keyCode === 39) addItem("right");
-      if (e.keyCode === 40) addItem("bottom");
-      if (e.keyCode === 13 || e.keyCode === 32) mover();
-    });
-
-    function addItem(value) {
-      const span = document.createElement("span");
-      span.textContent = "+" + value;
-      span.style.padding = "10px";
-      span.style.border = "1px solid red";
-      span.addEventListener("mouseover", function () {
-        this.style.backgroundColor = "red";
-        this.style.color = "white";
-      });
-      span.addEventListener("mouseout", function () {
-        this.style.backgroundColor = "white";
-        this.style.color = "black";
-      });
-      span.addEventListener("click", function () {});
-      list.push(span);
-      listContainer.appendChild(span);
-    }
-    function mover() {
-      if (!!list) {
-        const current = block.getBoundingClientRect();
-        const removeItem = list.shift();
-        const txt = removeItem.textContent.replace("+", "");
-        listContainer.removeChild(removeItem);
-        if (txt === "left")
-          block.style.left = current.left - current.width + "px";
-        if (txt === "right")
-          block.style.left = current.left + current.width + "px";
-        if (txt === "top")
-          block.style.top = current.top - current.height + "px";
-        if (txt === "bottom")
-          block.style.top = current.top + current.height + "px";
-      }
+    function getRandomRes(ans) {
+      const random = Math.floor(Math.random() * ans.length);
+      return ans[random];
     }
   </script>
 </html>
