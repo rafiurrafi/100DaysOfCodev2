@@ -13,30 +13,58 @@
     <title>Practise basic components of website</title>
   </head>
   <body>
-    <h3>Ask your ques</h3>
-    <input type="text" />
-    <button>Ask</button>
-    <div id="output"></div>
+    <style>
+      .number {
+        height: 40px;
+        width: 40px;
+        font-size: 24px;
+      }
+    </style>
+    <div class="game"></div>
+    <button>Start Game</button>
   </body>
   <script>
-    const input = document.querySelector("input");
+    const gameArea = document.querySelector(".game");
     const button = document.querySelector("button");
-    const shwOutput = document.querySelector("#output");
-    const answers = ["Yes", "no", "ok", "sure", "fine"];
+    let gamePlay;
     button.addEventListener("click", function () {
-      shwOutput.textContent = "";
-      const response = getRandomRes(answers);
-      const showQues = document.createElement("h4");
-      showQues.textContent = input.value;
-      const showAns = document.createElement("span");
-      showAns.textContent = response;
-      shwOutput.append(showQues);
-      shwOutput.append(showAns);
-      input.value = "";
+      if (!gamePlay) {
+        gamePlay = true;
+        maker();
+        button.textContent = "Check combo";
+      } else {
+        const inputs = document.querySelectorAll(".number");
+        let winCondition = 0;
+        console.log(inputs);
+        for (let i = 0; i < 4; i++) {
+          if (+inputs[i].value < inputs[i].correct) {
+            inputs[i].style.backgroundColor = "blue";
+            inputs[i].style.color = "white";
+          } else if (+inputs[i].value > inputs[i].correct) {
+            inputs[i].style.backgroundColor = "red";
+            inputs[i].style.color = "white";
+          } else {
+            inputs[i].style.backgroundColor = "black";
+            inputs[i].style.color = "white";
+            winCondition++;
+          }
+        }
+        if (winCondition === inputs.length) console.log("Over");
+      }
     });
-    function getRandomRes(ans) {
-      const random = Math.floor(Math.random() * ans.length);
-      return ans[random];
+    function maker() {
+      for (let index = 0; index < 4; index++) {
+        const input = document.createElement("input");
+        input.setAttribute("type", "number");
+        input.min = 0;
+        input.max = 9;
+        input.order = index;
+        input.correct = Math.floor(Math.random() * 10);
+        input.value = 0;
+        input.size = 1;
+        input.classList.add("number");
+        gameArea.appendChild(input);
+      }
     }
   </script>
 </html>
