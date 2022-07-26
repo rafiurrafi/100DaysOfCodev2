@@ -13,46 +13,58 @@
     <title>Practise basic components of website</title>
   </head>
   <body>
-    <style>
-      .hidden {
-        display: none;
-      }
-    </style>
-    <div class="message"></div>
-    <input type="text" class="hidden" />
-    <button>Start</button>
+    <input type="date" name="end-date" />
+    <div class="clock">
+      <span><span class="days">0</span>Days</span>
+      <span><span class="hours">0</span>Hours</span>
+      <span><span class="minutes">0</span>Minutes</span>
+      <span><span class="seconds">0</span>Seconds</span>
+    </div>
   </body>
   <script>
-    const message = document.querySelector(".message");
-    const input = document.querySelector("input");
-    const button = document.querySelector("button");
+    const input = document.querySelector("input[name = 'end-date']");
+    const clock = document.querySelector(".clock");
+    let timeInterval;
 
-    let inPlay;
-    const words = ["html", "javascript", "typescript", "redux", "graphql"];
-
-    button.addEventListener("click", function () {
-      if (!inPlay) {
-        inPlay = true;
-        this.textContent = "Guess";
-        input.classList.remove("hidden");
-        getWord();
-      }
+    input.addEventListener("change", function (e) {
+      e.preventDefault();
+      clearInterval(timeInterval);
+      const date = new Date(input.value);
+      startClock(date);
     });
-    function getWord() {
-      const random = Math.floor(Math.random() * words.length);
-      const letters = words[random].split("");
-      randomArr(letters);
-    }
-    function randomArr(arr) {
-      for (let i = arr.length - 1; i >= 0; i--) {
-        let temp = arr[i];
-        const j = Math.floor(Math.random() * (i + 1));
-        console.log(j, i);
-        arr[i] = arr[j];
-        arr[j] = temp;
-        console.log(arr);
+    function startClock(date) {
+      function updateTime() {
+        const timeObject = timeLeft(date);
+        for (let key in timeObject) {
+          const element = clock.querySelector("." + key);
+          if (element) {
+            element.textContent = timeObject[key];
+          }
+        }
       }
-      console.log(arr.join(""));
+      updateTime();
+      timeInterval = setInterval(updateTime, 1000);
+    }
+    function timeLeft(date) {
+      const millisecondsToSec = 1000;
+      const currentDate = new Date();
+      const timeRemaining =
+        (Date.parse(date) - Date.parse(currentDate)) / millisecondsToSec;
+      if (timeRemaining < 0) {
+        clearInterval(timeInterval);
+        console.log("Time is up");
+        return;
+      }
+      const seconds = Math.floor(timeRemaining % 60);
+      const minutes = Math.floor((timeRemaining / 60) % 60);
+      const hours = Math.floor((timeRemaining / 60 / 60) % 24);
+      const days = Math.floor(timeRemaining / 60 / 60 / 24);
+      return {
+        days,
+        hours,
+        minutes,
+        seconds,
+      };
     }
   </script>
 </html>
