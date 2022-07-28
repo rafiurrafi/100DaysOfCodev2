@@ -13,63 +13,57 @@
     <title>Practise basic components of website</title>
   </head>
   <body>
-    <input type="date" name="end-date" />
-    <div class="clock">
-      <span><span class="days">0</span>Days</span>
-      <span><span class="hours">0</span>Hours</span>
-      <span><span class="minutes">0</span>Minutes</span>
-      <span><span class="seconds">0</span>Seconds</span>
+    <style>
+      .btn {
+        cursor: pointer;
+        padding: 15px;
+        border: 1px solid #333;
+        text-align: center;
+        background-color: blue;
+        color: white;
+      }
+      .page {
+        display: none;
+      }
+      .visible {
+        display: block;
+      }
+    </style>
+    <div class="game-area">
+      <div class="stats"></div>
+      <div class="main-page page">
+        <div class="starts">
+          <a href="javascript:void(0)" class="btn new-game-btn">New Game</a>
+        </div>
+      </div>
+      <div class="game-page page"></div>
     </div>
   </body>
   <script>
-    const input = document.querySelector("input[name = 'end-date']");
-    const clock = document.querySelector(".clock");
-    let timeInterval;
-    const valueFromStorage = localStorage.getItem("countDown") || false;
-    if (valueFromStorage) {
-      startClock(valueFromStorage);
-    }
+    const playArea = {};
+    const player = {};
 
-    input.addEventListener("change", function (e) {
-      e.preventDefault();
-      clearInterval(timeInterval);
-      const date = new Date(input.value);
-      localStorage.setItem("countDown", date);
-      startClock(date);
+    playArea.stats = document.querySelector(".stats");
+    playArea.main = document.querySelector(".main-page");
+    playArea.game = document.querySelector(".game-page");
+    playArea.btns = Array.from(document.querySelectorAll(".btn"));
+    playArea.pages = Array.from(document.querySelectorAll(".page"));
+
+    player.score = 0;
+    player.items = 3;
+
+    playArea.btns.forEach((btn) => {
+      btn.addEventListener("click", handleBtn);
     });
-    function startClock(date) {
-      function updateTime() {
-        const timeObject = timeLeft(date);
-        for (let key in timeObject) {
-          const element = clock.querySelector("." + key);
-          if (element) {
-            element.textContent = timeObject[key];
-          }
-        }
+    function handleBtn(e) {
+      const selectedBtn = e.target;
+      if (selectedBtn.classList.contains("new-game-btn")) {
+        console.log("😊");
+        startGame();
       }
-      updateTime();
-      timeInterval = setInterval(updateTime, 1000);
     }
-    function timeLeft(date) {
-      const millisecondsToSec = 1000;
-      const currentDate = new Date();
-      const timeRemaining =
-        (Date.parse(date) - Date.parse(currentDate)) / millisecondsToSec;
-      if (timeRemaining < 0) {
-        clearInterval(timeInterval);
-        console.log("Time is up");
-        return;
-      }
-      const seconds = Math.floor(timeRemaining % 60);
-      const minutes = Math.floor((timeRemaining / 60) % 60);
-      const hours = Math.floor((timeRemaining / 60 / 60) % 24);
-      const days = Math.floor(timeRemaining / 60 / 60 / 24);
-      return {
-        days,
-        hours,
-        minutes,
-        seconds,
-      };
+    function startGame() {
+      console.log("Game started");
     }
   </script>
 </html>
