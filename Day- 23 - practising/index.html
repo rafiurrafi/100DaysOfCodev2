@@ -14,56 +14,86 @@
   </head>
   <body>
     <style>
-      .btn {
-        cursor: pointer;
-        padding: 15px;
-        border: 1px solid #333;
-        text-align: center;
-        background-color: blue;
-        color: white;
+      .game-area {
+        height: 200px;
+        width: 200px;
+        border: 1px solid black;
       }
-      .page {
-        display: none;
+      .box {
+        height: 50%;
+        width: 50%;
+        float: left;
+        margin-bottom: 0;
       }
-      .visible {
-        display: block;
+      .active {
+        border: 1px solid red;
+        color: greenyellow;
       }
     </style>
-    <div class="game-area">
-      <div class="stats"></div>
-      <div class="main-page page">
-        <div class="starts">
-          <a href="javascript:void(0)" class="btn new-game-btn">New Game</a>
-        </div>
-      </div>
-      <div class="game-page page"></div>
-    </div>
+    <div class="message">Press start button</div>
+    <div class="game-area"></div>
+    <button>Start</button>
   </body>
   <script>
-    const playArea = {};
-    const player = {};
+    const gameColors = ["red", "orange", "royalblue", "greenyellow"];
+    const gameArea = document.querySelector(".game-area");
+    const btn = document.querySelector("button");
+    const message = document.querySelector(".message");
 
-    playArea.stats = document.querySelector(".stats");
-    playArea.main = document.querySelector(".main-page");
-    playArea.game = document.querySelector(".game-page");
-    playArea.btns = Array.from(document.querySelectorAll(".btn"));
-    playArea.pages = Array.from(document.querySelectorAll(".page"));
+    let gameClicks = [];
+    let userClicks = [];
+    let inPlay = false;
+    let playNum = 3;
 
-    player.score = 0;
-    player.items = 3;
-
-    playArea.btns.forEach((btn) => {
-      btn.addEventListener("click", handleBtn);
+    window.addEventListener("load", setUp);
+    btn.addEventListener("click", function () {
+      if (!inPlay) {
+        player();
+      }
     });
-    function handleBtn(e) {
-      const selectedBtn = e.target;
-      if (selectedBtn.classList.contains("new-game-btn")) {
-        console.log("😊");
-        startGame();
+    function player() {
+      btn.disabled = true;
+      gameClicks = [];
+      userClicks = [];
+      runSequence(playNum);
+    }
+    function runSequence(number) {
+      const squares = document.querySelectorAll(".box");
+      number--;
+      if (number < 0) {
+        inPlay = true;
+        return;
+      }
+      const randomNumber = Math.floor(Math.random() * squares.length);
+      gameClicks.push(gameColors[randomNumber]);
+      squares[randomNumber].style.opacity = 1;
+      setTimeout(() => {
+        squares[randomNumber].style.opacity = 0.5;
+        setTimeout(() => {
+          runSequence(number);
+        }, 100);
+      }, 200);
+    }
+    function setUp() {
+      for (let i = 0; i < gameColors.length; i++) {
+        const element = document.createElement("div");
+        element.classList.add("box");
+        element.style.backgroundColor = gameColors[i];
+        element.addEventListener("click", checkAnswer);
+        element.color = gameColors[i];
+        element.style.opacity = 0.5;
+        gameArea.appendChild(element);
       }
     }
-    function startGame() {
-      console.log("Game started");
+    function checkAnswer(e) {
+      if (inPlay) {
+        const item = e.target;
+        userClicks.push(item.color);
+        item.style.opacity = 1;
+        setTimeout(() => {
+          item.style.opacity = 0.5;
+        }, 100);
+      }
     }
   </script>
 </html>
