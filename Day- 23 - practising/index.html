@@ -13,87 +13,38 @@
     <title>Practise basic components of website</title>
   </head>
   <body>
-    <style>
-      .game-area {
-        height: 200px;
-        width: 200px;
-        border: 1px solid black;
-      }
-      .box {
-        height: 50%;
-        width: 50%;
-        float: left;
-        margin-bottom: 0;
-      }
-      .active {
-        border: 1px solid red;
-        color: greenyellow;
-      }
-    </style>
-    <div class="message">Press start button</div>
-    <div class="game-area"></div>
-    <button>Start</button>
+    <div>Hey anonymous</div>
+    <form>
+      <input
+        type="text"
+        id="displayName"
+        placeholder="Display Name"
+        style="margin-bottom: 10px"
+      />
+      <br />
+      <input
+        type="text"
+        style="margin-bottom: 10px"
+        id="password"
+        placeholder="Password"
+      />
+      <br />
+      <button>Submit</button>
+    </form>
   </body>
   <script>
-    const gameColors = ["red", "orange", "royalblue", "greenyellow"];
-    const gameArea = document.querySelector(".game-area");
-    const btn = document.querySelector("button");
-    const message = document.querySelector(".message");
+    const displayName = document.querySelector("#displayName");
+    const password = document.querySelector("#password");
+    const button = document.querySelector("button");
 
-    let gameClicks = [];
-    let userClicks = [];
-    let inPlay = false;
-    let playNum = 3;
-
-    window.addEventListener("load", setUp);
-    btn.addEventListener("click", function () {
-      if (!inPlay) {
-        player();
-      }
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log(displayName.value, password.value);
+      resetInput();
     });
-    function player() {
-      btn.disabled = true;
-      gameClicks = [];
-      userClicks = [];
-      runSequence(playNum);
-    }
-    function runSequence(number) {
-      const squares = document.querySelectorAll(".box");
-      number--;
-      if (number < 0) {
-        inPlay = true;
-        return;
-      }
-      const randomNumber = Math.floor(Math.random() * squares.length);
-      gameClicks.push(gameColors[randomNumber]);
-      squares[randomNumber].style.opacity = 1;
-      setTimeout(() => {
-        squares[randomNumber].style.opacity = 0.5;
-        setTimeout(() => {
-          runSequence(number);
-        }, 100);
-      }, 200);
-    }
-    function setUp() {
-      for (let i = 0; i < gameColors.length; i++) {
-        const element = document.createElement("div");
-        element.classList.add("box");
-        element.style.backgroundColor = gameColors[i];
-        element.addEventListener("click", checkAnswer);
-        element.color = gameColors[i];
-        element.style.opacity = 0.5;
-        gameArea.appendChild(element);
-      }
-    }
-    function checkAnswer(e) {
-      if (inPlay) {
-        const item = e.target;
-        userClicks.push(item.color);
-        item.style.opacity = 1;
-        setTimeout(() => {
-          item.style.opacity = 0.5;
-        }, 100);
-      }
+    function resetInput() {
+      displayName.value = "";
+      password.value = "";
     }
   </script>
 </html>
