@@ -12,6 +12,7 @@ const selectText = document.querySelector(".select > p");
 
 let holder = {};
 let selected = {};
+
 addTextBtn.addEventListener("click", () => {
   holder.obj = document.createElement("div");
   holder.obj.textContent = "<FULLNAME>";
@@ -24,6 +25,7 @@ addTextBtn.addEventListener("click", () => {
   dragger(holder.obj);
   playground.appendChild(holder.obj);
 });
+
 // under observation
 function dragger(element) {
   let pos = {};
@@ -32,6 +34,7 @@ function dragger(element) {
   function dragMouse(e) {
     pos.x = e.clientX;
     pos.y = e.clientY;
+
     document.onmouseup = function () {
       document.onmouseup = null;
       document.onmousemove = null;
@@ -132,7 +135,27 @@ const a = document.querySelector("#download-btn");
 
 a.addEventListener("click", () => {
   a.download = "certificate.html";
+  // a.href =
+  //   "data:text/html," +
+  //   document.getElementById("playground-container").innerHTML;
   a.href =
-    "data:text/html," +
-    document.getElementById("playground-container").innerHTML;
+    "data:text/html," + document.querySelector(".playground-content").innerHTML;
+});
+
+const textDeleteBtn = document.querySelector("#text-delete-btn");
+const imageDeleteBtn = document.querySelector("#image-delete-btn");
+textDeleteBtn.addEventListener("click", function () {
+  selected.obj.parentElement.removeChild(selected.obj);
+});
+
+imageDeleteBtn.addEventListener("click", function () {
+  selectedImg.obj.parentElement.removeChild(selectedImg.obj);
+});
+const playgroundHeightInput = document.querySelector("#playground-height");
+const playgroundWidthInput = document.querySelector("#playground-width");
+const playgroundSizeBtn = document.querySelector("#playground-btn");
+
+playgroundSizeBtn.addEventListener("click", () => {
+  playground.style.height = +playgroundHeightInput.value + "px";
+  playground.style.width = +playgroundWidthInput.value + "px";
 });

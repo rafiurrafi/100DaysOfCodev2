@@ -18,39 +18,18 @@
       <div class="menu">
         <h2 class="logo">Logo_</h2>
 
-        <div class="add-name-container">
-          <h3 class="title">Add sections</h3>
-          <button id="add-text">Add text</button>
-        </div>
-
-        <div class="add-image-container">
-          <h3 class="title">Add Image</h3>
-          <input
-            type="file"
-            id="img"
-            class="custom-file-input"
-            accept="image/png, image/jpg"
-          />
-        </div>
-
-        <div class="add-background-image-container">
-          <h3 class="title">Background Image</h3>
-          <input
-            type="file"
-            id="bg-img"
-            class="custom-file-input custom-bg-input"
-            accept="image/png, image/jpg"
-          />
-        </div>
         <h4 class="text-white mb-1">Change text</h4>
         <input type="text" id="input-text" /> <br />
-        <div class="my-2">
-          <span class="text-white">Text color </span>:
-          <input type="color" id="text-color" />
-        </div>
-        <div class="my-2">
-          <label for="">Font size</label>
-          <input type="text" id="font-size-input" style="width: 100px" />
+        <div class="text-change-group">
+          <div class="my-2">
+            <span class="text-white">C</span>:
+            <input type="color" id="text-color" />
+          </div>
+          <div class="my-2">
+            <label for="">S</label>
+            <input type="text" id="font-size-input" style="width: 50px" />
+          </div>
+          <button id="text-delete-btn" class="delete-btn">X</button>
         </div>
         <div class="select">
           <p class="select-menu text-white">Select Text</p>
@@ -73,7 +52,12 @@
         <button id="update-text-btn" style="margin-top: 20px">
           Update text
         </button>
-        <h3 class="title text-white" style="margin-top: 40px">Update image</h3>
+        <h3 class="title text-white" style="margin-top: 40px">
+          Update image
+          <button class="delete-btn" id="image-delete-btn" style="float: right">
+            X
+          </button>
+        </h3>
         <label for="height">H</label>
         <input type="text" id="height" />
         <label id="width-label" for="height">W</label>
@@ -85,7 +69,46 @@
       </div>
       <!-- playground -->
       <div id="playground-container">
-        <div class="playground"></div>
+        <div class="actions">
+          <div class="add-name-container">
+            <h3 class="title">Add sections</h3>
+            <button id="add-text">Add text</button>
+          </div>
+
+          <div class="add-image-container">
+            <h3 class="title">Add Image</h3>
+            <input
+              type="file"
+              id="img"
+              class="custom-file-input"
+              accept="image/png, image/jpg"
+            />
+          </div>
+
+          <div class="add-background-image-container">
+            <h3 class="title">Background Image</h3>
+            <input
+              type="file"
+              id="bg-img"
+              class="custom-file-input custom-bg-input"
+              accept="image/png, image/jpg"
+            />
+          </div>
+          <div class="playgound-size">
+            <div>
+              <label for="">H</label>
+              <input type="text" id="playground-height" value="500" />
+            </div>
+            <div>
+              <label for="">W</label>
+              <input type="text" id="playground-width" value="700" />
+            </div>
+            <button id="playground-btn">Submit</button>
+          </div>
+        </div>
+        <div class="playground-content">
+          <div class="playground"></div>
+        </div>
       </div>
     </div>
     <a href="" id="download-btn"><i class="fa fa-download fa-2x"></i></a>

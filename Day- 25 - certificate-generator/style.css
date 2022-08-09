@@ -35,23 +35,19 @@ button {
 }
 /* playground  */
 #playground-container {
-  flex: 0 0 1;
+  flex: 1;
+
+  /* z-index: -1; */
+}
+.playground {
   height: 500px;
   width: 700px;
   border: 1px solid orange;
   position: relative;
 
-  margin-top: 10%;
-  margin-left: 10%;
-
-  /* z-index: -1; */
+  margin-top: 2%;
+  margin-left: 2%;
 }
-/* .playground {
-  height: 100%;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-} */
 .courier {
   font-family: "Times New Roman", Times, serif;
 }
@@ -136,7 +132,7 @@ label {
 #width-label {
   margin-left: 30px;
 }
-.add-background-image-container {
+/* .add-background-image-container {
   position: absolute;
   top: 40px;
   right: 20px;
@@ -150,7 +146,7 @@ label {
   position: absolute;
   top: 40px;
   left: 25%;
-}
+} */
 .my-2 {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -169,4 +165,46 @@ label {
 }
 #download-btn:hover {
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.text-change-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delete-btn {
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid tomato;
+  color: tomato;
+  background-color: transparent;
+}
+.delete-btn:hover {
+  background-color: tomato;
+  color: white;
+}
+.actions {
+  display: grid;
+  grid-gap: 1rem;
+  margin-left: 2%;
+  grid-template-columns: repeat(2, 1fr);
+}
+.playgound-size {
+  display: flex;
+  align-items: center;
+}
+
+.playgound-size input,
+.playgound-size label {
+  color: black;
+}
+.playgound-size input {
+  width: 50px;
+  margin-right: 1rem;
+}
+
+.playgound-size button {
+  padding: 10px;
 }

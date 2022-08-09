@@ -12,39 +12,38 @@
     <link rel="stylesheet" href="style.css" />
     <title>Practise basic components of website</title>
   </head>
-  <body>
-    <div>Hey anonymous</div>
-    <form>
-      <input
-        type="text"
-        id="displayName"
-        placeholder="Display Name"
-        style="margin-bottom: 10px"
-      />
-      <br />
-      <input
-        type="text"
-        style="margin-bottom: 10px"
-        id="password"
-        placeholder="Password"
-      />
-      <br />
-      <button>Submit</button>
-    </form>
-  </body>
+  <body></body>
   <script>
-    const displayName = document.querySelector("#displayName");
-    const password = document.querySelector("#password");
-    const button = document.querySelector("button");
-
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      console.log(displayName.value, password.value);
-      resetInput();
-    });
-    function resetInput() {
-      displayName.value = "";
-      password.value = "";
-    }
+    const products = [
+      {
+        id: 1,
+        name: "Panjabi",
+      },
+      {
+        id: 2,
+        name: "Kurta",
+      },
+      {
+        id: 3,
+        name: "Shirt",
+      },
+      {
+        id: 4,
+        name: "Skirt",
+      },
+      {
+        id: 5,
+        name: "jaggings",
+      },
+    ];
+    const wishLists = [ {
+        id: 4,
+        name: "Skirt",
+      },
+      {
+        id: 5,
+        name: "jaggings",
+      },];
+   
   </script>
 </html>
