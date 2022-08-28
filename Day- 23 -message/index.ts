@@ -1,32 +1,15 @@
-interface Product {
-  name: string;
-  price: string;
+let sales: number = 123_42_213;
+let course: string = "Typescript";
+let isPublished: boolean = false;
+let level;
+let user: [number, string] = [0, "Sahad"];
+user.push("hello");
+enum size {
+  small = "sm",
+  medium = "",
+  large = "",
 }
-type optional = {
-  [property in keyof Product]?: Product[property];
-};
-class Store<T> {
-  protected _objects: T[] = [];
-  add(object: T): void {
-    this._objects.push(object);
-  }
-  find(property: keyof T, value: unknown): T | undefined {
-    return this._objects.find((obj) => obj[property] === value);
-  }
+function calculateTax(income: number): number {
+  if (income < 400_999) return income * 1.3;
+  return income * 0.5;
 }
-class CompossibleStore<T> extends Store<T> {
-  compose() {}
-}
-class searchableStore<T extends { name: string }> extends Store<T> {
-  // find(name: string): T | undefined {
-  //   return this._objects.find((obj) => obj.name === name);
-  // }
-}
-class ProductStore extends Store<Product> {
-  filter(category: string): Product[] {
-    return [];
-  }
-}
-let store = new CompossibleStore<Product>();
-store.find("name", "saad");
-store.find("price", 109);
