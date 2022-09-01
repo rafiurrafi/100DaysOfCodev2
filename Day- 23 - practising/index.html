@@ -13,74 +13,23 @@
     <title>Practise basic components of website</title>
   </head>
   <body>
-    <div>
-      <h1>Counter</h1>
-      <span id="counter"></span> <br />
-      <button id="inc">Inc</button>
-      <button id="dec">Dec</button>
-    </div>
+    <form action="">
+      <input type="text" value="Feed the cow" />
+      <button>Submit</button>
+    </form>
+    <ul id="list"></ul>
   </body>
   <script>
-    let state = {
-      counter: 0,
-    };
-    const listeners = [];
-    //make counter functional
-    function dispatch(action) {
-      let newState = reducer(state, action);
-      if (newState !== state) state = newState;
-      listeners.forEach((listener) => {
-        listener();
-      });
-    }
-    // add event when button clicked
-    document.querySelector("#inc").onclick = () => dispatch("inc");
-    document.querySelector("#dec").onclick = () => dispatch("dec");
-    // updateview
-    function updateView() {
-      document.querySelector("#counter").textContent = state.counter;
-    }
-    //first call
-    updateView();
-    //listen for changes
-    subscribe(updateView);
+    const form = document.querySelector("form");
+    const input = document.querySelector("input");
+    const list = document.querySelector("#list");
 
-    function subscribe(callback) {
-      listeners.push(callback);
-    }
-    function reducer(state, action) {
-      switch (action) {
-        case "inc":
-          return { ...state, counter: state.counter + 1 };
-        case "dec":
-          return { ...state, counter: state.counter - 1 };
-        default:
-          return state;
-      }
-    }
-    const states = {
-      counter: 0,
-    };
-    const list = [];
-    function dispatch(action) {
-      let newState = reducer(states, action);
-      if (newState !== states) state = newState;
-    }
-    document.querySelector("#inc").onclick = () => dispatch("inc");
-    document.querySelector("#dec").onclick = () => dispatch("dec");
-    function subscribe(callback) {
-      list.push(callback);
-    }
-    function updateView() {
-      document.querySelector("#counter").textContext = state.counter;
-    }
-    function reducer(state, action) {
-      switch (action) {
-        case "inc":
-          return { ...state, counter: state.action + 1 };
-        default:
-          return state;
-      }
-    }
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const li = document.createElement("li");
+      li.textContent = input.value;
+      list.append(li);
+      input.value = "";
+    });
   </script>
 </html>
