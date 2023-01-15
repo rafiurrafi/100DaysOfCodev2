@@ -37,7 +37,11 @@ function touchStart(index) {
 }
 function touchEnd() {
   isDragging = false;
-  console.log("End");
+  cancelAnimationFrame(animationId);
+  const movedBy = currentTranslate - prevTranslate;
+  if (movedBy < -100 && currentIndex < sliders.length - 1) currentIndex += 1;
+  if (movedBy > 100 && currentIndex >= 0) currentIndex -= 1;
+  setPositionByIndex();
 }
 function touchMove(e) {
   if (isDragging) {
@@ -54,4 +58,10 @@ function animation() {
 }
 function setSliderPosition() {
   slider.style.transform = `translateX(${currentTranslate}px)`;
+}
+function setPositionByIndex() {
+  currentTranslate = currentIndex * -window.innerWidth;
+  prevTranslate = currentTranslate;
+  setSliderPosition();
+  console.log(currentTranslate);
 }
