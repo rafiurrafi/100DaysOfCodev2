@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #fefcff;
+}
+.container {
+  margin: 2rem auto;
+  padding: 3rem 5rem;
+  width: 70%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.datepicker-input {
+  height: 2.5rem;
+  width: 100%;
+  border: 2px solid #777;
+}
+#submit {
+  border: none;
+  background-color: #38acec;
+  font-size: 1.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #fefcff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
