@@ -25,7 +25,6 @@
 
     let inPlay = false;
     let playArea = {};
-    let startTime;
 
     displayMessage("Click the button");
 
@@ -38,26 +37,44 @@
       }
     });
     function showBox() {
-      startTime = new Date().getTime();
-      myBox();
+      playArea.timer = setTimeout(myBox, random(3000));
     }
     function myBox() {
       const element = document.createElement("div");
       element.style.height = random(30) + 70 + "px";
       element.style.width = random(30) + 70 + "px";
-      element.style.backgroundColor = "red";
-      element.style.borderRadius = 50 + "%";
+      element.style.backgroundColor = getColor();
+      element.style.borderRadius = random(50) + "%";
       element.style.position = "absolute";
       element.style.top = random(50) + "px";
       element.style.left = random(50) + "px";
+      element.start = new Date().getTime();
+      element.addEventListener("click", hit);
 
+      gameArea.style.position = "relative";
       gameArea.append(element);
+    }
+    function getColor() {
+      function col() {
+        const hex = random(255).toString(16);
+        return ("0" + String(hex)).substr(-2);
+      }
+      return "#" + col() + col() + col();
     }
     function random(num) {
       return Math.floor(Math.random() * num);
     }
     function displayMessage(msg) {
       message.innerHTML = msg;
+    }
+    function hit(e) {
+      const endTime = new Date().getTime();
+      const startTime = e.target.start;
+      const duration = (endTime - startTime) / 1000;
+      displayMessage("it took " + duration + " times to click");
+      clearTimeout(playArea.timer);
+      gameArea.children[0].remove();
+      playArea.timer = setTimeout(myBox, random(3000));
     }
   </script>
 </html>
