@@ -23,6 +23,8 @@ setInterval(() => {
   if (isAlarm) {
     alarmTone.play();
     alarmTone.loop = true;
+  } else {
+    alarmTone.pause();
   }
 }, 1000);
 function formatTime(time) {
