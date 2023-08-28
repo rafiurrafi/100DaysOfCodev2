@@ -4,6 +4,10 @@ const hourSelect = document.querySelector("#hour-select");
 const minuteSelect = document.querySelector("#minute-select");
 const amSelect = document.querySelector("#am-select");
 const addBtn = document.querySelector("button");
+let alarmTime,
+  isAlarm = false;
+const alarmTone = new Audio("./assets/alarm.mp3");
+console.log(alarmTone);
 setInterval(() => {
   let currentTime = new Date();
   const hours = currentTime.getHours();
@@ -13,8 +17,13 @@ setInterval(() => {
   const formatedTime = `${formatTime(hours)} : ${formatTime(
     minutes
   )} : ${formatTime(seconds)}`;
-
+  const timeForAlarm = `${formatTime(hours)} : ${formatTime(minutes)}`;
   clock.textContent = formatedTime;
+  if (alarmTime === timeForAlarm) isAlarm = true;
+  if (isAlarm) {
+    alarmTone.play();
+    alarmTone.loop = true;
+  }
 }, 1000);
 function formatTime(time) {
   return `${time.toString().padStart(2, 0)}`;
@@ -24,10 +33,10 @@ function setAlarm() {
   const selectetMinute = minuteSelect.value;
   const selectetMeridian = amSelect.value;
   if (selectetMeridian === "PM") selectetHour = +selectetHour + 12;
-  const createTime = `${selectetHour} : ${selectetMinute}`;
-  const runningTimes = clock.textContent.split(":");
-  const time = `${runningTimes[0]} : ${runningTimes[1]}`;
-  console.log(createTime, time);
+  alarmTime = `${selectetHour} : ${selectetMinute}`;
+}
+function stopAlarm() {
+  isAlarm = false;
 }
 document.addEventListener("DOMContentLoaded", () => {
   for (let i = 1; i <= 12; i++) {
@@ -54,7 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 addBtn.addEventListener("click", function () {
   if (this.textContent == "Add alarm") {
-    // this.textContent = "Reset";
+    this.textContent = "Reset";
     setAlarm();
+  } else if (this.textContent === "Reset") {
+    stopAlarm();
   }
 });
