@@ -4,6 +4,12 @@ const hourSelect = document.querySelector("#hour-select");
 const minuteSelect = document.querySelector("#minute-select");
 const amSelect = document.querySelector("#am-select");
 const addBtn = document.querySelector("button");
+
+const minute = document.querySelector("#minutes");
+const second = document.querySelector("#seconds");
+const milli = document.querySelector("#milli");
+const stopwatchBtn = document.querySelector("#stopwatch-btn");
+
 let alarmTime,
   isAlarm = false;
 const alarmTone = new Audio("./assets/alarm.mp3");
@@ -69,5 +75,28 @@ addBtn.addEventListener("click", function () {
     setAlarm();
   } else if (this.textContent === "Reset") {
     stopAlarm();
+  }
+});
+
+// stopwatch function
+let startTime, stopwatchInterval;
+function updateStopwatch() {
+  const currentTime = Date.now() - startTime;
+  const milliSecond = currentTime % 1000;
+  const sec = Math.floor((currentTime / 1000) % 60);
+  const min = Math.floor((currentTime / 1000 / 60) % 60);
+
+  minute.textContent = String(min).padStart(2, "0");
+  second.textContent = String(sec).padStart(2, 0);
+  milli.textContent = milliSecond;
+}
+stopwatchBtn.addEventListener("click", function () {
+  if (this.innerText === "Start") {
+    this.innerText = "Stop";
+    startTime = Date.now() - 0;
+    stopwatchInterval = setInterval(updateStopwatch, 100);
+  } else if (this.innerText === "Stop") {
+    this.innerText = "Start";
+    clearInterval(stopwatchInterval);
   }
 });
