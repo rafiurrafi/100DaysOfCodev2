@@ -7,8 +7,11 @@ const googleDatabase = [
   "cathungry.com",
 ];
 
-const googleSearch = (input) => {
-  return googleDatabase.filter((data) => data.includes(input));
+const googleSearch = (db, input) => {
+  if (db === undefined || db === null) return [];
+  return db.filter((data) => data.includes(input));
 };
-const result = googleSearch("cat");
+const result = googleSearch(googleDatabase, "cat");
 console.log(result);
+
+module.exports = googleSearch;
