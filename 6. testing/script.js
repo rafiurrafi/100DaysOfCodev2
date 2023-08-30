@@ -1,17 +1,15 @@
-const googleDatabase = [
-  "cats.com",
-  "aniamls.com",
-  "supercats.com",
-  "rolex.com",
-  "burgerking.com",
-  "cathungry.com",
+const googleData = [
+  "cat.com",
+  "catland.com",
+  "bull.com",
+  "redbull.com",
+  "catfighter.com",
+  "catfish.com",
 ];
 
 const googleSearch = (db, input) => {
-  if (db === undefined || db === null) return [];
-  return db.filter((data) => data.includes(input));
+  const result = db.filter((data) => data.includes(input));
+  return result.length > 3 ? result.slice(0, 3) : result;
 };
-const result = googleSearch(googleDatabase, "cat");
-console.log(result);
 
 module.exports = googleSearch;

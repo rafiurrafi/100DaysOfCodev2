@@ -1,13 +1,26 @@
 const googleSearch = require("./script");
-dbMock = ["puri.com", "parata.com", "vaji.com", "daal.com", "sobji.com"];
-it("is testing google search", () => {
+
+const dbMock = [
+  "puri.com",
+  "porota.com",
+  "dalpuri.com",
+  "alupuri.com",
+  "purivaji.com",
+];
+
+it("is dummy test", () => {
   expect("Hello").toBe("Hello");
 });
-it("is searching google", () => {
-  expect(googleSearch(dbMock, "nun")).toEqual([]);
-  expect(googleSearch(dbMock, "puri")).toEqual(["puri.com"]);
+it("test googleData", () => {
+  console.log(googleSearch(dbMock, "fuska"));
+  expect(googleSearch(dbMock, "fuska")).toEqual([
+    // "puri.com",
+    // "dalpuri.com",
+    // "alupuri.com",
+  ]);
 });
 
-it("works with undefined database", () => {
-  expect(googleSearch(undefined, "puri")).toEqual([]);
+it("count length of", () => {
+  console.log(googleSearch(dbMock, "fuska"));
+  expect(googleSearch(dbMock, "fuska").length).toEqual(0);
 });

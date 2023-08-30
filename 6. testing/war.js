@@ -1,7 +1,12 @@
-const getPlanet = () => {
-  const planets = fetch("https://swapi.dev/api/planets/")
+import fetch from "node-fetch";
+const getPlanet = (fetch) => {
+  return fetch("https://swapi.dev/api/planets/")
     .then((response) => response.json)
-    .then((data) => data);
-  return planets;
+    .then((data) => {
+      console.log(data);
+      return {
+        planet: data.films,
+      };
+    });
 };
-console.log(getPlanet());
+console.log(getPlanet(fetch));
