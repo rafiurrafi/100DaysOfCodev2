@@ -13,3 +13,9 @@ const googleSearch = (db, input) => {
 };
 
 module.exports = googleSearch;
+
+const style = document.createElement("link");
+style.href =
+  "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
+style.ref = "stylesheet";
+console.log(style);
