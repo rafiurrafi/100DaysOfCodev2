@@ -16,6 +16,15 @@
 //exchange the value of random index and the arr
 //decrement length
 
+const foods = ["burger", "pizza", "biriyani", "chicken"];
+const food = foods[getRandomNumber(foods.length)];
+
+const jumbleFood = makeJumble(food);
+const input = "";
+
+function getRandomNumber(length) {
+  return Math.floor(Math.random() * length);
+}
 function makeJumble(word) {
   const letters = word.split("");
   let length = letters.length;
