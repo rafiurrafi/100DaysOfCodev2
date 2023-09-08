@@ -6,18 +6,22 @@
     <link href="../output/style.css" rel="stylesheet" />
   </head>
   <body class="h-screen flex items-center justify-center bg-gray-100">
-    <div class="max-w-sm mx-auto bg-white p-8 rounded-xl">
+    <div
+      class="max-w-sm mx-auto bg-white p-8 rounded-xl group hover:bg-gray-900"
+    >
       <img
         class="h-24 mb-6 w-24 ring-4 rounded-full mx-auto ring-green-400"
         src="../img/ariana.jpg"
         alt=""
       />
-      <div class="text-center">
+      <div class="text-center selection:bg-red-600">
         <div>
-          <h3 class="text-lg">Ariana Grande</h3>
-          <p>Actress</p>
+          <h3 class="text-lg group-hover:text-white">Ariana Grande</h3>
+          <p class="group-hover:text-white">Actress</p>
         </div>
-        <button class="px-5 py-2 bg-gray-500 hover:bg-gray-900 text-white">
+        <button
+          class="px-5 py-2 group-hover:bg-transparent group-hover:text-green-500 group-hover:border-green-500 bg-green-500 hover:bg-green-600 active:bg-green-700 focus:outline-none focus:ring focus:ring-green-300 text-black"
+        >
           Hire now
         </button>
       </div>
