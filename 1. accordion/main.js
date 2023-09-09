@@ -1,38 +1,24 @@
-//input
-// give a jumble word
-//you have to type the correct
-// - if correct, you can again play
-// if false you can try again
-// "Theme"
-// ["t", "h", "e", "m", "e"]
-// 5 => random 1 change ehemt
-// 4 => random 2 change emeht
-// 3 => random 1 change emeht
-// 2 random 2 emeht
+//create a dom with all styles height width bgColor position
+// add click functionality
+// add time later
+createElement();
 
-//loop through the arr
-//initialize length
-// get a random number
-//exchange the value of random index and the arr
-//decrement length
-
-const foods = ["burger", "pizza", "biriyani", "chicken"];
-const food = foods[getRandomNumber(foods.length)];
-
-const jumbleFood = makeJumble(food);
-const input = "";
-
-function getRandomNumber(length) {
-  return Math.floor(Math.random() * length);
+function createElement() {
+  const box = document.createElement("div");
+  box.classList.add("box");
+  box.style.height = 100 + "px";
+  box.style.top = 100 + "px";
+  box.style.width = 100 + "px";
+  box.style.left = 100 + "px";
+  box.style.borderRadius = 10 + "px";
+  box.style.position = "absolute";
+  box.style.backgroundColor = "crimson";
+  box.addEventListener("click", updateBox);
+  document.body.appendChild(box);
 }
-function makeJumble(word) {
-  const letters = word.split("");
-  let length = letters.length;
-  letters.forEach((letter, index) => {
-    const random = getRandomNumber(length);
-    const temp = letters[random];
-    letters[random] = letter;
-    letters[index] = temp;
-  });
-  return letters.join("");
+function updateBox(e) {
+  document.body.removeChild(e.target);
+  setTimeout(() => {
+    createElement();
+  }, 500);
 }
