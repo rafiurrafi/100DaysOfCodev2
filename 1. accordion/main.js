@@ -2,17 +2,30 @@ const showMessage = document.querySelector("#show-message");
 const startScreen = document.querySelector(".start-screen");
 const gameArea = document.querySelector(".game-area");
 
-const player = {};
+const player = { speed: 5 };
 
 const keys = {
   ArrowLeft: false,
   ArrowUp: false,
   ArrowRight: false,
-  rrowDown: false,
+  ArrowDown: false,
 };
 function playGame() {
-  console.log("inplay");
-  if (player.start) requestAnimationFrame(playGame);
+  const car = document.querySelector(".car");
+  const road = gameArea.getBoundingClientRect();
+  console.log(road);
+  if (player.start) {
+    if (keys.ArrowLeft && player.x > 0) player.x -= player.speed;
+    if (keys.ArrowRight && player.x < 150) player.x += player.speed;
+    if (keys.ArrowUp && player.y > road.y) player.y -= player.speed;
+    if (keys.ArrowDown && player.y < road.height - 100)
+      player.y += player.speed;
+
+    car.style.left = player.x + "px";
+    car.style.top = player.y + "px";
+
+    requestAnimationFrame(playGame);
+  }
 }
 
 function start() {
@@ -24,7 +37,11 @@ function start() {
 
   const car = document.createElement("div");
   car.innerText = "car";
+  car.classList.add("car");
   gameArea.appendChild(car);
+  player.x = car.offsetLeft;
+  player.y = car.offsetTop;
+  console.log(player);
 }
 
 function keyDownHandler(e) {

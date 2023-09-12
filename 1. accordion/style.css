@@ -1,3 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .hide {
   display: none;
+}
+.car {
+  height: 100px;
+  width: 50px;
+  background-color: crimson;
+  position: absolute;
+  left: 50px;
+  bottom: 100px;
+  z-index: 1;
+}
+.game-area {
+  background-color: black;
+  height: 100vh;
+  width: 200px;
+  position: relative;
+  /* overflow: hidden; */
+  margin: auto;
 }
